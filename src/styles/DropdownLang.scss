@@ -1,0 +1,73 @@
+@import "mixin.scss";
+@import "variable.scss";
+
+.dd-lang {
+  width: 40px;
+  padding: 0 5px;
+  position: relative;
+  z-index: 1;
+  &.active {
+    .dd-popup {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  .dd-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    .dd-label {
+      cursor: pointer;
+    }
+    .dd-input {
+    }
+    .ic-dd {
+    }
+  }
+  .dd-popup {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    z-index: 1;
+    border-radius: 6px;
+    background-color: var(--color-white);
+    padding: 6px 8px;
+    width: 100px;
+    border: 0.5px solid var(--color-light2);
+    &::after {
+      content: "";
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      width: 8px;
+      height: 8px;
+      background-color: var(--color-white);
+      z-index: 2;
+      transform-origin: center;
+      border-left: 0.5px solid var(--color-light2);
+      border-top: 0.5px solid var(--color-light2);
+    }
+    .dd-wrapper {
+      .dd-list {
+        padding: 4px 8px;
+        display: flex;
+        align-items: center;
+        column-gap: 8px;
+        cursor: pointer;
+        border-radius: 3px;
+        &:hover,
+        &.active {
+          background-color: var(--color-light2);
+        }
+      }
+    }
+  }
+}
