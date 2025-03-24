@@ -1,0 +1,90 @@
+@font-face {
+    font-family: 'DB Helvethaica X 55';
+    src: url('DBHelvethaicaX-55Regular.woff2') format('woff2'),
+        url('DBHelvethaicaX-55Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DB Helvethaica X 65 Med';
+    src: url('DBHelvethaicaX-65Med.woff2') format('woff2'),
+        url('DBHelvethaicaX-65Med.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DB Helvethaica X 56';
+    src: url('DBHelvethaicaX-56Italic.woff2') format('woff2'),
+        url('DBHelvethaicaX-56Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DB Helvethaica X 75 Bd';
+    src: url('DBHelvethaicaX-75Bd.woff2') format('woff2'),
+        url('DBHelvethaicaX-75Bd.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DB Helvethaica X 57 Cond';
+    src: url('DBHelvethaicaX-57Cond.woff2') format('woff2'),
+        url('DBHelvethaicaX-57Cond.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DB Helvethaica X 85 Blk';
+    src: url('DBHelvethaicaX-85Blk.woff2') format('woff2'),
+        url('DBHelvethaicaX-85Blk.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DB Helvethaica X 45 Li';
+    src: url('DBHelvethaicaX-45Li.woff2') format('woff2'),
+        url('DBHelvethaicaX-45Li.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DB Helvethaica X 53 Ext';
+    src: url('DBHelvethaicaX-53Ext.woff2') format('woff2'),
+        url('DBHelvethaicaX-53Ext.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DB Helvethaica X 25 UlLi';
+    src: url('DBHelvethaicaX-25UlLi.woff2') format('woff2'),
+        url('DBHelvethaicaX-25UlLi.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DB Helvethaica X 35';
+    src: url('DBHelvethaicaX-35Thin.woff2') format('woff2'),
+        url('DBHelvethaicaX-35Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+

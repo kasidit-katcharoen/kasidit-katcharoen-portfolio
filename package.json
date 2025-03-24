@@ -1,23 +1,40 @@
 {
-  "name": "kasidit-portfolio-app",
+  "name": "kasidit-portfolio-web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p4000",
     "lint": "next lint"
   },
   "dependencies": {
+    "@studio-freight/lenis": "^1.0.42",
+    "aos": "^2.3.4",
+    "axios": "^1.8.3",
+    "formidable": "^3.5.2",
+    "gsap": "^3.12.7",
+    "isotope-layout": "^3.0.6",
+    "mongodb": "^6.14.2",
+    "multer": "^1.4.5-lts.1",
+    "next": "15.2.1",
+    "next-intl": "^4.0.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.2.1"
+    "react-fast-marquee": "^1.6.5",
+    "react-type-animation": "^3.2.0",
+    "rtl-detect": "^1.1.2",
+    "sass": "^1.86.0",
+    "swiper": "^11.2.5"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
+    "@types/node": "22.13.10",
+    "@types/react": "19.0.12",
+    "autoprefixer": "^10.4.21",
     "eslint": "^9",
     "eslint-config-next": "15.2.1",
-    "@eslint/eslintrc": "^3"
+    "tailwindcss": "^4"
   }
 }
