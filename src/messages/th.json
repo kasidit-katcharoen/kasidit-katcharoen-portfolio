@@ -1,10 +1,10 @@
 {
-  "not-found": {
+  "notFound": {
     "title": "ไม่พบหน้า",
     "desc": "กรุณาตรวจสอบลิงก์ที่คุณมาหรือกลับไปที่หน้าแรก",
     "btn": "หน้าแรก"
   },
-  "header": {
+  "Header": {
     "home": "หน้าหลัก",
     "about": "เกี่ยวกับ",
     "skills": "ความสามารถ",
@@ -17,13 +17,13 @@
     "fname": "กษิดิศ",
     "lname": "กาศเจริญ",
     "position": "Frontend Developer 💻 🪄",
-    "btn-contact": "ติดต่อ"
+    "btnContact": "ติดต่อ"
   },
   "SectionAbout": {
     "title": "เกี่ยวกับ",
     "title_sub": "ทำความรู้จัก กษิดิศ กาศเจริญ (กันต์)",
     "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam illum fuga corporis repellendus magnam eligendi repudiandae quas voluptate rerum reiciendis,",
-    "btn-view-more": "ดูเพิ่มเติม"
+    "btnViewMore": "ดูเพิ่มเติม"
   },
   "SectionSkills": {
     "title": "ทักษะ",

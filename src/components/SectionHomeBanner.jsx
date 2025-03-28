@@ -10,30 +10,29 @@ import {
   EffectCards,
 } from "swiper/modules"; // นำเข้าโมดูลที่ต้องใช้
 import "@/src/styles/SectionHomeBanner.scss";
-import AOS from "aos";
 import "aos/dist/aos.css";
 import { TypeAnimation } from "react-type-animation";
 import axios from "axios";
 import { useEffect } from "react";
 
-import Image from "next/image";
-import imgProfile from "@/public/images/profile.jpg";
-import { useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
+import messages from "@/src/messages/messages";
 
 export default function SectionHomeBanner() {
-  const t = useTranslations('SectionHomeBanner');
+  const locale = useLocale();
+  const t = messages?.[locale]?.["SectionHomeBanner"] || "";
   const getApiHomebanner = async () => {
     try {
       const res = await axios.get("/api/homebanner");
-      console.log('res',res.data);
-      
+      console.log("res", res.data);
+
       return res;
     } catch (error) {
       console.log(error);
     }
   };
   useEffect(() => {
-    getApiHomebanner();
+    // getApiHomebanner();
   }, []);
   return (
     <>
@@ -43,33 +42,33 @@ export default function SectionHomeBanner() {
             <div
               className="txt-box"
               data-aos="fade-left"
-              data-aos-duration="1000"
+              data-aos-duration="800"
+              data-aos-once={false}
             >
-              <div className="txt-1 f-lig">{t('hello')}</div>
+              <div className="txt-1 f-lig">{t?.hello}</div>
               <span className="txt-2 f-bol c-gd">
-                {t('fname')} {t('lname')}
-
+                {t?.fname} {t?.lname}
               </span>
               <br />
               <TypeAnimation
                 wrapper="div"
-                sequence={["", 200, `${t('position')}`, 8000, "", 500]}
+                sequence={[`${t?.position}`, 5000, "", 1500,]}
                 className="txt-3"
-                speed={50}
-                deletionSpeed={50}
+                speed={30}
+                deletionSpeed={30}
                 repeat={Infinity}
               />
               <div className="txt-4 f-lig">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam,
                 accusamus?
               </div>
-              <a href="/contact" className="btn-view-more" data-btn="solid black">
-                <span>{t('btn-contact')}</span>
+              <a href="/contact" className="btn-view-more" data-btn="solid">
+                <span>{t?.btnContact}</span>
               </a>
             </div>
           </div>
           <Swiper
-            className="swiper-banner shadow"
+            className="swiper-banner"
             modules={[
               EffectFade,
               EffectCards,
@@ -78,7 +77,6 @@ export default function SectionHomeBanner() {
               Autoplay,
               Parallax,
             ]}
-            // effect="fade"
             speed={2000}
             autoplay={{
               delay: 7000,
@@ -86,24 +84,20 @@ export default function SectionHomeBanner() {
             }}
             navigation
             pagination={{ clickable: true }}
-            // loop={true}
             parallax={true}
-            // effect={"cards"}
-            // grabCursor={true}
+            data-aos="fade-in"
+            data-aos-duration="800"
+            data-aos-once={false}
           >
             {[...Array(1)].map((v, k) => {
               return (
                 <>
                   <SwiperSlide key={`${k}${new Date().getTime()}`}>
-                    {/* <div className="content-box">
-                        <h2 data-swiper-parallax="-200">Slide {k+1}</h2>
-                        <p data-swiper-parallax="-100">
-                          Lorem ipsum dolor sit amet consectetur
-                        </p>
-                      </div> */}
-                    <Image
+                    <img
                       className="img-banner"
-                      src={imgProfile}
+                      src={`/images/profile/profile1.jpeg`}
+                      width={100}
+                      height={100}
                       alt="banner"
                     />
                   </SwiperSlide>

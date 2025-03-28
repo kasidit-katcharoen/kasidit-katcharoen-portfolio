@@ -9,9 +9,9 @@
 
 @mixin font-size($p1, $p2: null) {
   line-height: 1;
-  [lang="en"],[data-lang="en"] &{
-    line-height: 1;
-  }
+  // [lang="en"],[data-lang="en"] &{
+  //   line-height: 1;
+  // }
 
   @if $p2 == null {
     font-size: calc($p1 + 2px);
@@ -29,14 +29,14 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
-  background-size: 300% 300%;
-  animation: gradientAnimation 20s infinite linear;
+  background-size: 200% 200%;
+  animation: gradientAnimation 10s infinite linear;
 }
 
 @mixin bg-color-animation($color) {
   background: $color;
-  background-size: 300% 300%;
-  animation: gradientAnimation 20s infinite linear;
+  background-size: 200% 200%;
+  animation: gradientAnimation 10s infinite linear;
 }
 
 @keyframes gradientAnimation {
@@ -51,17 +51,6 @@
   }
 }
 
-@keyframes pulseGradient {
-  0% {
-    background: linear-gradient(90deg, #ff0000, #ff7300);
-  }
-  50% {
-    background: linear-gradient(90deg, #ff7300, #fffb00);
-  }
-  100% {
-    background: linear-gradient(90deg, #ff0000, #ff7300);
-  }
-}
 
 @keyframes rainbowWave {
   0% {
@@ -77,21 +66,10 @@
     transform: scale(1);
   }
   50% {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
   100% {
     transform: scale(1);
   }
 }
 
-@keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}

@@ -2,12 +2,28 @@
 @import "variable.scss";
 
 .sec-about {
-  // background: var(--color-white);
+  background-color: var(--c-white);
   position: relative;
+  z-index: 3;
   padding: calc(var(--header-height) + 60px) 20px 100px;
   width: 100vw;
-  min-height: 100dvh;
+  // height: 100dvh;
+  &::after{
+    content:'';
+    pointer-events: none;
+    background-image: linear-gradient(0deg, rgba(var(--c-white-rgb),1) 0%, rgba(var(--c-white-rgb),0) 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    height: 150px;
+    transform: translateY(-100%);
+    z-index: 1;
+  }
   .wrapper {
+    position: relative;
+    z-index: 2;
     max-width: 1280px;
     width: 100%;
     margin: 0 auto;
@@ -29,11 +45,12 @@
           max-width: 100%;
           width: 100%;
           height: auto;
-          position: sticky;
-          top: calc(var(--header-height) + 60px);
+          max-height: 420px;
+          // position: sticky;
+          // top: calc(var(--header-height) + 60px);
           object-fit: cover;
           object-position: center;
-          border-radius: 4px;
+          border-radius: 6px;
           // transform: skewX(-2deg);
         }
       }
@@ -45,7 +62,7 @@
         }
         .txt-desc {
           margin-top: 20px;
-          color: var(--color-gray);
+          color: var(--c-gray);
         }
         .btn-view-more {
           margin-top: 20px;
