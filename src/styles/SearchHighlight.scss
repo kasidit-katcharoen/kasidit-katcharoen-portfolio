@@ -10,7 +10,7 @@
   input {
     width: 100%;
     padding: 3px;
-    border: 1px solid var(--color-gray);
+    border: 1px solid var(--c-gray);
     border-top: none;
     border-left: none;
     border-right: none;
@@ -20,7 +20,7 @@
         border-top: none;
         border-left: none;
         border-right: none;
-        border-bottom: 1px solid var(--color-black);
+        border-bottom: 1px solid var(--c-black);
     }
   }
   .suggestions {
@@ -31,22 +31,22 @@
     list-style-type: none;
     padding: 0;
     margin: 5px 0;
-    border: 1px solid var(--color-gray);
+    border: 1px solid var(--c-gray);
     border-radius: 6px;
     max-height: 150px;
     overflow-y: auto;
-    background-color: var(--color-white);
+    background-color: var(--c-white);
   }
   .suggestions li {
     padding: 8px;
     cursor: pointer;
   }
   .suggestions li:hover {
-    background-color: var(--color-gray);
+    background-color: var(--c-gray);
   }
   .highlight {
-    background-color: var(--color-black);
-    color: var(--color-white);
+    background-color: var(--c-black);
+    color: var(--c-white);
   }
 
   @media (max-width: 767px) {

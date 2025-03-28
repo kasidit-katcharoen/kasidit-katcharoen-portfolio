@@ -2,60 +2,43 @@
   --header-height: 0px;
 
   // mode light
-  --color-white: #fff;
-  --color-white-rgb: 255, 255, 255;
-  --color-black: #222;
-  --color-black-rgb: 5, 5, 6;
-  --color-light: #fbfbfb;
-  --color-light2: #f0f0f0;
-  --color-gray: #777;
-
-  // mode dark
-  // --color-white: #000;
-  // --color-white-rgb: 0, 0, 0;
-  // --color-black: #fbfbfb;
-  // --color-black-rgb: 5, 5, 6;
-  // --color-light: #222;
-  // --color-light2: #777;
-  // --color-gray: #f0f0f0;
+  --c-white-rgb: 255, 255, 255;
+  --c-black: #222;
+  --c-black-rgb: 5, 5, 6;
+  --c-light: #fbfbfb;
+  --c-light2: #f0f0f0;
+  --c-gray: #777;
+  --c-gray-rgb: 119, 119, 119;
 
 
-  // --color-gradient: linear-gradient(
-  //   to right,
-  //   #6F22E9 0%,
-  //   #304EE3 50%,
-  //   #07B2CE 100%
-  // );
+  [data-theme='dark'] {
+    --background: black;
+    --foreground: white;
+  }
 
-  // --color-gradient: linear-gradient(90deg, #56ab2f 0%, #a8e063 100%);
-  // --color-gradient: linear-gradient(90deg, #ff7e5f 0%, #feb47b 100%);
-  // --color-gradient: linear-gradient(90deg, #2193b0 0%, #6dd5ed 100%);
-  // --color-gradient: linear-gradient(90deg, #2c3e50 0%, #4ca1af 100%);
-  // --color-gradient: linear-gradient(90deg, #ee0979 0%, #ff6a00 100%);
+  
+  // --c-gradient: linear-gradient(90deg, #56ab2f 0%, #a8e063 100%);
+  // --c-gradient: linear-gradient(90deg, #ff7e5f 0%, #feb47b 100%);
+  // --c-gradient: linear-gradient(90deg, #2193b0 0%, #6dd5ed 100%);
+  // --c-gradient: linear-gradient(90deg, #2c3e50 0%, #4ca1af 100%);
+  // --c-gradient: linear-gradient(90deg, #ee0979 0%, #ff6a00 100%);
+  // --c-gradient: linear-gradient(-90deg,#007cf0,#00dfd8,#ff0080,#007cf0);
+  // --c-gradient: linear-gradient(90deg, #6a00f4 0%, #0072ff 50%, #00ffe5 100%);
+  // --c-gradient: linear-gradient(90deg, #6a00f4 0%, #0072ff 50%, #00c6ff 100%);
+  // --c-gradient: linear-gradient(135deg, #00c6ff 0%, #0072ff 40%, #6a00f4 100%);
+  // --c-gradient: linear-gradient(135deg, #6a00f4 0%,#0072ff 30%, #00c6ff 90%, #00c6ff 100%);
+  // --c-gradient: linear-gradient(135deg, #00c38f 0%,#00b6de 50%, #6a00f4 100%);
+  --c-gradient: linear-gradient(135deg, #07b2ce 0%, #07b2ce 30%, #304ee3 60%, #6f22e9 100%);
+  // --c-gradient: #000;
+  // --c-gradient: #8a041a;
 
-  --color-gradient: linear-gradient(
-    90deg,
-    #6a00f4 0%,
-    #0072ff 50%,
-    #00c6ff 100%
-  );
 
-  // --color-gradient: linear-gradient(-90deg,#007cf0,#00dfd8,#ff0080,#007cf0);
 
-  // --color-gradient: linear-gradient(
-  //   90deg,
-  //   #6a00f4 0%,
-  //   #0072ff 50%,
-  //   #00ffe5 100%
-  // );
-  --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
-    90deg,
-    color-mix(in srgb, oklch(63.32% 0.24 31.68), white 20%) 0%,
-    color-mix(in srgb, oklch(69.02% 0.277 332.77), white 70%) 50%,
-    color-mix(in srgb, oklch(53.18% 0.28 296.97), white 70%) 100%
-  );
+
+
 
   --c-white: #fff;
+  --c-black: #000;
   --c-transparent-black_100: #00000008;
   --c-transparent-black_200: #00000014;
   --c-transparent-black_300: #00000026;

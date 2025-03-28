@@ -4,15 +4,18 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState, useTransition } from "react";
 import { localeDefault, locales, routing } from "../i18n/routing";
 import "@/src/styles/DropdownLang.scss";
-import { useLang } from "../context/LangContext";
+import { useLocale } from "next-intl";
 
 export default function DropdownLang() {
   const router = useRouter();
   const pathname = usePathname();
   const [isPending, startTransition] = useTransition();
-  const [lang, setLang] = useState(useLang());
+  const [lang, setLang] = useState(useLocale());
   const [isOpen, setIsOpen] = useState(false);
-  const ddLangRef = useRef(null);
+  const [isTop, setIsTop] = useState(true);
+  const [isBottom, setIsBottom] = useState(false);
+  const ddRef = useRef(null);
+  const ddScrollRef = useRef(null);
 
   const changeLanguage = (_lang) => {
     // if (lang == _lang) return;
@@ -39,7 +42,7 @@ export default function DropdownLang() {
 
   useEffect(() => {
     function handleClickOutside(event) {
-      if (ddLangRef.current && !ddLangRef.current.contains(event.target)) {
+      if (ddRef.current && !ddRef.current.contains(event.target)) {
         setIsOpen(false); // ปิดเมื่อคลิกข้างนอก
       }
     }
@@ -51,44 +54,70 @@ export default function DropdownLang() {
   }, []);
 
   useEffect(() => {
-    setLang(pathname.split('/')[1]);
-  },[pathname])
+    const checkScroll = () => {
+      if (!ddScrollRef.current) return;
+
+      const { scrollTop, scrollHeight, clientHeight } = ddScrollRef.current;
+
+      setIsTop(scrollTop === 0);
+      setIsBottom(scrollTop + clientHeight >= scrollHeight);
+    };
+
+    const dropdown = ddScrollRef.current;
+    dropdown?.addEventListener("scroll", checkScroll);
+    checkScroll();
+
+    return () => dropdown?.removeEventListener("scroll", checkScroll);
+  }, []);
+
+  useEffect(() => {
+    setLang(pathname.split("/")[1]);
+  }, [pathname]);
 
   return (
     <>
-      <div ref={ddLangRef} className={`dd-lang ${isOpen ? "active" : ""}`}>
-        <div className="dd-inner">
-          <div
-            className={`dd-label ${isOpen ? "active" : ""}`}
-            data-hover="underline"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            <span>{findObjLang(lang)?.label}</span>
-          </div>
+      <div ref={ddRef} className={`dd-lang ${isOpen ? "active" : ""}`}>
+        <div className="dd-inner" onClick={() => setIsOpen(!isOpen)}>
+          <img
+            className="dd-flag"
+            src={`/flags/${findObjLang(lang)?.flag || ""}.svg`}
+            width={20}
+            alt={`flags_${findObjLang(lang)?.flag || ""}`}
+          />
+          {/* <span className="dd-label">{findObjLang(lang)?.label||''}</span> */}
           <input
             type="hidden"
             name="lang"
             className="dd-input"
             defaultValue={lang}
           />
-          <i className="ic-dd"></i>
+          <i className="ic-dd fa-solid fa-caret-down"></i>
         </div>
-        <div className="dd-popup shadow">
-          <div className="dd-wrapper">
-            {locales.map((v, i) => (
-              <div
-                key={i}
-                className={`dd-list ${v.code === lang ? "active" : ""}`}
-                onClick={() => changeLanguage(v.code)}
-              >
-                <img
-                  src={`/flags/${v.flag}.svg`}
-                  width={20}
-                  alt={`flags_${v.flag}`}
-                />
-                <span>{v.label}</span>
-              </div>
-            ))}
+        <div className="dd-popup shadow" data-lenis-prevent>
+          <div className="dd-popup-card">
+            <div className="dd-wrapper" ref={ddScrollRef}>
+              {locales.map((v, i) => (
+                <div
+                  key={i}
+                  className={`dd-list ${v.code === lang ? "active" : ""}`}
+                  onClick={() => changeLanguage(v.code)}
+                >
+                  <div className="dd-txt">
+                    <div className="img-box">
+                      <img
+                        className="dd-flag"
+                        src={`/flags/${v.flag}.svg`}
+                        width={20}
+                        alt={`flags_${v.flag}`}
+                      />
+                    </div>
+                    <span>{v.label}</span>
+                  </div>
+                  {v.code === lang ? <i className="fa-solid fa-check"></i> : ""}
+                </div>
+              ))}
+            </div>
+            {!isBottom ? <div className="fade-scroll"></div> : ""}
           </div>
         </div>
       </div>

@@ -8,7 +8,7 @@
     &::after {
       content: "";
       border-radius: 50px;
-      background: var(--color-light2);
+      background: var(--c-light2);
       width: calc(100% + 10px);
       height: calc(100% + 10px);
       position: absolute;
@@ -18,7 +18,7 @@
       z-index: -1;
       opacity: 0;
       visibility: hidden;
-      transition: all 0.4s ease-in-out;
+      transition: all 0.3s ease-in-out;
     }
     &:hover,
     &.active {
@@ -31,7 +31,7 @@
   &[data-hover~="underline"] {
     display: inline;
     text-align: center;
-    background: var(--color-gradient);
+    background: var(--c-gradient);
     background-clip: text;
     --webkit-background-clip: text;
     width: fit-content;
@@ -46,14 +46,14 @@
       height: 1px;
       border-radius: 50px;
       transform: scaleX(0);
-      background: var(--color-gradient);
+      background: var(--c-gradient);
       transform-origin: bottom right;
-      transition: transform 0.4s ease-in-out;
+      transition: transform 0.3s ease-in-out;
     }
     &:hover,
     &.active,
     .dd-list.active & {
-      @include font-color-fill(var(--color-gradient));
+      @include font-color-fill(var(--c-gradient));
       &::after {
         transform: scaleX(1);
         transform-origin: bottom left;
@@ -67,7 +67,7 @@
   position: relative;
   &[data-underline~="gradient"] {
     &::after {
-      background: var(--color-gradient);
+      background: var(--c-gradient);
     }
   }
   &::after {
@@ -79,21 +79,21 @@
     height: 1px;
     border-radius: 50px;
     transform: scaleX(1);
-    background: var(--color-black);
+    background: var(--c-black);
     transform-origin: bottom right;
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.3s ease-in-out;
   }
 }
 
 [data-btn] {
   cursor: pointer;
-  padding: 6px 8px;
+  padding: 6px 20px;
   min-width: 90px;
   @include font-size(16px, 14px);
   display: inline-flex;
   justify-content: center;
   &[data-btn~="solid"] {
-    color: var(--color-white);
+    color: var(--c-white);
     position: relative;
     display: inline-flex;
     border-radius: 50px;
@@ -106,14 +106,12 @@
       left: 50%;
       z-index: 1;
       transform: translate(-50%, -50%);
-      background: var(--color-gradient);
-      background-size: 1000% 1000%;
-      animation: gradientAnimation 6s linear infinite;
+      @include bg-color-animation(var(--c-gradient));
       width: 100%;
       height: 100%;
       opacity: 1;
       visibility: visible;
-      transition: all 0.4s ease-in-out;
+      transition: all 0.3s ease-in-out;
     }
     &::before {
       content: "";
@@ -125,7 +123,7 @@
       background-image: linear-gradient(
         to right,
         transparent 0%,
-        rgba(var(--color-white-rgb), 0.3) 100%
+        rgba(var(--c-white-rgb), 0.3) 100%
       );
       border-radius: 50px;
       width: 100%;
@@ -140,18 +138,18 @@
       }
     }
     &[data-btn~="black"] {
-      color: var(--color-white);
+      color: var(--c-white);
       &::after {
         content: "";
-        background: var(--color-black);
+        background: var(--c-black);
       }
     }
   }
   &[data-btn~="outline"] {
-    color: var(--color-black);
+    color: var(--c-black);
     position: relative;
     display: inline-flex;
-    border: 1px solid var(--color-black);
+    border: 1px solid var(--c-black);
     border-radius: 50px;
     background: transparent;
     overflow: hidden;
@@ -162,18 +160,16 @@
       left: 50%;
       z-index: -1;
       transform: translate(-50%, -50%);
-      background: var(--color-gradient);
-      background-size: 1000% 1000%;
-      animation: gradientAnimation 10s linear infinite;
+      @include bg-color-animation(var(--c-gradient));
       width: 100%;
       height: 100%;
       opacity: 0;
       visibility: hidden;
-      transition: all 0.4s ease-in-out;
+      transition: all 0.3s ease-in-out;
     }
     &:hover {
-      color: var(--color-white);
-      background-color: var(--color-black);
+      color: var(--c-white);
+      background-color: var(--c-black);
       &::after {
         opacity: 1;
         visibility: visible;

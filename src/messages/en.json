@@ -1,10 +1,10 @@
 {
-  "not-found": {
+  "notFound": {
     "title": "Page not found",
     "desc": "Please check the link you came from or go back to the home page.",
     "btn": "home page"
   },
-  "header": {
+  "Header": {
     "home": "Home",
     "about": "About",
     "skills": "Skills",
@@ -17,17 +17,23 @@
     "fname": "Kasidit",
     "lname": "Katcharoen",
     "position": "Frontend Developer 💻 🪄",
-    "btn-contact": "Contact"
+    "btnContact": "Contact"
   },
   "SectionAbout": {
     "title": "About",
     "title_sub": "Get to know Kasidit Katcharoen (Gun)",
     "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam illum fuga corporis repellendus magnam eligendi repudiandae quas voluptate rerum reiciendis,",
-    "btn-view-more": "View More"
+    "btnViewMore": "View More"
   },
 
   "SectionSkills": {
     "title": "Skills",
-    "desc": "Web development skills & Technology"
+    "desc": "Web development skills & Technology",
+    "dropdown_category_skills": {
+      "all": "All",
+      "language": "Language",
+      "framework&labary": "Framework&nbsp;&nbsp;&&nbsp;&nbsp;labary",
+      "tools": "Tools"
+    }
   }
 }

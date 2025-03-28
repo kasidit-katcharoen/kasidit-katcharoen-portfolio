@@ -1,7 +1,7 @@
 import { defineRouting } from "next-intl/routing";
 
 export const locales = [
-  { code: "en", label: "ENG", flag: "us" },
+  { code: "en", label: "EN", flag: "sh" },
   { code: "th", label: "ไทย", flag: "th" },
 ];
 
