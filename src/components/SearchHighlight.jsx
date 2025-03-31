@@ -71,7 +71,7 @@ const SearchHighlight = ({
           {suggestions.map((v, index) => (
             <li
               key={index}
-              className="f-lig"
+              className=""
               onClick={() => {
                 setHasValue(v.title), setQuery(v.title);
               }}

@@ -2,20 +2,19 @@
 @import "variable.scss";
 
 .sec-banner {
-  background-image: url("/images/home/bg1.jpg");
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  z-index: 2;
   width: 100vw;
   height: 100dvh;
+  position: relative;
+  z-index: 2;
+  background-size: cover;
+  background-position: center;
   &::after {
     content: "";
     background-image: linear-gradient(
-      135deg,
-      rgba(var(--c-white-rgb), 1) 0%,
-      rgba(var(--c-white-rgb), 1) 50%,
-      rgba(var(--c-white-rgb), 0) 100%
+      to bottom right,
+      rgba(var(--c-bg-rgb), 1) 0%,
+      rgba(var(--c-bg-rgb), 0.6) 50%,
+      rgba(var(--c-bg-rgb), 0) 100%
     );
     position: absolute;
     top: 0;
@@ -23,6 +22,24 @@
     right: 0;
     bottom: 0;
     z-index: 1;
+  }
+  &::before {
+    content: "";
+    pointer-events: none;
+    background-image: linear-gradient(0deg, var(--c-bg) 0%, transparent 100%);
+    position: absolute;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 200px;
+    z-index: 1;
+  }
+  [data-theme~="light"] & {
+    background-image: url("/images/home/bg1.jpg");
+  }
+  [data-theme~="dark"] & {
+    background-image: url("/images/home/bg2.jpg");
   }
   .wrapper {
     position: relative;
@@ -37,23 +54,23 @@
     justify-content: space-between;
     column-gap: 30px;
     .overlay-box {
-      // border: 1px solid rgb(47, 160, 19);
       max-width: 420px;
       width: 100%;
       .txt-box {
-        // letter-spacing: 3px;
+        // letter-spacing: 2px;
         .txt-1 {
-          @include font-size(30px, 20px);
+          @include font-size(30px);
         }
         .txt-2 {
-          @include font-size(60px, 35px);
+          @include font-size(60px);
         }
         .txt-3 {
-          @include font-size(34px, 22px);
+          @include font-size(34px);
         }
         .txt-4 {
+          max-width: 360px;
           margin-top: 10px;
-          @include font-size(18px, 9px);
+          @include font-size(18px);
         }
         .btn-view-more {
           margin-top: 20px;
@@ -61,31 +78,30 @@
       }
     }
     .swiper-banner {
-      // max-width: 900px;
       width: 100%;
       margin: 0;
       border-radius: 6px;
       .swiper-wrapper {
         .swiper-slide {
           overflow: hidden;
-          &::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 2;
-            width: 100%;
-            height: 100%;
-            // background-color: rgba(var(--c-black-rgb),0.3);
-            background-image: linear-gradient(
-              135deg,
-              rgba(var(--c-white-rgb), 1) 0%,
-              transparent 50%,
-              transparent 100%
-            );
-          }
+          // &::after {
+          //   content: "";
+          //   position: absolute;
+          //   top: 0;
+          //   left: 0;
+          //   right: 0;
+          //   bottom: 0;
+          //   z-index: 2;
+          //   width: 100%;
+          //   height: 100%;
+          //   // background-color: rgba(var(--c-black-rgb),0.3);
+          //   background-image: linear-gradient(
+          //     135deg,
+          //     rgba(var(--c-bg-rgb), 1) 0%,
+          //     transparent 50%,
+          //     transparent 100%
+          //   );
+          // }
           .img-banner {
             position: relative;
             z-index: 1;
@@ -95,16 +111,16 @@
             max-height: 550px;
             object-fit: cover;
             object-position: center;
-            // animation: zoom-in-zoom-out 50s linear infinite;
           }
           .content-box {
+            padding: 20px 30px;
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
             z-index: 3;
-            color: var(--c-white);
+            color: var(--c-f-ops);
           }
         }
       }
@@ -117,7 +133,7 @@
     padding: 0 0 30px;
     // height: auto;
     &::after {
-      content: '';
+      content: "";
       display: none;
     }
     .wrapper {
@@ -126,6 +142,8 @@
       .overlay-box {
         max-width: 100%;
         .txt-box {
+        padding: 20px;
+
           .txt-1 {
           }
           .txt-2 {
@@ -146,7 +164,7 @@
             &::after {
               background-image: linear-gradient(
                 to top,
-                rgba(var(--c-black-rgb), 0.5) 0%,
+                rgba(var(--c-bg-ops-rgb), 0.5) 0%,
                 transparent 50%,
                 transparent 100%
               );

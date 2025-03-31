@@ -1,44 +1,19 @@
 :root {
   --header-height: 0px;
 
-  // mode light
+  --c-white: #ffffff;
   --c-white-rgb: 255, 255, 255;
-  --c-black: #222;
-  --c-black-rgb: 5, 5, 6;
-  --c-light: #fbfbfb;
-  --c-light2: #f0f0f0;
-  --c-gray: #777;
-  --c-gray-rgb: 119, 119, 119;
-
-
-  [data-theme='dark'] {
-    --background: black;
-    --foreground: white;
-  }
-
-  
-  // --c-gradient: linear-gradient(90deg, #56ab2f 0%, #a8e063 100%);
-  // --c-gradient: linear-gradient(90deg, #ff7e5f 0%, #feb47b 100%);
-  // --c-gradient: linear-gradient(90deg, #2193b0 0%, #6dd5ed 100%);
-  // --c-gradient: linear-gradient(90deg, #2c3e50 0%, #4ca1af 100%);
-  // --c-gradient: linear-gradient(90deg, #ee0979 0%, #ff6a00 100%);
-  // --c-gradient: linear-gradient(-90deg,#007cf0,#00dfd8,#ff0080,#007cf0);
-  // --c-gradient: linear-gradient(90deg, #6a00f4 0%, #0072ff 50%, #00ffe5 100%);
-  // --c-gradient: linear-gradient(90deg, #6a00f4 0%, #0072ff 50%, #00c6ff 100%);
-  // --c-gradient: linear-gradient(135deg, #00c6ff 0%, #0072ff 40%, #6a00f4 100%);
-  // --c-gradient: linear-gradient(135deg, #6a00f4 0%,#0072ff 30%, #00c6ff 90%, #00c6ff 100%);
-  // --c-gradient: linear-gradient(135deg, #00c38f 0%,#00b6de 50%, #6a00f4 100%);
-  --c-gradient: linear-gradient(135deg, #07b2ce 0%, #07b2ce 30%, #304ee3 60%, #6f22e9 100%);
-  // --c-gradient: #000;
-  // --c-gradient: #8a041a;
-
-
-
-
-
-
-  --c-white: #fff;
-  --c-black: #000;
+  --c-transparent-white_100: #ffffff1a;
+  --c-transparent-white_200: #ffffff33;
+  --c-transparent-white_300: #ffffff4d;
+  --c-transparent-white_400: #ffffff66;
+  --c-transparent-white_500: #ffffff80;
+  --c-transparent-white_600: #ffffff99;
+  --c-transparent-white_700: #ffffffb3;
+  --c-transparent-white_800: #ffffffcc;
+  --c-transparent-white_900: #ffffffe6;
+  --c-black: #000000;
+  --c-black-rgb: 0, 0, 0;
   --c-transparent-black_100: #00000008;
   --c-transparent-black_200: #00000014;
   --c-transparent-black_300: #00000026;
@@ -49,6 +24,7 @@
   --c-transparent-black_800: #000c;
   --c-transparent-black_900: #000000e6;
   --c-black_100: #f7f7f7;
+  --c-black_100-rgb: 247, 247, 247;
   --c-black_200: #ebebeb;
   --c-black_300: #d9d9d9;
   --c-black_400: #bdbdbd;
@@ -93,4 +69,71 @@
   --c-blue_700: #0552b5;
   --c-blue_800: #03449e;
   --c-blue_900: #01337d;
+
+  --c-gradient: var(--c-black);
+  // --c-gradient: linear-gradient(90deg, #56ab2f 0%, #a8e063 100%);
+  // --c-gradient: linear-gradient(90deg, #ff7e5f 0%, #feb47b 100%);
+  // --c-gradient: linear-gradient(90deg, #2193b0 0%, #6dd5ed 100%);
+  // --c-gradient: linear-gradient(90deg, #2c3e50 0%, #4ca1af 100%);
+  // --c-gradient: linear-gradient(90deg, #ee0979 0%, #ff6a00 100%);
+  // --c-gradient: linear-gradient(-90deg,#007cf0,#00dfd8,#ff0080,#007cf0);
+  // --c-gradient: linear-gradient(90deg, #6a00f4 0%, #0072ff 50%, #00ffe5 100%);
+  // --c-gradient: linear-gradient(90deg, #6a00f4 0%, #0072ff 50%, #00c6ff 100%);
+  // --c-gradient: linear-gradient(135deg, #00c6ff 0%, #0072ff 40%, #6a00f4 100%);
+  // --c-gradient: linear-gradient(135deg, #6a00f4 0%,#0072ff 30%, #00c6ff 90%, #00c6ff 100%);
+  // --c-gradient: linear-gradient(135deg, #00c38f 0%,#00b6de 50%, #6a00f4 100%);
+  --c-gradient: linear-gradient(
+    135deg,
+    #07b2ce 0%,
+    #304ee3 50%,
+    #6f22e9 100%
+  );
+
+  --c-gd: var(--c-gradient);
+
+  // property
+  // mode light
+  --c-theme: var(--c-white);
+  --c-f: var(--c-black);
+  --c-f-rgb: var(--c-black-rgb);
+  --c-f-ops: var(--c-white);
+  --c-f-ops-rgb: var(--c-white-rgb);
+  --c-f1: var(--c-black_600);
+  --c-bg: var(--c-white);
+  --c-bg-rgb: var(--c-white-rgb);
+  --c-bg-ops: var(--c-black);
+  --c-bg-ops-rgb: var(--c-black-rgb);
+  --c-bg1: var(--c-black_100);
+  --c-bg2: var(--c-black_200);
+  --c-card: var(--c-white);
+  --c-bd: var(--c-black);
+  --c-bd1: var(--c-black_100);
+  --c-bd2: var(--c-black_200);
+  --c-sd: var(--c-transparent-black_200);
+  --c-gd: var(--c-gradient);
+
+}
+
+// property
+// mode dark
+[data-theme~="dark"] {
+  --c-theme: var(--c-black);
+  --c-f: var(--c-white);
+  --c-f-rgb: var(--c-white-rgb);
+  --c-f-ops: var(--c-black);
+  --c-f-ops-rgb: var(--c-black-rgb);
+  --c-f1: var(--c-black_600);
+  --c-f1: var(--c-black_400);
+  --c-bg: var(--c-black);
+  --c-bg-rgb: var(--c-black-rgb);
+  --c-bg-ops: var(--c-white);
+  --c-bg-ops-rgb: var(--c-white-rgb);
+  --c-bg1: var(--c-black_900);
+  --c-bg2: var(--c-black_800);
+  --c-card: #0a0a0a;
+  --c-bd: var(--c-white);
+  --c-bd1: var(--c-black_900);
+  --c-bd2: var(--c-black_800);
+  --c-sd: var(--c-transparent-black_200);
+  --c-gd: var(--c-white);
 }

@@ -13,9 +13,9 @@
 
 html,
 body {
-  background-color: var(--c-white);
-  color: var(--c-black);
-  @include font-size(16px);
+  background-color: var(--c-bg);
+  color: var(--c-f);
+  @include font-size(18px);
   @include font-family-main();
 }
 
@@ -26,9 +26,14 @@ body {
   min-height: 100dvh;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
 a {
   text-decoration: none;
-  color: var(--c-black);
+  color: var(--c-f);
 }
 
 ul {
@@ -39,8 +44,12 @@ img {
   display: block;
   object-fit: contain;
 }
+
 i {
   position: relative;
+  &::before{
+    // vertical-align: middle;
+  }
 }
 
 .disable {
@@ -57,29 +66,26 @@ i {
 }
 
 .hr {
-  background: var(--c-black);
+  background: var(--c-bd);
   width: 100%;
   height: 1px;
 }
 
 .shadow {
-  box-shadow: 0px 2px 8px 0px rgba(99, 99, 99, 0.2);
+  box-shadow: 0px 2px 8px 0px var(--c-sd);
 }
 
 // =================== custom class ===================
 
 .c-gd {
-  @include font-color-fill(var(--c-gradient));
-}
-.c-red{
-  color: var(--c-red_900);
+  @include font-color-fill(var(--c-gd));
 }
 
 .text-image {
   font-size: 80px;
   font-weight: bold;
   text-transform: uppercase;
-  background: url("/images/profile.jpg") no-repeat center;
+  background: url("/images/profile/profile.jpg") no-repeat center;
   background-size: cover;
   -webkit-background-clip: text;
   color: transparent;

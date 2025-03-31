@@ -8,7 +8,7 @@
     &::after {
       content: "";
       border-radius: 50px;
-      background: var(--c-light2);
+      background: var(--c-bg1);
       width: calc(100% + 10px);
       height: calc(100% + 10px);
       position: absolute;
@@ -31,7 +31,7 @@
   &[data-hover~="underline"] {
     display: inline;
     text-align: center;
-    background: var(--c-gradient);
+    background: var(--c-gd);
     background-clip: text;
     --webkit-background-clip: text;
     width: fit-content;
@@ -46,14 +46,14 @@
       height: 1px;
       border-radius: 50px;
       transform: scaleX(0);
-      background: var(--c-gradient);
+      background: var(--c-gd);
       transform-origin: bottom right;
       transition: transform 0.3s ease-in-out;
     }
     &:hover,
     &.active,
     .dd-list.active & {
-      @include font-color-fill(var(--c-gradient));
+      @include font-color-fill(var(--c-gd));
       &::after {
         transform: scaleX(1);
         transform-origin: bottom left;
@@ -67,7 +67,7 @@
   position: relative;
   &[data-underline~="gradient"] {
     &::after {
-      background: var(--c-gradient);
+      background: var(--c-gd);
     }
   }
   &::after {
@@ -79,7 +79,7 @@
     height: 1px;
     border-radius: 50px;
     transform: scaleX(1);
-    background: var(--c-black);
+    background: var(--c-f);
     transform-origin: bottom right;
     transition: transform 0.3s ease-in-out;
   }
@@ -88,14 +88,12 @@
 [data-btn] {
   cursor: pointer;
   padding: 6px 20px;
-  min-width: 90px;
-  @include font-size(16px, 14px);
   display: inline-flex;
   justify-content: center;
+  min-width: 100px;
   &[data-btn~="solid"] {
-    color: var(--c-white);
+    color: var(--c-theme);
     position: relative;
-    display: inline-flex;
     border-radius: 50px;
     background: transparent;
     overflow: hidden;
@@ -106,7 +104,7 @@
       left: 50%;
       z-index: 1;
       transform: translate(-50%, -50%);
-      @include bg-color-animation(var(--c-gradient));
+      @include bg-color-animation(var(--c-gd));
       width: 100%;
       height: 100%;
       opacity: 1;
@@ -123,7 +121,7 @@
       background-image: linear-gradient(
         to right,
         transparent 0%,
-        rgba(var(--c-white-rgb), 0.3) 100%
+        rgba(var(--c-bg-rgb), 0.3) 100%
       );
       border-radius: 50px;
       width: 100%;
@@ -138,21 +136,21 @@
       }
     }
     &[data-btn~="black"] {
-      color: var(--c-white);
+      color: var(--c-theme);
       &::after {
         content: "";
-        background: var(--c-black);
+        background: var(--c-bg-ops);
       }
     }
   }
   &[data-btn~="outline"] {
-    color: var(--c-black);
+    color: var(--c-f);
     position: relative;
-    display: inline-flex;
-    border: 1px solid var(--c-black);
+    border: 1px solid var(--c-bd);
     border-radius: 50px;
     background: transparent;
     overflow: hidden;
+    transition: color 0.3s ease-in-out;
     &::after {
       content: "";
       position: absolute;
@@ -160,7 +158,7 @@
       left: 50%;
       z-index: -1;
       transform: translate(-50%, -50%);
-      @include bg-color-animation(var(--c-gradient));
+      background-color: var(--c-bg-ops);
       width: 100%;
       height: 100%;
       opacity: 0;
@@ -168,8 +166,7 @@
       transition: all 0.3s ease-in-out;
     }
     &:hover {
-      color: var(--c-white);
-      background-color: var(--c-black);
+      color: var(--c-theme);
       &::after {
         opacity: 1;
         visibility: visible;

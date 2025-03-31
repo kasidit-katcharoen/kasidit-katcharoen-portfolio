@@ -2,16 +2,16 @@
 @import "variable.scss";
 
 #footer {
-  border-top: 1px solid var(--c-light2);
+  border-top: 1px solid var(--c-bd1);
+  background-color: var(--c-bg);
   .wrapper {
     margin: 0 auto;
-    max-width: 1024px;
+    max-width: calc(1024px);
     width: 100%;
     .inner {
       .logo-box {
         span {
           @include font-size(38px);
-          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
       }
       .row {
@@ -21,11 +21,11 @@
         .logo-box {
         }
         .col {
-          padding: 20px 20px 60px;
+          padding: 20px 30px 60px;
           max-width: calc(100% / 3);
           width: 100%;
           &:first-child {
-            border-right: 1px solid var(--c-light2);
+            border-right: 1px solid var(--c-bd1);
           }
         }
         .group-menu {
@@ -39,9 +39,8 @@
             }
           }
           .list-menu {
-            margin-top: 10px;
+            margin-top: 15px;
             display: block;
-            @include font-size(18px);
           }
         }
         .group-contact {
@@ -49,9 +48,9 @@
           .contact-list {
             display: flex;
             align-items: center;
-            column-gap: 10px;
+            column-gap: 15px;
             &:not(:first-child) {
-              margin-top: 10px;
+              margin-top: 15px;
             }
           }
         }
@@ -59,7 +58,9 @@
     }
   }
   .bottom-box {
-    border-top: 1px solid var(--c-light2);
+    border-top: 1px solid var(--c-bd1);
+    color: var(--c-f1);
+    @include font-size(16px);
     .inner-box {
       padding: 5px 20px;
       margin: 0 auto;
@@ -81,12 +82,11 @@
 
 @media (max-width: 767px) {
   #footer {
-    padding-top: 20px;
+    // padding-top: 20px;
     .wrapper {
       .inner {
         .logo-box {
           span {
-            @include font-size(30px);
           }
         }
         .row {
@@ -94,9 +94,13 @@
           .logo-box {
           }
           .col {
-            padding: 0px 20px 20px;
+            padding: 30px 20px;
             max-width: 100%;
             &:first-child {
+              border-right: none;
+            }
+            &:last-child {
+              border-top: 1px solid var(--c-bd1);
             }
           }
           .group-menu {

@@ -18,7 +18,7 @@ export default function Footer() {
     }, [pathname]);
   return (
     <>
-      <div id="footer" className="shadow">
+      <div id="footer" className="">
         <div className="wrapper">
           <div className="inner">
             <div className="row">
@@ -31,7 +31,7 @@ export default function Footer() {
               </div>
               <div className="col center">
                 {/* <div className="tt-col ">Menu</div> */}
-                <div className="group-menu f-lig">
+                <div className="group-menu">
                   <div className="row-menu">
                     <div className="col-menu">
                       <Link
@@ -92,7 +92,7 @@ export default function Footer() {
               </div>
               <div className="col right">
                 <div className="tt-col ">{t?.contact || ""}</div>
-                <div className="group-contact f-lig">
+                <div className="group-contact">
                   <Link href="tel:0935460996" className="contact-list">
                     {/* <img src="/icon/mobile.png" width="15" alt="" /> */}
                     <i className="fa-solid fa-phone c-gd"></i>
@@ -117,7 +117,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="bottom-box">
-          <div className="inner-box f-lig">
+          <div className="inner-box">
             <div className="copyright-box">
               <span>Copyright 2025 Kasidit Katcharoen</span>
             </div>

@@ -14,8 +14,8 @@ export default function useWordFade(word = "Word Fade", styleFade = "fade-up") {
             key={new Date().getTime + k}
             data-aos={styleFade}
             data-aos-delay={200 * k}
-            data-aos-duration="800"
-            data-aos-once={false}
+            data-aos-duration="500"
+            data-aos-once={true}
           >
             {v}
           </span>
