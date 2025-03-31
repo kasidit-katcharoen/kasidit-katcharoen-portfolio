@@ -2,29 +2,17 @@
 @import "variable.scss";
 
 .sec-about {
-  background-color: var(--c-white);
   position: relative;
   z-index: 3;
   padding: calc(var(--header-height) + 60px) 20px 100px;
   width: 100vw;
-  // height: 100dvh;
-  &::after{
-    content:'';
-    pointer-events: none;
-    background-image: linear-gradient(0deg, rgba(var(--c-white-rgb),1) 0%, rgba(var(--c-white-rgb),0) 100%);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: auto;
-    height: 150px;
-    transform: translateY(-100%);
-    z-index: 1;
-  }
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
   .wrapper {
     position: relative;
     z-index: 2;
-    max-width: 1280px;
+    max-width: 1024px;
     width: 100%;
     margin: 0 auto;
     .title-sec {
@@ -45,7 +33,7 @@
           max-width: 100%;
           width: 100%;
           height: auto;
-          max-height: 420px;
+          max-height: 500px;
           // position: sticky;
           // top: calc(var(--header-height) + 60px);
           object-fit: cover;
@@ -58,14 +46,15 @@
         max-width: 50%;
         width: 100%;
         .txt-title {
-          @include font-size(20px, 20px);
+          @include font-size(22px);
         }
         .txt-desc {
           margin-top: 20px;
-          color: var(--c-gray);
+          color: var(--c-f1);
+          @include font-size(20px);
         }
         .btn-view-more {
-          margin-top: 20px;
+          margin: 20px auto 0;
         }
       }
     }

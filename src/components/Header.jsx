@@ -14,6 +14,7 @@ import { locales } from "../i18n/routing";
 import messages from "@/src/messages/messages.jsx";
 import useScrollDirection from "../hooks/useScrollDirection";
 import useScrolled from "../hooks/useScrolled";
+import ThemeSwitcher from "@/src/components/ThemeSwitcher";
 
 export default function Header() {
   const locale = useLocale();
@@ -47,13 +48,13 @@ export default function Header() {
   // const handleStartScroll = () => {
   //   lenisRef.current?.start(); // เปิด Scroll
   // };
-  // useEffect(() => {
-  //   if (openMenu) {
-  //     handleStopScroll();
-  //   } else {
-  //     handleStartScroll();
-  //   }
-  // }, [openMenu]);
+  useEffect(() => {
+    if (openMenu) {
+      // handleStopScroll();
+    } else {
+      // handleStartScroll();
+    }
+  }, [openMenu]);
 
   useEffect(() => {
     // console.log("router", router);
@@ -113,7 +114,7 @@ export default function Header() {
                 <ul className="wrap-menu">
                   <li className="item-menu">
                     <Link
-                      className={`f-reg ${
+                      className={`${
                         pageActive == "home" ||
                         locales
                           .map((locale) => locale.code)
@@ -129,7 +130,7 @@ export default function Header() {
                   </li>
                   <li className="item-menu">
                     <Link
-                      className={`f-reg ${
+                      className={`${
                         pageActive == "about" ? "active" : ""
                       }`}
                       data-hover="underline"
@@ -140,7 +141,7 @@ export default function Header() {
                   </li>
                   <li className="item-menu">
                     <Link
-                      className={`f-reg ${
+                      className={`${
                         pageActive == "skills" ? "active" : ""
                       }`}
                       data-hover="underline"
@@ -151,7 +152,7 @@ export default function Header() {
                   </li>
                   <li className="item-menu">
                     <Link
-                      className={`f-reg ${
+                      className={`${
                         pageActive == "works" ? "active" : ""
                       }`}
                       data-hover="underline"
@@ -162,7 +163,7 @@ export default function Header() {
                   </li>
                   <li className="item-menu">
                     <Link
-                      className={`f-reg ${
+                      className={`${
                         pageActive == "contact" ? "active" : ""
                       }`}
                       data-hover="underline"
@@ -179,6 +180,7 @@ export default function Header() {
           )}
           <div className="navigator-box">
             {/* {isDestop ? <SearchHighlight /> : ""} */}
+            {isDestop ? <ThemeSwitcher /> : ""}
             {isDestop ? <DropdownLang /> : ""}
             <div className="navigator-inner" data-hover="solid">
               <div
@@ -205,7 +207,8 @@ export default function Header() {
         ></div>
         <div className="navbar-card">
           <div className="navigatorbar">
-            <DropdownLang />
+            {!isDestop ? <ThemeSwitcher /> : ""}
+            {!isDestop ? <DropdownLang /> : ""}
             <div
               className="btn-close"
               data-hover="solid"
@@ -241,7 +244,7 @@ export default function Header() {
                   </li>
                 </ul>
               </div>
-              <div className="bottom-box f-reg">
+              <div className="bottom-box">
                 <div className="hr"></div>
                 <div className="address-txt">{t?.address || ""}</div>
                 <div className="contact-box">

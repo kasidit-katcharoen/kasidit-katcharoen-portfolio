@@ -63,7 +63,7 @@ export default function Dropdown({
     <>
       <div
         ref={ddRef}
-        className={`dd f-lig ${className || ""} ${isOpen ? "active" : ""}`}
+        className={`dd ${className || ""} ${isOpen ? "active" : ""}`}
       >
         <div className="dd-inner" onClick={() => setIsOpen(!isOpen)}>
           <span

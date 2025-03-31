@@ -1,17 +1,27 @@
-@mixin font-family-main(){
-  font-family: 'DB Helvethaica X 55';
-  src: url('../../public/fonts/DB Helvethaica X/DBHelvethaicaX-55Regular.woff2') format('woff2'),
-      url('../../public/fonts/DB Helvethaica X/DBHelvethaicaX-55Regular.woff') format('woff');
-  font-weight: normal;
+@mixin font-family-main() {
+  font-family: "DB Helvethaica X 45 Li";
+  src: url("../../public/fonts/DB Helvethaica X/DBHelvethaicaX-45Li.woff2")
+      format("woff2"),
+    url("../../public/fonts/DB Helvethaica X/DBHelvethaicaX-45Li.woff")
+      format("woff");
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
+
+  // font-family: 'DB Helvethaica X 55';
+  // src: url('../../public/fonts/DB Helvethaica X/DBHelvethaicaX-55Regular.woff2') format('woff2'),
+  //     url('../../public/fonts/DB Helvethaica X/DBHelvethaicaX-55Regular.woff') format('woff');
+  // font-weight: normal;
+  // font-style: normal;
+  // font-display: swap;
 }
 
 @mixin font-size($p1, $p2: null) {
   line-height: 1;
-  // [lang="en"],[data-lang="en"] &{
-  //   line-height: 1;
-  // }
+  [lang="en"] &,
+  [data-lang="en"] & {
+    line-height: 1;
+  }
 
   @if $p2 == null {
     font-size: calc($p1 + 2px);
@@ -24,19 +34,24 @@
 }
 
 @mixin font-color-fill($color) {
-  background: $color;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  background-size: 200% 200%;
-  animation: gradientAnimation 10s infinite linear;
+  [data-theme="light"] & {
+    background: $color;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    background-size: 200% 200%;
+    // animation: gradientAnimation 10s infinite linear;
+  }
+  [data-theme="dark"] & {
+    color: $color;
+  }
 }
 
 @mixin bg-color-animation($color) {
   background: $color;
   background-size: 200% 200%;
-  animation: gradientAnimation 10s infinite linear;
+  // animation: gradientAnimation 10s infinite linear;
 }
 
 @keyframes gradientAnimation {
@@ -50,7 +65,6 @@
     background-position: 0% 50%;
   }
 }
-
 
 @keyframes rainbowWave {
   0% {
@@ -72,4 +86,3 @@
     transform: scale(1);
   }
 }
-

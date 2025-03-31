@@ -8,11 +8,12 @@ import "@/public/fontawesome/css/all.min.css";
 
 import { NextIntlClientProvider, useLocale } from "next-intl";
 import { localeDefault } from "../i18n/routing";
-import { ThemeProvider } from "next-themes";
 
 import Header from "@/src/components/Header";
 import Footer from "@/src/components/Footer";
 import NextTopLoader from "nextjs-toploader";
+import { ThemeProvider } from "next-themes";
+import PreNextTopLoader from "../hooks/PreNextTopLoader";
 
 export const metadata = {
   title: "Portfolio | KKDEV",
@@ -25,18 +26,8 @@ export default function RootLayout({ children }) {
     <NextIntlClientProvider>
       <html lang={locale || localeDefault} suppressHydrationWarning>
         <body>
-          <ThemeProvider>
-            <NextTopLoader
-              color="#000"
-              initialPosition={0.08}
-              crawlSpeed={200}
-              height={2}
-              crawl={true}
-              showSpinner={false}
-              easing="ease-in-out"
-              speed={200}
-              shadow="0 0 10px #000,0 0 5px #000"
-            />
+          <ThemeProvider defaultTheme="system">
+            <PreNextTopLoader/>
             <Header />
             {children}
             <Footer />
