@@ -6,7 +6,6 @@ import {
   EffectFade,
   Navigation,
   Autoplay,
-  Parallax,
   EffectCards,
 } from "swiper/modules"; // นำเข้าโมดูลที่ต้องใช้
 import "@/src/styles/SectionHomeBanner.scss";
@@ -20,15 +19,45 @@ import messages from "@/src/messages/messages";
 import { Particles } from "./magicui/particles";
 import { useTheme } from "next-themes";
 import { getTheme } from "../hooks/useThemeData";
+import Button from "@/src/components/ui/Button";
+import { Parallax } from "react-scroll-parallax";
+import RepellersAnimation from "../hooks/useRepellersAnimation";
 
 export default function SectionHomeBanner() {
   const locale = useLocale();
   const t = messages?.[locale]?.["SectionHomeBanner"] || "";
   const { theme, setTheme } = useTheme();
-  const [particlesColor, setParticlesColor] = useState([]);
+  const [particlesColor, setParticlesColor] = useState(
+    getTheme(theme).particlesColor || []
+  );
+  const [elementParticles, setElementParticles] = useState("");
+
   useEffect(() => {
-    setParticlesColor(getTheme(theme).colorParticles || []);
+    setParticlesColor(getTheme(theme).particlesColor || []);
   }, [theme]);
+
+  useEffect(() => {
+    setElementParticles(() => (
+      <>
+        {particlesColor
+          ? particlesColor.map((v, k) => (
+              <Particles
+                key={k}
+                className="absolute inset-0 z-2"
+                size={0.8}
+                staticity={50}
+                quantity={
+                  getTheme(theme).particlesQuantity / particlesColor.length
+                }
+                ease={80}
+                color={v || ""}
+                refresh
+              />
+            ))
+          : ""}
+      </>
+    ));
+  }, [particlesColor]);
 
   const getApiHomebanner = async () => {
     try {
@@ -46,27 +75,14 @@ export default function SectionHomeBanner() {
   return (
     <>
       <div className="sec-banner">
-        {particlesColor
-          ? particlesColor.map((v, k) => (
-              <Particles
-                key={k}
-                className="absolute inset-0 z-1"
-                size={0.8}
-                staticity={50}
-                quantity={100 / particlesColor.length}
-                ease={80}
-                color={v || ""}
-                refresh
-              />
-            ))
-          : ""}
+        {elementParticles || ""}
         <div className="wrapper">
           <div className="overlay-box">
             <div
               className="txt-box"
-              data-aos="fade-left"
-              data-aos-duration="500"
-              data-aos-once={true}
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-once={false}
             >
               <div className="txt-1">{t?.hello}</div>
               <span className="txt-2 f-bol c-gd">
@@ -86,55 +102,38 @@ export default function SectionHomeBanner() {
                 deletionSpeed={50}
                 repeat={Infinity}
               />
-              <div className="txt-4">
-                {t?.sub||''}
+              <div className="txt-4">{t?.sub || ""}</div>
+              <div className="wrap-btn">
+                <Button url={"/contact"}>{t?.btnContact || ""}</Button>
               </div>
-              <a href="/contact" className="btn-view-more" data-btn="solid">
-                <span>{t?.btnContact}</span>
-              </a>
             </div>
           </div>
-          <Swiper
-            className="swiper-banner"
-            modules={[
-              EffectFade,
-              EffectCards,
-              Navigation,
-              Pagination,
-              Autoplay,
-              Parallax,
-            ]}
-            speed={2000}
-            autoplay={{
-              delay: 7000,
-              disableOnInteraction: true,
-            }}
-            navigation
-            pagination={{ clickable: true }}
-            parallax={true}
-            data-aos="fade-in"
-            data-aos-duration="500"
-            data-aos-once={true}
-          >
-            {[...Array(1)].map((v, k) => {
-              return (
-                <>
-                  <SwiperSlide key={`${k}${new Date().getTime()}`}>
-                    {/* <div className="content-box">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, eum.
-                    </div> */}
-                    <img
-                      className="img-banner"
-                      src={`/images/profile/profile1.jpeg`}
-                      width={100}
-                      height={100}
-                      alt="banner"
-                    />
-                  </SwiperSlide>
-                </>
-              );
-            })}
-          </Swiper>
+          <div className="img-box">
+            <Parallax speed={0}>
+              <img
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-once={false}
+                className="img-banner shadow"
+                src={`/images/profile/profile1.jpeg`}
+                width={100}
+                height={100}
+                alt="banner"
+                // data-cursor-label="ดูรูปภาพ"
+              />
+            </Parallax>
+            {/* <div
+              className="animation-box"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-once={false}
+            >
+              <div data-dot={1}></div>
+              <div data-dot={2}></div>
+              <div data-dot={3}></div>
+              <div data-dot={4}></div>
+            </div> */}
+          </div>
         </div>
       </div>
     </>

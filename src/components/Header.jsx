@@ -51,7 +51,9 @@ export default function Header() {
   useEffect(() => {
     if (openMenu) {
       // handleStopScroll();
+      document.body.style.overflow = "hidden";
     } else {
+      document.body.style.overflow = "auto";
       // handleStartScroll();
     }
   }, [openMenu]);
@@ -106,93 +108,89 @@ export default function Header() {
             <div className="icon">
               <img src={Logo.Image} wigth="30" alt="" />
             </div>
-            <div className="txt f-bol">KK<span className="c-gd">DEV</span></div>
+            <div className="txt f-bol">
+              KK<span className="c-gd">DEV</span>
+            </div>
           </Link>
-          {isDestop ? (
-            <>
-              <div className="menu-page">
-                <ul className="wrap-menu">
-                  <li className="item-menu">
-                    <Link
-                      className={`${
-                        pageActive == "home" ||
-                        locales
-                          .map((locale) => locale.code)
-                          .includes(pageActive)
-                          ? "active"
-                          : ""
-                      }`}
-                      data-hover="underline"
-                      href="/home"
-                    >
-                      {t?.home || ""}
-                    </Link>
-                  </li>
-                  <li className="item-menu">
-                    <Link
-                      className={`${
-                        pageActive == "about" ? "active" : ""
-                      }`}
-                      data-hover="underline"
-                      href="/about"
-                    >
-                      {t?.about || ""}
-                    </Link>
-                  </li>
-                  <li className="item-menu">
-                    <Link
-                      className={`${
-                        pageActive == "skills" ? "active" : ""
-                      }`}
-                      data-hover="underline"
-                      href="/skills"
-                    >
-                      {t?.skills || ""}
-                    </Link>
-                  </li>
-                  <li className="item-menu">
-                    <Link
-                      className={`${
-                        pageActive == "works" ? "active" : ""
-                      }`}
-                      data-hover="underline"
-                      href="/works"
-                    >
-                      {t?.works || ""}
-                    </Link>
-                  </li>
-                  <li className="item-menu">
-                    <Link
-                      className={`${
-                        pageActive == "contact" ? "active" : ""
-                      }`}
-                      data-hover="underline"
-                      href="/contact"
-                    >
-                      {t?.contact || ""}
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </>
-          ) : (
-            ""
-          )}
-          <div className="navigator-box">
-            {/* {isDestop ? <SearchHighlight /> : ""} */}
-            {isDestop ? <ThemeSwitcher /> : ""}
-            {isDestop ? <DropdownLang /> : ""}
-            <div className="navigator-inner" data-hover="solid">
-              <div
-                className={`btn-menu ${openMenu ? "active" : ""}`}
-                // data-hover="solid"
-                onClick={(e) => {
-                  setOpenMenu(!openMenu);
-                }}
-              >
-                <div className="line n1"></div>
-                <div className="line n2"></div>
-                <div className="line n3"></div>
+          <div className="wrapper">
+            {isDestop ? (
+              <>
+                <div className="menu-page">
+                  <ul className="wrap-menu">
+                    <li className="item-menu">
+                      <Link
+                        className={`${
+                          pageActive == "home" ||
+                          locales
+                            .map((locale) => locale.code)
+                            .includes(pageActive)
+                            ? "active"
+                            : ""
+                        }`}
+                        data-hover="underline"
+                        href="/home"
+                      >
+                        {t?.home || ""}
+                      </Link>
+                    </li>
+                    <li className="item-menu">
+                      <Link
+                        className={`${pageActive == "about" ? "active" : ""}`}
+                        data-hover="underline"
+                        href="/about"
+                      >
+                        {t?.about || ""}
+                      </Link>
+                    </li>
+                    <li className="item-menu">
+                      <Link
+                        className={`${pageActive == "skills" ? "active" : ""}`}
+                        data-hover="underline"
+                        href="/skills"
+                      >
+                        {t?.skills || ""}
+                      </Link>
+                    </li>
+                    <li className="item-menu">
+                      <Link
+                        className={`${pageActive == "works" ? "active" : ""}`}
+                        data-hover="underline"
+                        href="/works"
+                      >
+                        {t?.works || ""}
+                      </Link>
+                    </li>
+                    <li className="item-menu">
+                      <Link
+                        className={`${pageActive == "contact" ? "active" : ""}`}
+                        data-hover="underline"
+                        href="/contact"
+                      >
+                        {t?.contact || ""}
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </>
+            ) : (
+              ""
+            )}
+            <div className="navigator-box">
+              {/* {isDestop ? <SearchHighlight /> : ""} */}
+              {isDestop ? <ThemeSwitcher /> : ""}
+              {isDestop ? <DropdownLang /> : ""}
+              <div className="navigator-inner" data-hover="solid">
+                <div
+                  className={`btn-menu ${openMenu ? "active" : ""}`}
+                  // data-hover="solid"
+                  onClick={(e) => {
+                    setOpenMenu(!openMenu);
+                  }}
+                >
+                  <div className="line n1"></div>
+                  <div className="line n2"></div>
+                  <div className="line n3"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -226,7 +224,7 @@ export default function Header() {
                 {/* <div className="navbar-search-box">
                 <SearchHighlight />
               </div> */}
-                <ul className="wrap-menu">
+                <ul className="wrap-menu f-med">
                   <li className="item-menu">
                     <Link href="/home">{t?.home || ""}</Link>
                   </li>

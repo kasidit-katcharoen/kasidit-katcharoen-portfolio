@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "@/src/styles/SectionSkills.scss";
 import { useLocale } from "next-intl";
-import Dropdown from "@/src/components/form/Dropdown";
+import Dropdown from "@/src/components/ui/Dropdown";
 import messages from "@/src/messages/messages.jsx";
 import { Particles } from "./magicui/particles";
 import { useTheme } from "next-themes";
@@ -11,14 +11,14 @@ import { cn } from "../lib/utils";
 
 const skills = [
   {
-    img: "/images/skills/html.png",
+    img: "/images/skills/html.svg",
     name: "HTML",
     class: "",
     cate: "language",
     url: null,
   },
   {
-    img: "/images/skills/css.png",
+    img: "/images/skills/css.svg",
     name: "CSS",
     class: "",
     cate: "language",
@@ -46,7 +46,7 @@ const skills = [
     url: null,
   },
   {
-    img: "/images/skills/js.png",
+    img: "/images/skills/js.svg",
     name: "JavaScript",
     class: "",
     cate: "language",
@@ -67,14 +67,14 @@ const skills = [
     url: null,
   },
   {
-    img: "/images/skills/nextjs.png",
+    img: "/images/skills/nextjs.svg",
     name: "NextJS",
     class: "size-leg theme-dark-invert",
     cate: "framework&labary",
     url: null,
   },
   {
-    img: "/images/skills/php.png",
+    img: "/images/skills/php.svg",
     name: "PHP",
     class: "size-leg",
     cate: "language",
@@ -95,17 +95,66 @@ const skills = [
     url: null,
   },
   {
-    img: "/images/skills/mysql.png",
+    img: "/images/skills/mysql.svg",
     name: "MySQL",
     class: "size-leg",
     cate: "tool",
     url: null,
   },
   {
-    img: "/images/skills/mongodb.png",
+    img: "/images/skills/mongodb.svg",
     name: "MongoDB",
     class: "size-leg",
     cate: "framework&labary",
+    url: null,
+  },
+  {
+    img: "/images/skills/vscode.svg",
+    name: "VS Code",
+    class: "",
+    cate: "tool",
+    url: null,
+  },
+  {
+    img: "/images/skills/postman.svg",
+    name: "Postman",
+    class: "",
+    cate: "tool",
+    url: null,
+  },
+  {
+    img: "/images/skills/sourcetree.svg",
+    name: "Sourcetree",
+    class: "",
+    cate: "tool",
+    url: null,
+  },
+  {
+    img: "/images/skills/filezilla.svg",
+    name: "FileZilla",
+    class: "",
+    cate: "tool",
+    url: null,
+  },
+  {
+    img: "/images/skills/figma.svg",
+    name: "Figma",
+    class: "",
+    cate: "tool",
+    url: null,
+  },
+  {
+    img: "/images/skills/postgresSQL.svg",
+    name: "PostgresSQL",
+    class: "",
+    cate: "tool",
+    url: null,
+  },
+  {
+    img: "/images/skills/fibery.png",
+    name: "Fibery",
+    class: "",
+    cate: "tool",
     url: null,
   },
 ];
@@ -116,10 +165,35 @@ export default function SectionSkills() {
   const [cate, setCate] = useState("all");
   const [elementSkills, setElementSkills] = useState("");
   const { theme, setTheme } = useTheme();
-  const [particlesColor, setParticlesColor] = useState([]);
+  const [particlesColor, setParticlesColor] = useState(
+    getTheme(theme).particlesColor || []
+  );
+  const [elementParticles, setElementParticles] = useState("");
+
   useEffect(() => {
-    setParticlesColor(getTheme(theme).colorParticles||[]);
+    setParticlesColor(getTheme(theme).particlesColor || []);
   }, [theme]);
+
+  useEffect(() => {
+    setElementParticles(() => (
+      <>
+        {particlesColor
+          ? particlesColor.map((v, k) => (
+              <Particles
+                key={k}
+                className="absolute inset-0 z-1"
+                size={0.8}
+                staticity={50}
+                quantity={getTheme(theme).particlesQuantity / particlesColor.length}
+                ease={80}
+                color={v || ""}
+                refresh
+              />
+            ))
+          : ""}
+      </>
+    ));
+  }, [particlesColor]);
 
   const cateSkills = [
     { label: tdcs?.all || "", value: "all" },
@@ -141,8 +215,8 @@ export default function SectionSkills() {
                 key={new Date().getTime + k}
                 data-aos="fade-up"
                 data-aos-delay={50 * k}
-                data-aos-duration="500"
-                data-aos-once={true}
+                data-aos-duration="1000"
+                data-aos-once={false}
               >
                 <img src={v.img} className={`${v.class}`} alt={v.name} />
                 <div className="txt-name">{v.name}</div>
@@ -161,27 +235,14 @@ export default function SectionSkills() {
   return (
     <>
       <div className="section-skills">
-        {particlesColor
-          ? particlesColor.map((v, k) => (
-              <Particles
-                key={k}
-                className="absolute inset-0 z-1"
-                size={0.8}
-                staticity={50}
-                quantity={100 / particlesColor.length}
-                ease={80}
-                color={v || ""}
-                refresh
-              />
-            ))
-          : ""}
-        <div className="absolute inset-0 z-1 flex size-full items-center justify-center">
-          {/* <DotPattern
+        {elementParticles || ""}
+        {/* <div className="absolute inset-0 z-1 flex size-full items-center justify-center">
+          <DotPattern
             className={cn(
               "[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]"
             )}
-          /> */}
-          {/* <DotPattern
+          />
+          <DotPattern
                width={20}
                height={20}
                cx={1}
@@ -190,14 +251,14 @@ export default function SectionSkills() {
                className={cn(
                  "[mask-image:linear-gradient(to_top_right,white,transparent,transparent)] "
                )}
-             /> */}
-        </div>
+             />
+        </div> */}
         <div className="wrapper">
           <div
             className="title-sec"
             data-aos="fade-up"
-            data-aos-duration="500"
-            data-aos-once={true}
+            data-aos-duration="1000"
+            data-aos-once={false}
           >
             <span className="c-gd f-bol" data-underline="gradient">
               {t?.title || ""}
@@ -206,8 +267,8 @@ export default function SectionSkills() {
           <div
             className="txt-sub-sec"
             data-aos="fade-up"
-            data-aos-duration="500"
-            data-aos-once={true}
+            data-aos-duration="1000"
+            data-aos-once={false}
           >
             {t?.desc || ""}
           </div>
@@ -215,8 +276,8 @@ export default function SectionSkills() {
             <div
               className="cate-box"
               data-aos="fade-up"
-              data-aos-duration="500"
-              data-aos-once={true}
+              data-aos-duration="1000"
+              data-aos-once={false}
             >
               <Dropdown
                 className="dropdown-skills"

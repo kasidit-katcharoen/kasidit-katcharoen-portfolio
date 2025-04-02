@@ -10,7 +10,7 @@ export default function NotFound() {
       {locale}
       <div className="title">{t?.title||''}</div>
       <div className="desc">{t?.desc||''}</div>
-      <div data-btn="outline">
+      <div className="f-reg" data-btn="outline">
         <span>{t?.btn||''}</span>
       </div>
     </div>
