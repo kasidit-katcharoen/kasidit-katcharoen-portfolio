@@ -15,20 +15,21 @@ const messages = {
         "7/2 Nong Kham 5 Rd., Bua Yai, Bua Yai, Nakhon Ratchasima 30120, Thailand",
     },
     SectionHomeBanner: {
-      hello: "👋 Hi I'm",
+      hello: "Hi I'm",
       fname: "Kasidit",
       lname: "Katcharoen",
-      position: ["Frontend Developer 🪄", "Fullstack Developer 🚀"],
-      sub: "I am a website developer with over 2 years of experience in creating and developing digital platforms, having worked with both leading companies and startups.",
+      position: ["Frontend Developer", "Full Stack Developer"],
+      sub: "I'm an experienced web developer, creating and developing digital platforms while collaborating with both leading companies and ambitious startups!",
       btnContact: "Contact",
     },
     SectionAbout: {
-      title: "About",
-      title_sub: "Start getting to know",
+      title: "About me",
+      // title_sub: "Get to know",
+      title_sub: "Kasidit Katcharoen",
       desc: `
-          Hello, my name is Kasidit Kascharoen (Kant), and I am 25 years old.
+          Hello, my name is Kasidit Katcharoen ( Gun ), and I'm 25 years old.
           I graduated in Business Computer (Continuing Program) from the Faculty of Business Administration,
-          Rajamangala University of Technology Isan. I am committed to continuous learning and skill development
+          Rajamangala University of Technology Isan. I'm committed to continuous learning and skill development
           to create highly efficient and beneficial web applications.
 
           I strongly hope to utilize my skills to contribute to the growth of an organization,
@@ -72,16 +73,17 @@ const messages = {
       address: "7/2 ถ.หนองขาม 5 ต.บัวใหญ่ อ.บัวใหญ่ นครราชสีมา 30120 ประเทศไทย",
     },
     SectionHomeBanner: {
-      hello: "👋 สวัสดีครับ",
+      hello: "สวัสดีครับ",
       fname: "กษิดิศ",
       lname: "กาศเจริญ",
-      position: ["Frontend Developer 🪄", "Fullstack Developer 🚀"],
-      sub: "ผมเป็นนักพัฒนาเว็บไซต์ ที่มีประสบการณ์มากกว่า 2 ปี ในการสร้างสรรค์และพัฒนาแพลตฟอร์มดิจิทัล ร่วมงานกับทั้งบริษัทชั้นนำและสตาร์ทอัพไฟแรง!",
+      position: ["Frontend Developer", "Fullstack Developer"],
+      sub: "ผมเป็นนักพัฒนาเว็บไซต์มากประสบการณ์ สร้างสรรค์และพัฒนาแพลตฟอร์มดิจิทัล ร่วมงานกับทั้งบริษัทชั้นนำและสตาร์ทอัพไฟแรง!",
       btnContact: "ติดต่อ",
     },
     SectionAbout: {
-      title: "เกี่ยวกับ",
-      title_sub: "เริ่มทำความรู้จัก",
+      title: "เกี่ยวกับฉัน",
+      // title_sub: "ทำความรู้จัก",
+      title_sub: "กษิดิศ กาศเจริญ",
       desc: `
         สวัสดีครับ ชื่อ นายกษิดิศ กาศเจริญ (กันต์) อายุ 25 ปี
         จบจากสาขาคอมพิวเตอร์ธุรกิจ (ต่อเนื่อง) คณะบริหารธุรกิจ

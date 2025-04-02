@@ -14,6 +14,9 @@ import Footer from "@/src/components/Footer";
 import NextTopLoader from "nextjs-toploader";
 import { ThemeProvider } from "next-themes";
 import PreNextTopLoader from "../hooks/PreNextTopLoader";
+import PreParallaxProvider from "../hooks/PreParallaxProvider";
+import { ScrollProgress } from "../components/magicui/scroll-progress";
+import { Cursor } from "../components/cursor";
 
 export const metadata = {
   title: "Portfolio | KKDEV",
@@ -27,9 +30,11 @@ export default function RootLayout({ children }) {
       <html lang={locale || localeDefault} suppressHydrationWarning>
         <body>
           <ThemeProvider defaultTheme="system">
-            <PreNextTopLoader/>
+            <Cursor />
+            <PreNextTopLoader />
+            <ScrollProgress />
             <Header />
-            {children}
+            <PreParallaxProvider>{children}</PreParallaxProvider>
             <Footer />
           </ThemeProvider>
         </body>

@@ -8,7 +8,7 @@ export default function PreNextTopLoader() {
   const { theme, setTheme } = useTheme();
   const [color, setColor] = useState("#ffffff");
   useEffect(() => {
-    setColor(theme === "dark" ? "#ffffff" : "#07b2ce");
+    setColor(theme === "dark" ? "#ffffff" : "#000000");
   }, [theme]);
   return (
     <>

@@ -7,6 +7,9 @@ import { useLocale } from "next-intl";
 import messages from "@/src/messages/messages";
 import { DotPattern } from "./magicui/dot-pattern";
 import { cn } from "../lib/utils";
+import { Globe } from "./magicui/globe";
+import Button from "./ui/Button";
+import { Parallax } from "react-scroll-parallax";
 
 export default function About() {
   const locale = useLocale();
@@ -15,7 +18,7 @@ export default function About() {
     <>
       <div className="sec-about">
         <div className="absolute inset-0 z-1 flex size-full items-center justify-center">
-          {/* <DotPattern
+          <DotPattern
             width={20}
             height={20}
             cx={1}
@@ -24,14 +27,14 @@ export default function About() {
             className={cn(
               "[mask-image:linear-gradient(to_bottom_left,white,transparent,transparent)] "
             )}
-          /> */}
+          />
         </div>
         <div className="wrapper">
           <div
             className="title-sec"
             data-aos="fade-up"
-            data-aos-duration="500"
-            data-aos-once={true}
+            data-aos-duration="1000"
+            data-aos-once={false}
           >
             <span className="c-gd f-bol" data-underline="gradient">
               {t?.title || ""}
@@ -39,44 +42,57 @@ export default function About() {
           </div>
           <div className="content-box">
             <div className="img-box">
-              <img
-                className="img-profile"
+              <Parallax speed={5}>
+                <img
+                  className="img-profile"
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
+                  data-aos-once={false}
+                  width={100}
+                  height={100}
+                  src={`/images/profile/profile1.jpeg`}
+                  alt="imgProfile"
+                  // data-cursor-label="ดูรูปภาพ"
+                />
+              </Parallax>
+              <div
+                className="animation-box"
                 data-aos="fade-up"
-                data-aos-duration="500"
-                data-aos-once={true}
-                width={100}
-                height={100}
-                src={`/images/profile/profile1.jpeg`}
-                alt="imgProfile"
-              />
+                data-aos-duration="1000"
+                data-aos-once={false}
+              >
+                <div data-dot={1}></div>
+                <div data-dot={2}></div>
+                <div data-dot={3}></div>
+                <div data-dot={4}></div>
+              </div>
             </div>
+
             <div className="detail-box">
               <div
-                className="txt-title"
+                className="txt-title f-med"
                 data-aos="fade-up"
-                data-aos-duration="500"
-                data-aos-once={true}
+                data-aos-duration="1000"
+                data-aos-once={false}
               >
                 {t?.title_sub || ""}
               </div>
               <div
                 className="txt-desc"
                 data-aos="fade-up"
-                data-aos-duration="500"
-                data-aos-once={true}
+                data-aos-duration="1000"
+                data-aos-once={false}
               >
                 {t?.desc || ""}
               </div>
-              <Link
-                href="/about"
-                className="btn-view-more"
-                data-btn="solid"
+              <div
+                className="wrap-btn"
                 data-aos="fade-up"
-                data-aos-duration="500"
-                data-aos-once={true}
+                data-aos-duration="1000"
+                data-aos-once={false}
               >
-                <span>{t?.btnViewMore || ""}</span>
-              </Link>
+                <Button url={"/about"}>{t?.btnViewMore || ""}</Button>
+              </div>
             </div>
           </div>
         </div>

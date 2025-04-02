@@ -3,13 +3,16 @@ const dataTheme = [
     themeName: "light",
     colorMain: "#FFFFFF",
     colorOpposite: "#000000",
-    colorParticles: ["#07b2ce", "#304ee3", "#6f22e9"],
+    particlesColor: ["#000000"],
+    particlesQuantity: 30,
+    // colorParticles: ["#07b2ce", "#304ee3", "#6f22e9"],
   },
   {
     themeName: "dark",
     colorMain: "#000000",
     colorOpposite: "#FFFFFF",
-    colorParticles: ["#FFFFFF"],
+    particlesColor: ["#FFFFFF"],
+    particlesQuantity: 60,
   },
 ];
 export default function useThemeData() {

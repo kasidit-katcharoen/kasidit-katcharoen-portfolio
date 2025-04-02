@@ -1,39 +1,3 @@
 {
-  "notFound": {
-    "title": "Page not found",
-    "desc": "Please check the link you came from or go back to the home page.",
-    "btn": "home page"
-  },
-  "Header": {
-    "home": "Home",
-    "about": "About",
-    "skills": "Skills",
-    "works": "Works",
-    "contact": "Contact",
-    "address": "7/2 Nong Kham 5 Rd., Bua Yai, Bua Yai, Nakhon Ratchasima 30120, Thailand"
-  },
-  "SectionHomeBanner": {
-    "hello": "Hi I'm",
-    "fname": "Kasidit",
-    "lname": "Katcharoen",
-    "position": "Frontend Developer 💻 🪄",
-    "btnContact": "Contact"
-  },
-  "SectionAbout": {
-    "title": "About",
-    "title_sub": "Get to know Kasidit Katcharoen (Gun)",
-    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam illum fuga corporis repellendus magnam eligendi repudiandae quas voluptate rerum reiciendis,",
-    "btnViewMore": "View More"
-  },
 
-  "SectionSkills": {
-    "title": "Skills",
-    "desc": "Web development skills & Technology",
-    "dropdown_category_skills": {
-      "all": "All",
-      "language": "Language",
-      "framework&labary": "Framework&nbsp;&nbsp;&&nbsp;&nbsp;labary",
-      "tools": "Tools"
-    }
-  }
 }
