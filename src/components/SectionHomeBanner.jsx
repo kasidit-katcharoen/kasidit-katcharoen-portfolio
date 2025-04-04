@@ -21,7 +21,6 @@ import { useTheme } from "next-themes";
 import { getTheme } from "../hooks/useThemeData";
 import Button from "@/src/components/ui/Button";
 import { Parallax } from "react-scroll-parallax";
-import RepellersAnimation from "../hooks/useRepellersAnimation";
 
 export default function SectionHomeBanner() {
   const locale = useLocale();
@@ -82,7 +81,7 @@ export default function SectionHomeBanner() {
               className="txt-box"
               data-aos="fade-up"
               data-aos-duration="1000"
-              data-aos-once={false}
+              data-aos-once={true}
             >
               <div className="txt-1">{t?.hello}</div>
               <span className="txt-2 f-bol c-gd">
@@ -98,7 +97,7 @@ export default function SectionHomeBanner() {
                   5000,
                 ]}
                 className="txt-3"
-                speed={50}
+                speed={40}
                 deletionSpeed={50}
                 repeat={Infinity}
               />
@@ -113,7 +112,7 @@ export default function SectionHomeBanner() {
               <img
                 data-aos="fade-up"
                 data-aos-duration="1000"
-                data-aos-once={false}
+                data-aos-once={true}
                 className="img-banner shadow"
                 src={`/images/profile/profile1.jpeg`}
                 width={100}
@@ -126,7 +125,7 @@ export default function SectionHomeBanner() {
               className="animation-box"
               data-aos="fade-up"
               data-aos-duration="1000"
-              data-aos-once={false}
+              data-aos-once={true}
             >
               <div data-dot={1}></div>
               <div data-dot={2}></div>
@@ -135,6 +134,8 @@ export default function SectionHomeBanner() {
             </div> */}
           </div>
         </div>
+
+        <div className="srolling-down">SCROLL</div>
       </div>
     </>
   );

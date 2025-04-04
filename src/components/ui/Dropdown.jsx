@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, useTransition } from "react";
-import "@/src/styles/form/Dropdown.scss";
+import "@/src/styles/ui/Dropdown.scss";
 import { dataDropdownMock } from "@/src/common";
 
 export default function Dropdown({

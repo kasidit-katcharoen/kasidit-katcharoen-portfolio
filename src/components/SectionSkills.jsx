@@ -216,7 +216,7 @@ export default function SectionSkills() {
                 data-aos="fade-up"
                 data-aos-delay={50 * k}
                 data-aos-duration="1000"
-                data-aos-once={false}
+                data-aos-once={true}
               >
                 <img src={v.img} className={`${v.class}`} alt={v.name} />
                 <div className="txt-name">{v.name}</div>
@@ -235,13 +235,13 @@ export default function SectionSkills() {
   return (
     <>
       <div className="section-skills">
-        {elementParticles || ""}
-        {/* <div className="absolute inset-0 z-1 flex size-full items-center justify-center">
-          <DotPattern
+        {/* {elementParticles || ""} */}
+        <div className="absolute inset-0 z-1 flex size-full items-center justify-center">
+          {/* <DotPattern
             className={cn(
               "[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]"
             )}
-          />
+          /> */}
           <DotPattern
                width={20}
                height={20}
@@ -252,13 +252,13 @@ export default function SectionSkills() {
                  "[mask-image:linear-gradient(to_top_right,white,transparent,transparent)] "
                )}
              />
-        </div> */}
+        </div>
         <div className="wrapper">
           <div
             className="title-sec"
             data-aos="fade-up"
             data-aos-duration="1000"
-            data-aos-once={false}
+            data-aos-once={true}
           >
             <span className="c-gd f-bol" data-underline="gradient">
               {t?.title || ""}
@@ -268,7 +268,7 @@ export default function SectionSkills() {
             className="txt-sub-sec"
             data-aos="fade-up"
             data-aos-duration="1000"
-            data-aos-once={false}
+            data-aos-once={true}
           >
             {t?.desc || ""}
           </div>
@@ -277,7 +277,7 @@ export default function SectionSkills() {
               className="cate-box"
               data-aos="fade-up"
               data-aos-duration="1000"
-              data-aos-once={false}
+              data-aos-once={true}
             >
               <Dropdown
                 className="dropdown-skills"

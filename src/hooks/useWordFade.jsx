@@ -15,7 +15,7 @@ export default function useWordFade(word = "Word Fade", styleFade = "fade-up") {
             data-aos={styleFade}
             data-aos-delay={200 * k}
             data-aos-duration="1000"
-            data-aos-once={false}
+            data-aos-once={true}
           >
             {v}
           </span>

@@ -34,6 +34,7 @@
   --c-black_800: #333;
   --c-black_900: #1a1a1a;
   --c-black_900-rgb: 26, 26, 26;
+  --c-black_900_2: #0a0a0a;
   --c-green_100: #e7f9eb;
   --c-green_200: #c3efcd;
   --c-green_300: #88dd9f;
@@ -144,7 +145,7 @@
   --c-bg-ops-rgb: var(--c-white-rgb);
   --c-bg1: var(--c-black_900);
   --c-bg2: var(--c-black_800);
-  --c-card: var(--c-black_900);
+  --c-card: var(--c-black_900_2);
   --c-bd: var(--c-white);
   --c-bd1: var(--c-black_900);
   --c-bd2: var(--c-black_800);

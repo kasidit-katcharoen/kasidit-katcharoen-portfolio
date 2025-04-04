@@ -199,6 +199,7 @@ export default function Header() {
       <nav id="navbar" className={`navbar ${openMenu ? "active" : ""}`}>
         <div
           className="bg-dim"
+          // data-cursor-label={'ปิด'}
           onClick={(e) => {
             setOpenMenu(false);
           }}
