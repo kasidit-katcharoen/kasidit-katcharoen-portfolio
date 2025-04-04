@@ -87,3 +87,22 @@
     transform: scale(1);
   }
 }
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    clip-path: inset(100% 0 0 0);
+  }
+  to {
+    transform: translateY(0);
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.text {
+  display: inline-block;
+  font-size: 24px;
+  font-weight: bold;
+  animation: slideUp 1s ease-out forwards;
+}
+

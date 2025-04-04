@@ -17,8 +17,9 @@
   text-align: center;
   background-color: var(--c-theme-ops);
   color: var(--c-theme);
-  @include font-size(16px);
   &.is-hover {
+    // background-color: var(--c-white);
+    // color: var(--c-black);
     // mix-blend-mode: unset;
   }
 }

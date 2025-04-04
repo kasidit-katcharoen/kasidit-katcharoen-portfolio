@@ -33,43 +33,15 @@
   [data-theme~="light"] & {
     background-image: url("/images/home/bg1.jpg");
     &::after {
-      // background-image: linear-gradient(
-      //   to bottom right,
-      //   rgba(var(--c-bg-rgb), 1) 0%,
-      //   rgba(var(--c-bg-rgb), 0.9) 50%,
-      //   rgba(var(--c-bg-rgb), 0.2) 100%
-      // );
-      // @media (max-width: 767px) {
-      //   background-image: linear-gradient(
-      //     to bottom right,
-      //     rgba(var(--c-bg-rgb), 1) 0%,
-      //     rgba(var(--c-bg-rgb), 1) 50%,
-      //     rgba(var(--c-bg-rgb), 0.5) 100%
-      //   );
-      // }
-      background-color: rgba(var(--c-bg-rgb), 0.6);
-      -webkit-backdrop-filter: blur(20px);
+      background-color: rgba(var(--c-bg-rgb), 0.5);
+      -webkit-backdrop-filter: blur(8px);
       backdrop-filter: blur(8px);
     }
   }
   [data-theme~="dark"] & {
-    background-image: url("/images/home/bg2.jpg");
+    background-image: url("/images/home/bg14.jpg");
     &::after {
-      // background-image: linear-gradient(
-      //   to bottom right,
-      //   rgba(var(--c-bg-rgb), 1) 0%,
-      //   rgba(var(--c-bg-rgb), 0.7) 50%,
-      //   rgba(var(--c-bg-rgb), 0) 100%
-      // );
-      // @media (max-width: 767px) {
-      //   background-image: linear-gradient(
-      //     to bottom right,
-      //     rgba(var(--c-bg-rgb), 1) 0%,
-      //     rgba(var(--c-bg-rgb), 0.8) 50%,
-      //     rgba(var(--c-bg-rgb), 0.3) 100%
-      //   );
-      // }
-      background-color: rgba(var(--c-bg-rgb), 0.4);
+      background-color: rgba(var(--c-bg-rgb), 0.5);
       -webkit-backdrop-filter: blur(8px);
       backdrop-filter: blur(8px);
     }
@@ -91,19 +63,19 @@
       .txt-box {
         // letter-spacing: 2px;
         .txt-1 {
-          @include font-size(30px,25px);
+          @include font-size(30px,20px);
         }
         .txt-2 {
           @include font-size(60px,50px);
         }
         .txt-3 {
-          @include font-size(34px,30px);
+          @include font-size(40px,30px);
         }
         .txt-4 {
           color: var(--c-f1);
           max-width: 360px;
           margin-top: 10px;
-          @include font-size(18px,18px);
+          @include font-size(18px);
         }
         .wrap-btn {
           margin: 20px 0 0;
@@ -131,45 +103,38 @@
     bottom: 0;
     z-index: 2;
     [data-dot] {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      --translate-size: 50%;
+      --c-size-bd: 1px;
       &[data-dot~="1"] {
-        position: absolute;
         top: 0;
         left: 0;
-        width: 25px;
-        height: 25px;
-        transform: translate(-50%, -50%);
-        border-top: 1px solid var(--c-bd);
-        border-left: 1px solid var(--c-bd);
+        transform: translate(calc(-1 * var(--translate-size)),calc(-1 * var(--translate-size)));
+        border-top: var(--c-size-bd) solid var(--c-theme-ops);
+        border-left: var(--c-size-bd) solid var(--c-theme-ops);
       }
       &[data-dot~="2"] {
-        position: absolute;
         right: 0;
         top: 0;
-        width: 25px;
-        height: 25px;
-        transform: translate(50%, -50%);
-        border-top: 1px solid var(--c-bd);
-        border-right: 1px solid var(--c-bd);
+        transform: translate(var(--translate-size),calc(-1 * var(--translate-size)));
+        border-top: var(--c-size-bd) solid var(--c-theme-ops);
+        border-right: var(--c-size-bd) solid var(--c-theme-ops);
       }
       &[data-dot~="3"] {
-        position: absolute;
         left: 0;
         bottom: 0;
-        width: 25px;
-        height: 25px;
-        transform: translate(-50%, 50%);
-        border-left: 1px solid var(--c-bd);
-        border-bottom: 1px solid var(--c-bd);
+        transform: translate(calc(-1 * var(--translate-size)),var(--translate-size));
+        border-left: var(--c-size-bd) solid var(--c-theme-ops);
+        border-bottom: var(--c-size-bd) solid var(--c-theme-ops);
       }
       &[data-dot~="4"] {
-        position: absolute;
         right: 0;
         bottom: 0;
-        width: 25px;
-        height: 25px;
-        transform: translate(50%, 50%);
-        border-right: 1px solid var(--c-bd);
-        border-bottom: 1px solid var(--c-bd);
+        transform: translate(var(--translate-size),var(--translate-size));
+        border-right: var(--c-size-bd) solid var(--c-theme-ops);
+        border-bottom: var(--c-size-bd) solid var(--c-theme-ops);
       }
     }
   }

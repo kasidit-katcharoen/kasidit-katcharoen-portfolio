@@ -1,4 +1,5 @@
 import Link from "next/link";
+import '@/src/styles/ui/Button.scss'
 
 export default function Button({
   children,

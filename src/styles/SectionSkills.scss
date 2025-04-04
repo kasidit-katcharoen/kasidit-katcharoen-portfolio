@@ -15,12 +15,12 @@
     margin: 0 auto;
     .title-sec {
       text-align: center;
-      @include font-size(34px, 34px);
+      @include font-size(50px,40px);
     }
     .txt-sub-sec {
       margin-top: 30px;
 
-      @include font-size(22px);
+      @include font-size(18px);
       text-align: center;
       color: var(--c-f1);
     }
@@ -32,15 +32,17 @@
         z-index: 2;
         .dropdown-skills {
           margin: 30px auto;
-          @include font-size(20px);
+          @include font-size(18px);
         }
       }
 
       .group-skills {
         display: grid;
-        grid-template-columns: repeat(7, 1fr);
+        grid-template-columns: repeat(6, 1fr);
         gap: 20px 20px;
         .list-skill {
+          position: relative;
+          z-index: 1;
           border-radius: 6px;
           padding: 20px;
           width: 100%;
@@ -52,10 +54,6 @@
           position: relative;
           overflow: hidden;
           border: 1px solid var(--c-bd1);
-          transition: all 0.5s ease-in-out;;
-          &:hover {
-            transform: scale(1.2);
-          }
           img {
             height: 60px;
             &.size-leg {
@@ -77,15 +75,15 @@
   }
 }
 
-@media (max-width: 1280px) {
-  .section-skills .wrapper .content-box .group-skills {
-    grid-template-columns: repeat(6, 1fr);
-    .list-skill {
-      img {
-      }
-    }
-  }
-}
+// @media (max-width: 1280px) {
+//   .section-skills .wrapper .content-box .group-skills {
+//     grid-template-columns: repeat(6, 1fr);
+//     .list-skill {
+//       img {
+//       }
+//     }
+//   }
+// }
 
 @media (max-width: 1024px) {
   .section-skills .wrapper .content-box .group-skills {
@@ -149,7 +147,7 @@
   .section-skills .wrapper .content-box .group-skills {
     // grid-template-columns: repeat(2, 1fr);
     .list-skill {
-      padding: 20px;
+      padding: 15px 10px;
       img {
         // height: 40px;
       }

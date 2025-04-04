@@ -6,11 +6,11 @@ const messages = {
       btn: "home page",
     },
     Header: {
-      home: "Home",
-      about: "About",
-      skills: "Skills",
-      works: "Works",
-      contact: "Contact",
+      home: "HOME",
+      about: "ABOUT",
+      skills: "SKILLS",
+      works: "WORKS",
+      contact: "CONTACT",
       address:
         "7/2 Nong Kham 5 Rd., Bua Yai, Bua Yai, Nakhon Ratchasima 30120, Thailand",
     },
@@ -23,23 +23,28 @@ const messages = {
       btnContact: "Contact",
     },
     SectionAbout: {
-      title: "About me",
+      title: "ABOUT ME",
       // title_sub: "Get to know",
       title_sub: "Kasidit Katcharoen",
       desc: `
-          Hello, my name is Kasidit Katcharoen ( Gun ), and I'm 25 years old.
-          I graduated in Business Computer (Continuing Program) from the Faculty of Business Administration,
-          Rajamangala University of Technology Isan. I'm committed to continuous learning and skill development
-          to create highly efficient and beneficial web applications.
-
-          I strongly hope to utilize my skills to contribute to the growth of an organization,
-          developing innovative solutions that meet user needs. My goal is to advance technology
-          and create impactful solutions that benefit both businesses and society.
+          Hello, my name is Kasidit Katcharoen (Gun). 
+          I'm 25 years old and I graduated Bachelor's degree 
+          in Business Computer (Continuing Program) from 
+          Faculty of Business Administration at Rajamangala 
+          University of Technology Isan.  I'm passionate about 
+          continuous learning and skill development to 
+          enhance my capabilities. My goal is to optimize 
+          web applications for maximum efficiency and benefit.  
+          I strongly hope to apply these skills to contribute to 
+          organizational growth and create innovative solutions 
+          that effectively meet user needs.  Ultimately, 
+          I aspire to drive technological advancements 
+          that will benefit both businesses and society in the future.
       `,
       btnViewMore: "View More",
     },
     SectionSkills: {
-      title: "Skills",
+      title: "SKILLS",
       desc: "Web development skills & Technology",
       dropdown_category_skills: {
         all: "All",
@@ -49,11 +54,11 @@ const messages = {
       },
     },
     Footer: {
-      home: "Home",
-      about: "About",
-      skills: "Skills",
-      works: "Works",
-      contact: "Contact",
+      home: "HOME",
+      about: "ABOUT",
+      skills: "SKILLS",
+      works: "WORKS",
+      contact: "CONTACT",
       address:
         "7/2 Nong Kham 5 Rd., Bua Yai, Bua Yai, Nakhon Ratchasima 30120, Thailand",
     },
@@ -85,12 +90,14 @@ const messages = {
       // title_sub: "ทำความรู้จัก",
       title_sub: "กษิดิศ กาศเจริญ",
       desc: `
-        สวัสดีครับ ชื่อ นายกษิดิศ กาศเจริญ (กันต์) อายุ 25 ปี
-        จบจากสาขาคอมพิวเตอร์ธุรกิจ (ต่อเนื่อง) คณะบริหารธุรกิจ
-        มหาวิทยาลัยเทคโนโลยีราชมงคลอีสาน มุ่งมั่นศึกษาและเรียนรู้เพิ่มทักษะความสามารถของตัวเองอยู่เสมอ
-        เพื่อพัฒนาเว็บแอปพลิเคชันที่มีประสิทธิภาพให้เกิดประโยชน์สูงสุด และหวังเป็นอย่างยิ่งว่าจะนำทักษะความสามารถนี้
-        เป็นส่วนช่วยส่งเสริมให้สามารถพัฒนาองค์กร พร้อมทั้งสร้างสรรค์โซลูชันที่ตอบโจทย์ความต้องการของผู้ใช้
-        มีเป้าหมายในการพัฒนาเทคโนโลยีให้ก้าวหน้าและเป็นประโยชน์ต่อธุรกิจและสังคม
+          สวัสดีครับ ชื่อ นายกษิดิศ กาศเจริญ (กันต์) อายุ 25 ปี สำเร็จการศึกษาระดับปริญญาตรี 
+          สาขาคอมพิวเตอร์ธุรกิจ (ต่อเนื่อง) คณะบริหารธุรกิจ จากมหาวิทยาลัยเทคโนโลยีราชมงคลอีสาน 
+          ผมได้มุ่งมั่นศึกษา เรียนรู้ และเพิ่มทักษะความสามารถของตัวเองอยู่เสมอ 
+          เพื่อที่จะพัฒนาเว็บแอปพลิเคชั่นให้มีประสิทธิภาพจนเกิดประโยชน์สูงสุด 
+          และหวังเป็นอย่างยิ่งว่าจะได้นำทักษะความสามารถเหล่านี้มาช่วยส่งเสริมให้สามารถพัฒนาองค์กร 
+          พร้อมทั้งสร้างสรรค์โซลูชั่นที่ตอบโจทย์ต่อความต้องการของผู้ใช้ 
+          สุดท้ายนี้ผมได้ตั้งเป้าหมายในการพัฒนาเทคโนโลยีให้ก้าวหน้าและ
+          เป็นประโยชน์ต่อธุรกิจและสังคมต่อไปในอนาคตข้างหน้า
       `,
       btnViewMore: "ดูเพิ่มเติม",
     },

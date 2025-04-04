@@ -89,7 +89,7 @@
         column-gap: 30px;
         .item-menu {
           a {
-            @include font-size(var(--size-burger-menu));
+            @include font-size(18px);
           }
         }
       }
@@ -334,7 +334,7 @@
               }
               a {
                 padding: 5px 0;
-                @include font-size(40px, 36px);
+                @include font-size(50px, 40px);
               }
             }
           }

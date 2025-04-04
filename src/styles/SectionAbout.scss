@@ -17,7 +17,7 @@
     margin: 0 auto;
     .title-sec {
       text-align: center;
-      @include font-size(34px, 34px);
+      @include font-size(50px,40px);
     }
     .content-box {
       margin-top: 60px;
@@ -46,12 +46,12 @@
         flex-direction: column;
         align-items: flex-start;
         .txt-title {
-          @include font-size(22px);
+          @include font-size(30px);
         }
         .txt-desc {
           margin-top: 20px;
           color: var(--c-f1);
-          @include font-size(20px);
+          @include font-size(18px);
         }
         .wrap-btn {
           margin: 20px 0 0;
@@ -69,45 +69,38 @@
     bottom: 0;
     z-index: 2;
     [data-dot] {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      --translate-size: 50%;
+      --c-size-bd: 1px;
       &[data-dot~="1"] {
-        position: absolute;
         top: 0;
         left: 0;
-        width: 25px;
-        height: 25px;
-        transform: translate(-50%,-50%);
-        border-top: 1px solid var(--c-bd);
-        border-left: 1px solid var(--c-bd);
+        transform: translate(calc(-1 * var(--translate-size)),calc(-1 * var(--translate-size)));
+        border-top: var(--c-size-bd) solid var(--c-theme-ops);
+        border-left: var(--c-size-bd) solid var(--c-theme-ops);
       }
       &[data-dot~="2"] {
-        position: absolute;
         right: 0;
         top: 0;
-        width: 25px;
-        height: 25px;
-        transform: translate(50%,-50%);
-        border-top: 1px solid var(--c-bd);
-        border-right: 1px solid var(--c-bd);
+        transform: translate(var(--translate-size),calc(-1 * var(--translate-size)));
+        border-top: var(--c-size-bd) solid var(--c-theme-ops);
+        border-right: var(--c-size-bd) solid var(--c-theme-ops);
       }
       &[data-dot~="3"] {
-        position: absolute;
         left: 0;
         bottom: 0;
-        width: 25px;
-        height: 25px;
-        transform: translate(-50%,50%);
-        border-left: 1px solid var(--c-bd);
-        border-bottom: 1px solid var(--c-bd);
+        transform: translate(calc(-1 * var(--translate-size)),var(--translate-size));
+        border-left: var(--c-size-bd) solid var(--c-theme-ops);
+        border-bottom: var(--c-size-bd) solid var(--c-theme-ops);
       }
       &[data-dot~="4"] {
-        position: absolute;
         right: 0;
         bottom: 0;
-        width: 25px;
-        height: 25px;
-        transform: translate(50%,50%);
-        border-right: 1px solid var(--c-bd);
-        border-bottom: 1px solid var(--c-bd);
+        transform: translate(var(--translate-size),var(--translate-size));
+        border-right: var(--c-size-bd) solid var(--c-theme-ops);
+        border-bottom: var(--c-size-bd) solid var(--c-theme-ops);
       }
     }
   }

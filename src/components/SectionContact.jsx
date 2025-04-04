@@ -1,4 +1,6 @@
 import React from "react";
+import "@/src/styles/SectionContact.scss";
+import Marquee from "react-fast-marquee";
 
 export default function SectionContact() {
   return (
@@ -15,6 +17,16 @@ export default function SectionContact() {
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe> */}
         </div>
+        <Marquee
+          className={"marquee-text f-bol"}
+          speed={50}
+          // gradient={true}
+          // gradientColor={'#000000'}
+          // pauseOnHover={true}
+          loop={999}
+        >
+          KASIDIT KATCHAROEN PORTFOLIO
+        </Marquee>
       </div>
     </>
   );

@@ -34,7 +34,7 @@ export default function About() {
             className="title-sec"
             data-aos="fade-up"
             data-aos-duration="1000"
-            data-aos-once={false}
+            data-aos-once={true}
           >
             <span className="c-gd f-bol" data-underline="gradient">
               {t?.title || ""}
@@ -47,19 +47,19 @@ export default function About() {
                   className="img-profile"
                   data-aos="fade-up"
                   data-aos-duration="1000"
-                  data-aos-once={false}
+                  data-aos-once={true}
                   width={100}
                   height={100}
-                  src={`/images/profile/profile1.jpeg`}
+                  src={`/images/profile/profile3.jpg`}
                   alt="imgProfile"
-                  // data-cursor-label="ดูรูปภาพ"
+                  data-cursor-label="ดูรูปภาพ"
                 />
               </Parallax>
               <div
                 className="animation-box"
-                data-aos="fade-up"
+                data-aos="fade-down"
                 data-aos-duration="1000"
-                data-aos-once={false}
+                data-aos-once={true}
               >
                 <div data-dot={1}></div>
                 <div data-dot={2}></div>
@@ -73,7 +73,7 @@ export default function About() {
                 className="txt-title f-med"
                 data-aos="fade-up"
                 data-aos-duration="1000"
-                data-aos-once={false}
+                data-aos-once={true}
               >
                 {t?.title_sub || ""}
               </div>
@@ -81,7 +81,7 @@ export default function About() {
                 className="txt-desc"
                 data-aos="fade-up"
                 data-aos-duration="1000"
-                data-aos-once={false}
+                data-aos-once={true}
               >
                 {t?.desc || ""}
               </div>
@@ -89,7 +89,7 @@ export default function About() {
                 className="wrap-btn"
                 data-aos="fade-up"
                 data-aos-duration="1000"
-                data-aos-once={false}
+                data-aos-once={true}
               >
                 <Button url={"/about"}>{t?.btnViewMore || ""}</Button>
               </div>
