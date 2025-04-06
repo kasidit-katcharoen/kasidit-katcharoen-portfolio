@@ -29,21 +29,22 @@
     right: 0;
     bottom: 0;
     z-index: 1;
+    will-change: background-image,backdrop-filter;
   }
   [data-theme~="light"] & {
     background-image: url("/images/home/bg1.jpg");
     &::after {
       background-color: rgba(var(--c-bg-rgb), 0.5);
-      -webkit-backdrop-filter: blur(8px);
-      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
     }
   }
   [data-theme~="dark"] & {
     background-image: url("/images/home/bg14.jpg");
     &::after {
       background-color: rgba(var(--c-bg-rgb), 0.5);
-      -webkit-backdrop-filter: blur(8px);
-      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
     }
   }
   .wrapper {
@@ -75,7 +76,7 @@
           color: var(--c-f1);
           max-width: 360px;
           margin-top: 10px;
-          @include font-size(18px);
+          // @include font-size(18px);
         }
         .wrap-btn {
           margin: 20px 0 0;
@@ -88,7 +89,7 @@
       width: 100%;
       .img-banner {
         width: 100%;
-        max-height: 50vh;
+        max-height: 50dvh;
         object-fit: cover;
         object-position: center;
       }
@@ -144,13 +145,15 @@
   .sec-banner .wrapper .img-box{
     // max-width: 50%;
     .img-banner{
-      max-height: 60vh;
+      max-height: 60dvh;
     }
   }
 }
 
 @media (max-width: 767px) {
   .sec-banner {
+    // min-height: 100dvh;
+    height: auto;
     &::before {
     }
     &::after {
@@ -177,6 +180,8 @@
           .txt-3 {
           }
           .txt-4 {
+            max-width: 400px;
+            margin: 0 auto;
           }
           .wrap-btn {
           }
@@ -185,7 +190,7 @@
       .img-box {
         max-width: 100%;
         .img-banner {
-          max-height: 45vh;
+          max-height: 300px;
         }
       }
     }

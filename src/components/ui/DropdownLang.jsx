@@ -2,8 +2,8 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState, useTransition } from "react";
-import { localeDefault, locales, routing } from "../i18n/routing";
-import "@/src/styles/DropdownLang.scss";
+import { localeDefault, locales, routing } from "@/src/i18n/routing";
+import "@/src/styles/ui/DropdownLang.scss";
 import { useLocale } from "next-intl";
 
 export default function DropdownLang() {

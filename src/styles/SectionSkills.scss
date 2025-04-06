@@ -20,7 +20,7 @@
     .txt-sub-sec {
       margin-top: 30px;
 
-      @include font-size(18px);
+      // @include font-size(18px);
       text-align: center;
       color: var(--c-f1);
     }
@@ -32,7 +32,7 @@
         z-index: 2;
         .dropdown-skills {
           margin: 30px auto;
-          @include font-size(18px);
+          // @include font-size(18px);
         }
       }
 
@@ -43,7 +43,7 @@
         .list-skill {
           position: relative;
           z-index: 1;
-          border-radius: 6px;
+          border-radius: 8px;
           padding: 20px;
           width: 100%;
           display: flex;
@@ -65,9 +65,9 @@
             }
           }
           .txt-name {
-            margin-top: 20px;
+            margin-top: 30px;
             color: var(--c-f);
-            @include font-size(18px);
+            // @include font-size(18px);
           }
         }
       }
@@ -125,6 +125,7 @@
               }
             }
             .txt-name {
+              margin-top: 10px;
             }
           }
         }
@@ -152,7 +153,7 @@
         // height: 40px;
       }
       .txt-name {
-        margin-top: 10px;
+        
       }
     }
   }

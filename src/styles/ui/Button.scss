@@ -2,86 +2,119 @@
 @import "../variable.scss";
 
 [data-btn] {
-    display: inline-flex;
-    align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  padding: 6px 20px;
+  border-radius: 50px;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 1px solid var(--c-bd);
+  min-width: 110px;
+  .box-1 {
     position: relative;
-    cursor: pointer;
-    padding: 6px 20px;
-    border-radius: 50px;
-    overflow: hidden;
-    white-space: nowrap;
-    border: 1px solid var(--c-bd);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 8px;
+    .dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--c-f);
+      border-radius: 50%;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    span {
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+  .box-2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(0, -50%);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--c-theme);
+    i {
+      @include font-size(14px);
+      vertical-align: middle;
+    }
+  }
+  &[data-btn~="left"] {
     .box-1 {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      column-gap: 8px;
       .dot {
-        width: 8px;
-        height: 8px;
-        background-color: var(--c-f);
-        border-radius: 50%;
-        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       }
       span {
-        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       }
     }
     .box-2 {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      z-index: 2;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      column-gap: 8px;
-      opacity: 0;
-      visibility: hidden;
+      left: auto;
+      right: 50%;
       transform: translate(0, -50%);
-      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-      color: var(--c-theme);
       i {
-        @include font-size(10px);
-        vertical-align: middle;
       }
     }
-  
-    &[data-btn~="solid"] {
-      border: 1px solid var(--c-f);
-      background-color: var(--c-f);
-      color: var(--c-theme);  
+  }
+  &[data-btn~="solid"] {
+    border: 1px solid var(--c-f);
+    background-color: var(--c-f);
+    color: var(--c-theme);
+    .box-1 {
+      .dot {
+        background-color: var(--c-theme);
+      }
+      span {
+      }
+    }
+    .box-2 {
+      color: var(--c-f);
+      i {
+      }
+    }
+  }
+
+  &:hover {
+    .box-1 {
+      .dot {
+        will-change: transform;
+        transform: scale(50);
+      }
+      span {
+        will-change: transform, opacity, visibility;
+        transform: translateX(100%);
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+    .box-2 {
+      will-change: transform, opacity, visibility;
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, -50%);
+    }
+    &[data-btn~="left"] {
       .box-1 {
         .dot {
-          background-color: var(--c-theme);
         }
         span {
+          transform: translateX(-100%);
         }
       }
       .box-2 {
-        color: var(--c-f);
+        transform: translate(50%, -50%);
         i {
         }
       }
     }
-  
-    &:hover {
-      .box-1 {
-        .dot {
-          transform: scale(100);
-        }
-        span {
-          transform: translateX(50px);
-          opacity: 0;
-          visibility: hidden;
-        }
-      }
-      .box-2 {
-        opacity: 1;
-        visibility: visible;
-        transform: translate(-50%, -50%);
-      }
-    }
   }
+}

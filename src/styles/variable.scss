@@ -93,7 +93,6 @@
 
   --c-gd: var(--c-gradient);
 
-  // property
   // mode light
   --c-theme: var(--c-white);
   --c-theme-rgb: var(--c-white-rgb);
@@ -104,6 +103,10 @@
   --c-f-ops: var(--c-white);
   --c-f-ops-rgb: var(--c-white-rgb);
   --c-f1: var(--c-black_600);
+  --c-f2: var(--c-black_500);
+  --c-f3: var(--c-black_400);
+  --c-input: var(--c-black_400);
+  --c-input-action: var(--c-black_900);
   --c-bg: var(--c-white);
   --c-bg-rgb: var(--c-white-rgb);
   --c-bg-ops: var(--c-black);
@@ -126,7 +129,6 @@
 
 }
 
-// property
 // mode dark
 [data-theme~="dark"] {
   --c-theme: var(--c-black);
@@ -137,8 +139,11 @@
   --c-f-rgb: var(--c-white-rgb);
   --c-f-ops: var(--c-black);
   --c-f-ops-rgb: var(--c-black-rgb);
-  --c-f1: var(--c-black_600);
-  --c-f1: var(--c-black_400);
+  --c-f1: var(--c-black_500);
+  --c-f2: var(--c-black_600);
+  --c-f3: var(--c-black_700);
+  --c-input: var(--c-black_700);
+  --c-input-action: var(--c-black_300);
   --c-bg: var(--c-black);
   --c-bg-rgb: var(--c-black-rgb);
   --c-bg-ops: var(--c-white);

@@ -96,14 +96,14 @@ export default function SectionHomeBanner() {
                   `${t?.position?.[1] || ""}`,
                   5000,
                 ]}
-                className="txt-3"
+                className="txt-3 f-reg"
                 speed={40}
                 deletionSpeed={50}
                 repeat={Infinity}
               />
               <div className="txt-4">{t?.sub || ""}</div>
               <div className="wrap-btn">
-                <Button url={"/contact"}>{t?.btnContact || ""}</Button>
+                <Button href={"/contact"}>{t?.btnContact || ""}</Button>
               </div>
             </div>
           </div>
@@ -114,7 +114,7 @@ export default function SectionHomeBanner() {
                 data-aos-duration="1000"
                 data-aos-once={true}
                 className="img-banner shadow"
-                src={`/images/profile/profile1.jpeg`}
+                src={`/images/profile/profile3.jpg`}
                 width={100}
                 height={100}
                 alt="banner"

@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 import Lenis from "@studio-freight/lenis";
 import { useLocale } from "next-intl";
 import { Link } from "../i18n/navigation";
-import DropdownLang from "@/src/components/DropdownLang";
+import DropdownLang from "@/src/components/ui/DropdownLang";
 import { locales } from "../i18n/routing";
 import messages from "@/src/messages/messages.jsx";
 import useScrollDirection from "../hooks/useScrollDirection";
@@ -89,7 +89,7 @@ export default function Header() {
   }, [headerHeight]);
 
   useEffect(() => {
-    console.log("pathname", pathname);
+    // console.log("pathname", pathname);
     setPageActive(() => pathname.split("/")[pathname.split("/")?.length - 1]);
     setOpenMenu(false);
   }, [pathname]);

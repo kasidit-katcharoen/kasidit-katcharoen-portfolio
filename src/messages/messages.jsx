@@ -6,11 +6,11 @@ const messages = {
       btn: "home page",
     },
     Header: {
-      home: "HOME",
-      about: "ABOUT",
-      skills: "SKILLS",
-      works: "WORKS",
-      contact: "CONTACT",
+      home: "Home",
+      about: "About",
+      skills: "Skills",
+      works: "Works",
+      contact: "Contact",
       address:
         "7/2 Nong Kham 5 Rd., Bua Yai, Bua Yai, Nakhon Ratchasima 30120, Thailand",
     },
@@ -24,7 +24,6 @@ const messages = {
     },
     SectionAbout: {
       title: "ABOUT ME",
-      // title_sub: "Get to know",
       title_sub: "Kasidit Katcharoen",
       desc: `
           Hello, my name is Kasidit Katcharoen (Gun). 
@@ -54,13 +53,40 @@ const messages = {
       },
     },
     Footer: {
-      home: "HOME",
-      about: "ABOUT",
-      skills: "SKILLS",
-      works: "WORKS",
-      contact: "CONTACT",
+      home: "Home",
+      about: "About",
+      skills: "Skills",
+      works: "Works",
+      contact: "Contact",
       address:
         "7/2 Nong Kham 5 Rd., Bua Yai, Bua Yai, Nakhon Ratchasima 30120, Thailand",
+    },
+    Form: {
+      submit: "Submit",
+      messages_error: {
+        empty: "Please enter the information.",
+        invalid: "Please enter the correct information.",
+      },
+      field: {
+        first_name: {
+          label: "First name",
+        },
+        last_name: {
+          label: "Last name",
+        },
+        email: {
+          label: "Email",
+        },
+        phone: {
+          label: "Phone",
+        },
+        contact_topic: {
+          label: "Contact topic",
+        },
+        contact_desc: {
+          label: "Contact description",
+        },
+      },
     },
   },
   th: {
@@ -87,7 +113,6 @@ const messages = {
     },
     SectionAbout: {
       title: "เกี่ยวกับฉัน",
-      // title_sub: "ทำความรู้จัก",
       title_sub: "กษิดิศ กาศเจริญ",
       desc: `
           สวัสดีครับ ชื่อ นายกษิดิศ กาศเจริญ (กันต์) อายุ 25 ปี สำเร็จการศึกษาระดับปริญญาตรี 
@@ -118,6 +143,33 @@ const messages = {
       works: "การทำงาน",
       contact: "ติดต่อ",
       address: "7/2 ถ.หนองขาม 5 ต.บัวใหญ่ อ.บัวใหญ่ นครราชสีมา 30120 ประเทศไทย",
+    },
+    Form: {
+      submit: "ยืนยัน",
+      messages_error: {
+        empty: "กรุณากรอกข้อมูล",
+        invalid: "กรุณากรอกข้อมูลที่ถูกต้อง",
+      },
+      field: {
+        first_name: {
+          label: "ชื่อ",
+        },
+        last_name: {
+          label: "นามสกุล",
+        },
+        email: {
+          label: "อีเมล",
+        },
+        phone: {
+          label: "เบอโทรศัพท์",
+        },
+        contact_topic: {
+          label: "หัวข้อที่ติดต่อ",
+        },
+        contact_desc: {
+          label: "รายละเอียด",
+        },
+      },
     },
   },
 };
