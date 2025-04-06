@@ -17,6 +17,7 @@
   text-align: center;
   background-color: var(--c-theme-ops);
   color: var(--c-theme);
+  will-change: transform;
   &.is-hover {
     // background-color: var(--c-white);
     // color: var(--c-black);
@@ -25,5 +26,5 @@
 }
 
 [data-cursor-label] {
-  cursor: none;
+  // cursor: none;
 }

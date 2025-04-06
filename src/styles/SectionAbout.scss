@@ -51,7 +51,7 @@
         .txt-desc {
           margin-top: 20px;
           color: var(--c-f1);
-          @include font-size(18px);
+          // @include font-size(18px);
         }
         .wrap-btn {
           margin: 20px 0 0;
@@ -120,7 +120,7 @@
         .img-box {
           max-width: 100%;
           .img-profile {
-            max-height: 45vh;
+            max-height: 300px;
           }
         }
         .detail-box {

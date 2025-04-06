@@ -3,8 +3,8 @@ const dataTheme = [
     themeName: "light",
     colorMain: "#FFFFFF",
     colorOpposite: "#000000",
-    particlesColor: ["#7cc4fa"],
-    particlesQuantity: 30,
+    particlesColor: ["#FFFFFF"],
+    particlesQuantity: 60,
     // colorParticles: ["#07b2ce", "#304ee3", "#6f22e9"],
   },
   {

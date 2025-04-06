@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 
 export default function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
-  // const [mounted, setMounted] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {

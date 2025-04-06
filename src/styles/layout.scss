@@ -15,7 +15,7 @@ html,
 body {
   background-color: var(--c-bg);
   color: var(--c-f);
-  @include font-size(18px);
+  @include font-size(20px);
   @include font-family-main();
 }
 
@@ -26,7 +26,12 @@ body {
   min-height: 100vh;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-size: inherit;
   font-weight: inherit;
 }
@@ -48,19 +53,22 @@ img {
 i {
   position: relative;
   vertical-align: middle;
+  &::before {
+    vertical-align: middle;
+  }
 }
 
-.disable {
+.disable, .disabled {
   pointer-events: none;
   opacity: 0.5;
 }
 
 .show-xs {
-  display: none !important;
+  display: none;
 }
 
 .hide-xs {
-  display: block !important;
+  display: block;
 }
 
 .hr {
@@ -71,6 +79,18 @@ i {
 
 .shadow {
   box-shadow: 0px 2px 8px 0px var(--c-sd);
+}
+
+input {
+  outline: none;
+}
+
+textarea{
+  display: block;
+}
+
+.c-red {
+  color: var(--c-red_500);
 }
 
 // =================== custom class ===================
@@ -91,10 +111,10 @@ i {
 
 @media (max-width: 767px) {
   .show-xs {
-    display: block !important;
+    display: block;
   }
 
   .hide-xs {
-    display: none !important;
+    display: none;
   }
 }

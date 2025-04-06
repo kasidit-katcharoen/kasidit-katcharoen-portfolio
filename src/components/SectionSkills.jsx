@@ -236,23 +236,13 @@ export default function SectionSkills() {
     <>
       <div className="section-skills">
         {/* {elementParticles || ""} */}
-        <div className="absolute inset-0 z-1 flex size-full items-center justify-center">
-          {/* <DotPattern
+        {/* <div className="absolute inset-0 z-1 flex size-full items-center justify-center">
+          <DotPattern
             className={cn(
               "[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]"
             )}
-          /> */}
-          <DotPattern
-               width={20}
-               height={20}
-               cx={1}
-               cy={1}
-               cr={1}
-               className={cn(
-                 "[mask-image:linear-gradient(to_top_right,white,transparent,transparent)] "
-               )}
-             />
-        </div>
+          />
+        </div> */}
         <div className="wrapper">
           <div
             className="title-sec"

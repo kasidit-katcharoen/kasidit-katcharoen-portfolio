@@ -59,11 +59,18 @@ export default function Dropdown({
     // console.log("isBottom", isBottom);
   }, [isBottom]);
 
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  if (!mounted) return null; // ป้องกัน hydration error
   return (
     <>
       <div
         ref={ddRef}
-        className={`dd ${className || ""} ${isOpen ? "active" : ""}`}
+        className={`dd ${className || ""} ${
+          dataValue?.value ? "selected" : ""
+        } ${isOpen ? "open" : ""}`}
       >
         <div className="dd-inner" onClick={() => setIsOpen(!isOpen)}>
           <span
@@ -104,7 +111,7 @@ export default function Dropdown({
                 </div>
               ))}
             </div>
-            {!isBottom ? <div className="fade-scroll"></div> : ""}
+            {/* {!isBottom ? <div className="fade-scroll"></div> : ""} */}
           </div>
         </div>
       </div>

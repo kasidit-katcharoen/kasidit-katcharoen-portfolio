@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
       <html lang={locale || localeDefault} suppressHydrationWarning>
         <body>
           <ThemeProvider defaultTheme="system">
-            <Cursor />
+            {/* <Cursor /> */}
             <PreNextTopLoader />
             <ScrollProgress />
             <Header />

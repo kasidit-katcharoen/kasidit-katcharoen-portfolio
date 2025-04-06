@@ -7,7 +7,6 @@ import { useLocale } from "next-intl";
 import messages from "@/src/messages/messages";
 import { DotPattern } from "./magicui/dot-pattern";
 import { cn } from "../lib/utils";
-import { Globe } from "./magicui/globe";
 import Button from "./ui/Button";
 import { Parallax } from "react-scroll-parallax";
 
@@ -17,7 +16,7 @@ export default function About() {
   return (
     <>
       <div className="sec-about">
-        <div className="absolute inset-0 z-1 flex size-full items-center justify-center">
+        {/* <div className="absolute inset-0 z-1 flex size-full items-center justify-center">
           <DotPattern
             width={20}
             height={20}
@@ -28,7 +27,7 @@ export default function About() {
               "[mask-image:linear-gradient(to_bottom_left,white,transparent,transparent)] "
             )}
           />
-        </div>
+        </div> */}
         <div className="wrapper">
           <div
             className="title-sec"
@@ -55,7 +54,7 @@ export default function About() {
                   data-cursor-label="ดูรูปภาพ"
                 />
               </Parallax>
-              <div
+              {/* <div
                 className="animation-box"
                 data-aos="fade-down"
                 data-aos-duration="1000"
@@ -65,7 +64,7 @@ export default function About() {
                 <div data-dot={2}></div>
                 <div data-dot={3}></div>
                 <div data-dot={4}></div>
-              </div>
+              </div> */}
             </div>
 
             <div className="detail-box">
@@ -91,7 +90,7 @@ export default function About() {
                 data-aos-duration="1000"
                 data-aos-once={true}
               >
-                <Button url={"/about"}>{t?.btnViewMore || ""}</Button>
+                <Button href={"/about"}>{t?.btnViewMore || ""}</Button>
               </div>
             </div>
           </div>
