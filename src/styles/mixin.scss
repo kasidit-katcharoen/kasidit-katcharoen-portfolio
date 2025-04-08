@@ -34,19 +34,14 @@
 }
 
 @mixin font-color-fill($color) {
+  // background: $color;
+  // background-clip: text;
+  // -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
+  // color: transparent;
+  // background-size: 200% 200%;
+  // // animation: gradientAnimation 10s infinite linear;
   color: $color;
-  // [data-theme="light"] & {
-  //   background: $color;
-  //   background-clip: text;
-  //   -webkit-background-clip: text;
-  //   -webkit-text-fill-color: transparent;
-  //   color: transparent;
-  //   background-size: 200% 200%;
-  //   // animation: gradientAnimation 10s infinite linear;
-  // }
-  // [data-theme="dark"] & {
-  //   color: $color;
-  // }
 }
 
 @mixin bg-color-animation($color) {

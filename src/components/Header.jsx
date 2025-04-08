@@ -71,7 +71,7 @@ export default function Header() {
   }, [width]);
 
   useEffect(() => {
-    // console.log("isDestop", isDestop);
+    console.log("isDestop", isDestop);
   }, [isDestop]);
 
   useEffect(() => {
@@ -113,72 +113,75 @@ export default function Header() {
             </div>
           </Link>
           <div className="wrapper">
-            {isDestop ? (
-              <>
-                <div className="menu-page">
-                  <ul className="wrap-menu">
-                    <li className="item-menu">
-                      <Link
-                        className={`${
-                          pageActive == "home" ||
-                          locales
-                            .map((locale) => locale.code)
-                            .includes(pageActive)
-                            ? "active"
-                            : ""
-                        }`}
-                        data-hover="underline"
-                        href="/home"
-                      >
-                        {t?.home || ""}
-                      </Link>
-                    </li>
-                    <li className="item-menu">
-                      <Link
-                        className={`${pageActive == "about" ? "active" : ""}`}
-                        data-hover="underline"
-                        href="/about"
-                      >
-                        {t?.about || ""}
-                      </Link>
-                    </li>
-                    <li className="item-menu">
-                      <Link
-                        className={`${pageActive == "skills" ? "active" : ""}`}
-                        data-hover="underline"
-                        href="/skills"
-                      >
-                        {t?.skills || ""}
-                      </Link>
-                    </li>
-                    <li className="item-menu">
-                      <Link
-                        className={`${pageActive == "works" ? "active" : ""}`}
-                        data-hover="underline"
-                        href="/works"
-                      >
-                        {t?.works || ""}
-                      </Link>
-                    </li>
-                    <li className="item-menu">
-                      <Link
-                        className={`${pageActive == "contact" ? "active" : ""}`}
-                        data-hover="underline"
-                        href="/contact"
-                      >
-                        {t?.contact || ""}
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </>
-            ) : (
-              ""
-            )}
+            <div className="hide-xs">
+              <div className="menu-page">
+                <ul className="wrap-menu">
+                  <li className="item-menu">
+                    <Link
+                      className={`${
+                        pageActive == "home" ||
+                        locales
+                          .map((locale) => locale.code)
+                          .includes(pageActive)
+                          ? "active"
+                          : ""
+                      }`}
+                      data-hover="underline"
+                      href="/home"
+                    >
+                      {t?.home || ""}
+                    </Link>
+                  </li>
+                  <li className="item-menu">
+                    <Link
+                      className={`${pageActive == "about" ? "active" : ""}`}
+                      data-hover="underline"
+                      href="/about"
+                    >
+                      {t?.about || ""}
+                    </Link>
+                  </li>
+                  <li className="item-menu">
+                    <Link
+                      className={`${pageActive == "skills" ? "active" : ""}`}
+                      data-hover="underline"
+                      href="/skills"
+                    >
+                      {t?.skills || ""}
+                    </Link>
+                  </li>
+                  <li className="item-menu">
+                    <Link
+                      className={`${pageActive == "works" ? "active" : ""}`}
+                      data-hover="underline"
+                      href="/works"
+                    >
+                      {t?.works || ""}
+                    </Link>
+                  </li>
+                  <li className="item-menu">
+                    <Link
+                      className={`${pageActive == "contact" ? "active" : ""}`}
+                      data-hover="underline"
+                      href="/contact"
+                    >
+                      {t?.contact || ""}
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
             <div className="navigator-box">
-              {/* {isDestop ? <SearchHighlight /> : ""} */}
-              {isDestop ? <ThemeSwitcher /> : ""}
-              {isDestop ? <DropdownLang /> : ""}
+              {/* <div className="hide-xs">
+                <SearchHighlight />
+              </div> */}
+              <div className="hide-xs">
+                <ThemeSwitcher />
+              </div>
+              <div className="hide-xs">
+                <DropdownLang />
+              </div>
               <div className="navigator-inner" data-hover="solid">
                 <div
                   className={`btn-menu ${openMenu ? "active" : ""}`}
@@ -206,8 +209,12 @@ export default function Header() {
         ></div>
         <div className="navbar-card">
           <div className="navigatorbar">
-            {!isDestop ? <ThemeSwitcher /> : ""}
-            {!isDestop ? <DropdownLang /> : ""}
+            <div className="show-xs">
+              <ThemeSwitcher />
+            </div>
+            <div className="show-xs">
+              <DropdownLang />
+            </div>
             <div
               className="btn-close"
               data-hover="solid"

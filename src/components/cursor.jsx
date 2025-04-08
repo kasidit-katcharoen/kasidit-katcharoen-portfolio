@@ -18,7 +18,7 @@ export const Cursor = () => {
         x: x - size / 2,
         y: y - size / 2,
       }}
-      transition={{ type: "tween", ease: "backOut", duration: 0.3 }}
+      transition={{ type: "tween", ease: "backOut", duration: 0.4 }}
     >
       <div className="cursor-label">{label}</div>
     </motion.div>

@@ -1,5 +1,6 @@
 import Button from "@/src/components/ui/Button";
 import Dropdown from "@/src/components/ui/Dropdown";
+import Form from "@/src/components/ui/Form";
 import Input from "@/src/components/ui/Input";
 import React from "react";
 
@@ -26,8 +27,15 @@ export default function page() {
           name="Input"
           defaultValue=""
           placeholder="Input"
-          label='Input'
+          label="Input"
         />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <Form/>
       </div>
     </>
   );

@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import "@/src/styles/ui/Textarea.scss";
-import { useLocale } from "next-intl";
 
 export default function Textarea({
   classNameParen = "",
@@ -12,8 +11,8 @@ export default function Textarea({
   required = false,
   disabled = false,
   autoComplete = "off",
-  rows = 4,
   submit = false,
+  rows = 5,
   setSubmit = () => {},
   messageError = {},
   onChange = () => {},
@@ -21,47 +20,60 @@ export default function Textarea({
   callback = () => {},
 }) {
   const ref = useRef(null);
-  const [value, setValue] = useState(defaultValue || "");
-  const [valid, setValid] = useState({ status: false, message: "" });
-  const locale = useLocale();
+  const [textareaData, setTextareaData] = useState({
+    name: name || "",
+    ref: ref,
+    value: defaultValue || "",
+    valid: !required,
+    required: required,
+    message_error: "",
+    show_error: false,
+  });
 
   const handleChange = (e) => {
     const _this = e.target;
-    setValue(_this?.value || "");
+    // setValue(_this?.value || "");
+    setTextareaData((pre) => ({ ...pre, value: _this?.value || "" }));
   };
 
   useEffect(() => {
-    onChange({
-      [name || ""]: {
-        ref: ref,
-        value: value || "",
-        required: required,
-        valid: valid?.status,
-        message: valid?.message,
-      },
-    });
-  }, [value, valid]);
+    setSubmit(false);
+    setTextareaData((pre) => ({ ...pre, show_error: false }));
+    if (required) {
+      if (validate(textareaData?.value)?.valid) {
+        setTextareaData((pre) => ({ ...pre, valid: true, message_error: "" }));
+        onChange({
+          [name]: { ...textareaData, valid: true, message_error: "" },
+        });
+      } else {
+        setTextareaData((pre) => ({
+          ...pre,
+          valid: false,
+          message_error: validate(textareaData?.value).message,
+        }));
+        onChange({
+          [name]: {
+            ...textareaData,
+            valid: false,
+            message_error: validate(textareaData?.value).message,
+          },
+        });
+      }
+    } else {
+      setTextareaData((pre) => ({ ...pre, valid: true, message_error: "" }));
+      onChange({
+        [name]: { ...textareaData, valid: true, message_error: "" },
+      });
+    }
+  }, [textareaData?.value]);
 
   useEffect(() => {
-    setValue(defaultValue);
+    setTextareaData((pre) => ({ ...pre, value: defaultValue || "" }));
   }, [defaultValue]);
 
   useEffect(() => {
-    setSubmit(false);
-    setValid({ status: true, message: "" });
-  }, [value]);
-
-  useEffect(() => {
     if (submit) {
-      if (required) {
-        if (validate(value)?.valid) {
-          setValid({ status: true, message: "" });
-        } else {
-          setValid({ status: false, message: validate(value).message });
-        }
-      } else {
-        setValid({ status: true, message: "" });
-      }
+      setTextareaData((pre) => ({ ...pre, show_error: true }));
     }
   }, [submit]);
 
@@ -73,20 +85,20 @@ export default function Textarea({
   return (
     <div
       className={`textarea-wrapper ${classNameParen || ""} ${
-        !valid?.status ? "textarea-error" : ""
+        !textareaData?.valid && textareaData?.show_error ? "textarea-error" : ""
       }`}
     >
       <div className="textarea-inner">
         <textarea
           ref={ref}
-          className={`textarea ${className || ""} ${value ? "has-value" : ""} ${
-            disabled ? "disable" : ""
+          className={`input ${className || ""} ${textareaData?.value ? "has-value" : ""} ${
+            disabled ? "disabled" : ""
           }`}
-          name={name || ""}
-          value={value || ""}
+          name={textareaData?.name || ""}
+          value={textareaData?.value || ""}
+          rows={rows}
           onChange={(e) => handleChange(e)}
           autoComplete={autoComplete || "off"}
-          rows={rows}
         />
         {label ? (
           <label className="textarea-label">
@@ -96,11 +108,11 @@ export default function Textarea({
         ) : (
           ""
         )}
-        {!valid?.status ? (
+        {!textareaData?.valid && textareaData?.show_error ? (
           <div className="message-error">
             <i className="fa-solid fa-circle-exclamation"></i>
             <div className="label-error">
-              {messageError?.[valid?.message] || ""}
+              {messageError?.[textareaData?.message_error] || ""}
             </div>
           </div>
         ) : (

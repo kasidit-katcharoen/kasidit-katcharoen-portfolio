@@ -4,7 +4,7 @@
 .section-skills {
   position: relative;
   z-index: 1;
-  padding: calc(var(--header-height) + 60px) 20px 100px;
+  padding: calc(var(--header-height) + 20px) 20px 100px;
   width: 100vw;
   min-height: 100vh;
   .wrapper {
@@ -20,9 +20,9 @@
     .txt-sub-sec {
       margin-top: 30px;
 
-      // @include font-size(18px);
+      @include font-size(24px);
       text-align: center;
-      color: var(--c-f1);
+      color: var(--c-f7);
     }
 
     .content-box {
@@ -106,7 +106,7 @@
 }
 @media (max-width: 767px) {
   .section-skills {
-    padding: 60px 20px;
+    padding: 40px 20px;
     .text-bg {
     }
     .wrapper {

@@ -2,27 +2,22 @@
 
 import React, { useEffect, useState } from "react";
 import "@/src/styles/SectionContact.scss";
-import Marquee from "react-fast-marquee";
-import { useTheme } from "next-themes";
 import Input from "./ui/Input";
-import Form from "./ui/Form";
 import { validateEmail, validateText } from "../hooks/useCommon";
 import Button from "./ui/Button";
 import { useLocale } from "next-intl";
 import messages from "../messages/messages";
-import { DotPattern } from "./magicui/dot-pattern";
-import { cn } from "../lib/utils";
 import Textarea from "./ui/Textarea";
+import Marquee from "react-fast-marquee";
 
-export default function SectionContact() {
-  const { theme } = useTheme();
+export default function SectionContactCustom() {
   const locale = useLocale();
   const t = messages?.[locale]?.["Form"] || "";
-  const [submit, setSubmit] = useState(false);
   const [formData, setFormData] = useState({});
   const [formValid, setFormValid] = useState(false);
+  const [submit, setSubmit] = useState(false);
 
-  const onInputChange = (obj) => {
+  const updateForm = (obj) => {
     setFormData((pre) => {
       return { ...pre, ...obj };
     });
@@ -40,21 +35,22 @@ export default function SectionContact() {
 
   useEffect(() => {
     console.log("formValid", formValid);
-    if (formValid) {
-      setFormData({})
-      alert('summit success!')
+    if (submit && formValid) {
+      setFormData({});
+      setSubmit(false);
+      alert("submit success!");
     }
   }, [formValid]);
 
   useEffect(() => {
-    if (submit) {
-      console.log("formData", formData);
-      checkFormValid();
-    }
+    console.log("formData", formData);
   }, [formData]);
 
   useEffect(() => {
     console.log("submit", submit);
+    if (submit) {
+      checkFormValid();
+    }
   }, [submit]);
 
   const [mounted, setMounted] = useState(false);
@@ -118,17 +114,23 @@ export default function SectionContact() {
                   setSubmit(true), e.preventDefault();
                 }}
               >
-                <div className="wrap-layout" data-layout="grid gap-30 gap-xs-20">
-                  <div className="row" data-layout="grid gap-30 gap-xs-20 col-2 col-xs-1">
+                <div
+                  className="wrap-layout"
+                  data-layout="grid gap-30 gap-xs-20"
+                >
+                  <div
+                    className="row"
+                    data-layout="grid gap-30 gap-xs-20 col-2 col-xs-1"
+                  >
                     <div className="col">
                       <Input
                         className=""
                         type="text"
                         name="first_name"
                         label={t?.field?.first_name?.label || ""}
-                        defaultValue={formData?.first_name?.value||''}
+                        defaultValue={formData?.first_name?.value || ""}
                         onChange={(obj) => {
-                          onInputChange(obj);
+                          updateForm(obj);
                         }}
                         submit={submit}
                         setSubmit={setSubmit}
@@ -143,9 +145,9 @@ export default function SectionContact() {
                         type="text"
                         name="last_name"
                         label={t?.field?.last_name?.label || ""}
-                        defaultValue={formData?.last_name?.value||''}
+                        defaultValue={formData?.last_name?.value || ""}
                         onChange={(obj) => {
-                          onInputChange(obj);
+                          updateForm(obj);
                         }}
                         submit={submit}
                         setSubmit={setSubmit}
@@ -155,16 +157,19 @@ export default function SectionContact() {
                       />
                     </div>
                   </div>
-                  <div className="row" data-layout="grid gap-30 gap-xs-20 col-2 col-xs-1">
+                  <div
+                    className="row"
+                    data-layout="grid gap-30 gap-xs-20 col-2 col-xs-1"
+                  >
                     <div className="col">
                       <Input
                         className=""
                         type="text"
                         name="email"
                         label={t?.field?.email?.label || ""}
-                        defaultValue={formData?.email?.value||''}
+                        defaultValue={formData?.email?.value || ""}
                         onChange={(obj) => {
-                          onInputChange(obj);
+                          updateForm(obj);
                         }}
                         submit={submit}
                         setSubmit={setSubmit}
@@ -179,9 +184,9 @@ export default function SectionContact() {
                         type="text"
                         name="phone"
                         label={t?.field?.phone?.label || ""}
-                        defaultValue={formData?.phone?.value||''}
+                        defaultValue={formData?.phone?.value || ""}
                         onChange={(obj) => {
-                          onInputChange(obj);
+                          updateForm(obj);
                         }}
                         submit={submit}
                         setSubmit={setSubmit}
@@ -198,9 +203,9 @@ export default function SectionContact() {
                         type="text"
                         name="topic"
                         label={t?.field?.contact_topic?.label || ""}
-                        defaultValue={formData?.topic?.value||''}
+                        defaultValue={formData?.topic?.value || ""}
                         onChange={(obj) => {
-                          onInputChange(obj);
+                          updateForm(obj);
                         }}
                         submit={submit}
                         setSubmit={setSubmit}
@@ -214,9 +219,9 @@ export default function SectionContact() {
                         className=""
                         name="contact_desc"
                         label={t?.field?.contact_desc?.label || ""}
-                        defaultValue={formData?.contact_desc?.value||''}
+                        defaultValue={formData?.contact_desc?.value || ""}
                         onChange={(obj) => {
-                          onInputChange(obj);
+                          updateForm(obj);
                         }}
                         submit={submit}
                         setSubmit={setSubmit}
@@ -228,7 +233,7 @@ export default function SectionContact() {
                   </div>
                 </div>
                 <div className="wrap-btn">
-                  <Button type="submit" className={`btn-submit`}>
+                  <Button type="submit" className={`btn-submit`} icon={<i className="fa-solid fa-circle-check"></i>}>
                     Submit
                   </Button>
                 </div>
@@ -236,7 +241,7 @@ export default function SectionContact() {
             </div>
           </div>
         </div>
-        <Marquee
+        {/* <Marquee
           className={"marquee-text f-bol"}
           speed={50}
           loop={99}
@@ -244,14 +249,8 @@ export default function SectionContact() {
           // gradient={true}
           // gradientColor={'#000000'}
         >
-          {[...Array(5)].map((v, i) => {
-            if (i / 2 === 0) {
-              return `KASIDIT KATCHAROEN PORTFOLIO`;
-            } else {
-              return ` `;
-            }
-          })}
-        </Marquee>
+          {[...Array(5)].map((v, i) => `KASIDIT KATCHAROEN PORTFOLIO`)}
+        </Marquee> */}
       </div>
     </>
   );

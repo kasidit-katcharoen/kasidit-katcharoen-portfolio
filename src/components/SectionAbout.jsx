@@ -9,6 +9,8 @@ import { DotPattern } from "./magicui/dot-pattern";
 import { cn } from "../lib/utils";
 import Button from "./ui/Button";
 import { Parallax } from "react-scroll-parallax";
+import Marquee from "react-fast-marquee";
+import MarqueeScroll from "@/src/hooks/MarqueeScroll";
 
 export default function About() {
   const locale = useLocale();
@@ -16,18 +18,6 @@ export default function About() {
   return (
     <>
       <div className="sec-about">
-        {/* <div className="absolute inset-0 z-1 flex size-full items-center justify-center">
-          <DotPattern
-            width={20}
-            height={20}
-            cx={1}
-            cy={1}
-            cr={1}
-            className={cn(
-              "[mask-image:linear-gradient(to_bottom_left,white,transparent,transparent)] "
-            )}
-          />
-        </div> */}
         <div className="wrapper">
           <div
             className="title-sec"
@@ -40,42 +30,15 @@ export default function About() {
             </span>
           </div>
           <div className="content-box">
-            <div className="img-box">
-              <Parallax speed={5}>
-                <img
-                  className="img-profile"
+            <div className="detail-box">
+              {/* <div
+                  className="txt-title f-med"
                   data-aos="fade-up"
                   data-aos-duration="1000"
                   data-aos-once={true}
-                  width={100}
-                  height={100}
-                  src={`/images/profile/profile3.jpg`}
-                  alt="imgProfile"
-                  data-cursor-label="ดูรูปภาพ"
-                />
-              </Parallax>
-              {/* <div
-                className="animation-box"
-                data-aos="fade-down"
-                data-aos-duration="1000"
-                data-aos-once={true}
-              >
-                <div data-dot={1}></div>
-                <div data-dot={2}></div>
-                <div data-dot={3}></div>
-                <div data-dot={4}></div>
-              </div> */}
-            </div>
-
-            <div className="detail-box">
-              <div
-                className="txt-title f-med"
-                data-aos="fade-up"
-                data-aos-duration="1000"
-                data-aos-once={true}
-              >
-                {t?.title_sub || ""}
-              </div>
+                >
+                  {t?.title_sub || ""}
+                </div> */}
               <div
                 className="txt-desc"
                 data-aos="fade-up"
@@ -94,6 +57,24 @@ export default function About() {
               </div>
             </div>
           </div>
+        </div>
+        <div
+          className="bg-box"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-once={true}
+        >
+          <MarqueeScroll
+            className={"marquee-text f-bol"}
+            direction={"left"}
+            gradient={true}
+            gradientWidth={"100px"}
+            speed={0.8}
+          >
+            {[...Array(99)].map((v, i) => (
+              <p key={i}>&nbsp;KASIDIT KATCHAROEN GUN&nbsp;</p>
+            ))}
+          </MarqueeScroll>
         </div>
       </div>
     </>

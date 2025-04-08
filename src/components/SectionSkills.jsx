@@ -157,6 +157,13 @@ const skills = [
     cate: "tool",
     url: null,
   },
+  {
+    img: "/images/skills/sketch.svg",
+    name: "Sketch",
+    class: "",
+    cate: "tool",
+    url: null,
+  },
 ];
 export default function SectionSkills() {
   const locale = useLocale();

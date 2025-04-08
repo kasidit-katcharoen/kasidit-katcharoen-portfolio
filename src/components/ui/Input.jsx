@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import "@/src/styles/ui/Input.scss";
-import { useLocale } from "next-intl";
 
 export default function Input({
   classNameParen = "",
@@ -20,47 +19,60 @@ export default function Input({
   callback = () => {},
 }) {
   const ref = useRef(null);
-  const [value, setValue] = useState(defaultValue || "");
-  const [valid, setValid] = useState({status:false,message:''});
-  const locale = useLocale();
+  const [inputData, setInputData] = useState({
+    name: name || "",
+    ref: ref,
+    value: defaultValue || "",
+    valid: !required,
+    required: required,
+    message_error: "",
+    show_error: false,
+  });
 
   const handleChange = (e) => {
     const _this = e.target;
-    setValue(_this?.value || "");
+    // setValue(_this?.value || "");
+    setInputData((pre) => ({ ...pre, value: _this?.value || "" }));
   };
 
   useEffect(() => {
-    onChange({
-      [name || ""]:{
-        ref:ref,
-        value: value || "",
-        required: required,
-        valid: valid?.status,
-        message: valid?.message,
-      },
-    });
-  }, [value,valid]);
-
-  useEffect(()=>{
-    setValue(defaultValue);
-  },[defaultValue])
+    setSubmit(false);
+    setInputData((pre) => ({ ...pre, show_error: false }));
+    if (required) {
+      if (validate(inputData?.value)?.valid) {
+        setInputData((pre) => ({ ...pre, valid: true, message_error: "" }));
+        onChange({
+          [name]: { ...inputData, valid: true, message_error: "" },
+        });
+      } else {
+        setInputData((pre) => ({
+          ...pre,
+          valid: false,
+          message_error: validate(inputData?.value).message,
+        }));
+        onChange({
+          [name]: {
+            ...inputData,
+            valid: false,
+            message_error: validate(inputData?.value).message,
+          },
+        });
+      }
+    } else {
+      setInputData((pre) => ({ ...pre, valid: true, message_error: "" }));
+      onChange({
+        [name]: { ...inputData, valid: true, message_error: "" },
+      });
+    }
+  }, [inputData?.value]);
 
   useEffect(() => {
-    setSubmit(false);
-    setValid({status:true,message:''});
-  }, [value]);
+    setInputData((pre) => ({ ...pre, value: defaultValue || "" }));
+  }, [defaultValue]);
 
   useEffect(() => {
     if (submit) {
-      if (required) {
-        if (validate(value)?.valid) {
-          setValid({status:true,message:''});
-        } else {
-          setValid({status:false,message:validate(value).message});
-        }
-      } else {
-        setValid({status:true,message:''});
-      }
+      setInputData((pre) => ({ ...pre, show_error: true }));
     }
   }, [submit]);
 
@@ -72,17 +84,17 @@ export default function Input({
   return (
     <div
       className={`input-wrapper ${classNameParen || ""} ${
-        !valid?.status ? "input-error" : ""
+        !inputData?.valid && inputData?.show_error ? "input-error" : ""
       }`}
     >
       <div className="input-inner">
         <input
           ref={ref}
-          className={`input ${className || ""} ${value ? "has-value" : ""} ${
+          className={`input ${className || ""} ${inputData?.value ? "has-value" : ""} ${
             disabled ? "disabled" : ""
           }`}
-          name={name || ""}
-          value={value || ""}
+          name={inputData?.name || ""}
+          value={inputData?.value || ""}
           onChange={(e) => handleChange(e)}
           autoComplete={autoComplete || "off"}
         />
@@ -94,11 +106,11 @@ export default function Input({
         ) : (
           ""
         )}
-        {!valid?.status ? (
+        {!inputData?.valid && inputData?.show_error ? (
           <div className="message-error">
             <i className="fa-solid fa-circle-exclamation"></i>
             <div className="label-error">
-              {messageError?.[valid?.message] || ""}
+              {messageError?.[inputData?.message_error] || ""}
             </div>
           </div>
         ) : (

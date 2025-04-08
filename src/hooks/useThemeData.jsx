@@ -4,7 +4,7 @@ const dataTheme = [
     colorMain: "#FFFFFF",
     colorOpposite: "#000000",
     particlesColor: ["#FFFFFF"],
-    particlesQuantity: 60,
+    particlesQuantity: 30,
     // colorParticles: ["#07b2ce", "#304ee3", "#6f22e9"],
   },
   {
@@ -12,7 +12,7 @@ const dataTheme = [
     colorMain: "#000000",
     colorOpposite: "#FFFFFF",
     particlesColor: ["#FFFFFF"],
-    particlesQuantity: 60,
+    particlesQuantity: 30,
   },
 ];
 export default function useThemeData() {

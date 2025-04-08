@@ -91,13 +91,11 @@ export default function SectionHomeBanner() {
               <TypeAnimation
                 wrapper="div"
                 sequence={[
-                  `${t?.position?.[0] || ""}`,
-                  5000,
-                  `${t?.position?.[1] || ""}`,
-                  5000,
+                  `${t?.position || ""}`,
+                  5000,``,1000,
                 ]}
                 className="txt-3 f-reg"
-                speed={40}
+                speed={50}
                 deletionSpeed={50}
                 repeat={Infinity}
               />

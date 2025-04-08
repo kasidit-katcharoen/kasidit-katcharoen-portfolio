@@ -36,9 +36,9 @@ export default function Button({
             {iconPosition == "left" ? <div className="dot"></div> : ""}
           </div>
           <div className="box-2">
-            {iconPosition == "left" ? icon : ""}
+            {iconPosition == "left" ? icon || "" : ""}
             <span>{children}</span>
-            {iconPosition == "right" ? icon : ""}
+            {iconPosition == "right" ? icon || "" : ""}
           </div>
         </Link>
       ) : (
@@ -56,9 +56,9 @@ export default function Button({
             {iconPosition == "left" ? <div className="dot"></div> : ""}
           </div>
           <div className="box-2">
-            {iconPosition == "left" ? icon : ""}
+            {iconPosition == "left" ? icon || "" : ""}
             <span>{children}</span>
-            {iconPosition == "right" ? icon : ""}
+            {iconPosition == "right" ? icon || "" : ""}
           </div>
         </button>
       )}

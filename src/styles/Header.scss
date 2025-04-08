@@ -16,20 +16,20 @@
   pointer-events: none;
   transition: all 0.5s ease-in-out;
   &.scroll-up {
-    top: 0;
+    // top: 0;
     .wrap-header {
       // max-width: 1280px;
     }
   }
   &.scroll-down {
-    top: calc(-1 * var(--header-height));
+    // top: calc(-1 * var(--header-height));
     .wrap-header {
       // max-width: 960px;
     }
   }
   &.scrolled {
     .wrap-header {
-      // max-width: 1024px;
+      max-width: 1024px;
     }
   }
   .wrap-header {

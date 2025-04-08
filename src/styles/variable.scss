@@ -87,6 +87,7 @@
   --c-gradient: linear-gradient(
     135deg,
     #07b2ce 0%,
+    #07b2ce 15%,
     #304ee3 50%,
     #6f22e9 100%
   );
@@ -102,11 +103,17 @@
   --c-f-rgb: var(--c-black-rgb);
   --c-f-ops: var(--c-white);
   --c-f-ops-rgb: var(--c-white-rgb);
-  --c-f1: var(--c-black_600);
-  --c-f2: var(--c-black_500);
-  --c-f3: var(--c-black_400);
-  --c-input: var(--c-black_400);
-  --c-input-action: var(--c-black_900);
+  --c-f1: var(--c-black_100);
+  --c-f2: var(--c-black_200);
+  --c-f3: var(--c-black_300);
+  --c-f4: var(--c-black_400);
+  --c-f5: var(--c-black_500);
+  --c-f6: var(--c-black_600);
+  --c-f7: var(--c-black_700);
+  --c-f8: var(--c-black_800);
+  --c-f9: var(--c-black_900);
+  --c-input: var(--c-black_200);
+  --c-input-action: var(--c-black_500);
   --c-bg: var(--c-white);
   --c-bg-rgb: var(--c-white-rgb);
   --c-bg-ops: var(--c-black);
@@ -139,11 +146,17 @@
   --c-f-rgb: var(--c-white-rgb);
   --c-f-ops: var(--c-black);
   --c-f-ops-rgb: var(--c-black-rgb);
-  --c-f1: var(--c-black_500);
-  --c-f2: var(--c-black_600);
-  --c-f3: var(--c-black_700);
-  --c-input: var(--c-black_700);
-  --c-input-action: var(--c-black_300);
+  --c-f1: var(--c-transparent-white_100);
+  --c-f2: var(--c-transparent-white_200);
+  --c-f3: var(--c-transparent-white_300);
+  --c-f4: var(--c-transparent-white_400);
+  --c-f5: var(--c-transparent-white_500);
+  --c-f6: var(--c-transparent-white_600);
+  --c-f7: var(--c-transparent-white_700);
+  --c-f8: var(--c-transparent-white_800);
+  --c-f9: var(--c-transparent-white_900);
+  --c-input: var(--c-black_800);
+  --c-input-action: var(--c-black_500);
   --c-bg: var(--c-black);
   --c-bg-rgb: var(--c-black-rgb);
   --c-bg-ops: var(--c-white);
