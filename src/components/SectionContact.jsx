@@ -12,7 +12,8 @@ import Marquee from "react-fast-marquee";
 
 export default function SectionContactCustom() {
   const locale = useLocale();
-  const t = messages?.[locale]?.["Form"] || "";
+  const t = messages?.[locale]?.["SectionContact"] || "";
+  const t_form = messages?.[locale]?.["Form"] || "";
   const [formData, setFormData] = useState({});
   const [formValid, setFormValid] = useState(false);
   const [submit, setSubmit] = useState(false);
@@ -34,7 +35,7 @@ export default function SectionContactCustom() {
   };
 
   useEffect(() => {
-    console.log("formValid", formValid);
+    // console.log("formValid", formValid);
     if (submit && formValid) {
       setFormData({});
       setSubmit(false);
@@ -43,11 +44,11 @@ export default function SectionContactCustom() {
   }, [formValid]);
 
   useEffect(() => {
-    console.log("formData", formData);
+    // console.log("formData", formData);
   }, [formData]);
 
   useEffect(() => {
-    console.log("submit", submit);
+    // console.log("submit", submit);
     if (submit) {
       checkFormValid();
     }
@@ -88,7 +89,7 @@ export default function SectionContactCustom() {
             data-aos-once={true}
           >
             <span className="c-gd f-bol" data-underline="gradient">
-              ติดต่อ
+              {t?.title || ""}
             </span>
           </div>
           <div
@@ -127,7 +128,7 @@ export default function SectionContactCustom() {
                         className=""
                         type="text"
                         name="first_name"
-                        label={t?.field?.first_name?.label || ""}
+                        label={t_form?.field?.first_name?.label || ""}
                         defaultValue={formData?.first_name?.value || ""}
                         onChange={(obj) => {
                           updateForm(obj);
@@ -136,7 +137,7 @@ export default function SectionContactCustom() {
                         setSubmit={setSubmit}
                         required={true}
                         validate={validateText}
-                        messageError={t?.messages_error || {}}
+                        messageError={t_form?.messages_error || {}}
                       />
                     </div>
                     <div className="col">
@@ -144,7 +145,7 @@ export default function SectionContactCustom() {
                         className=""
                         type="text"
                         name="last_name"
-                        label={t?.field?.last_name?.label || ""}
+                        label={t_form?.field?.last_name?.label || ""}
                         defaultValue={formData?.last_name?.value || ""}
                         onChange={(obj) => {
                           updateForm(obj);
@@ -153,7 +154,7 @@ export default function SectionContactCustom() {
                         setSubmit={setSubmit}
                         required={true}
                         validate={validateText}
-                        messageError={t?.messages_error || {}}
+                        messageError={t_form?.messages_error || {}}
                       />
                     </div>
                   </div>
@@ -166,7 +167,7 @@ export default function SectionContactCustom() {
                         className=""
                         type="text"
                         name="email"
-                        label={t?.field?.email?.label || ""}
+                        label={t_form?.field?.email?.label || ""}
                         defaultValue={formData?.email?.value || ""}
                         onChange={(obj) => {
                           updateForm(obj);
@@ -175,7 +176,7 @@ export default function SectionContactCustom() {
                         setSubmit={setSubmit}
                         required={true}
                         validate={validateEmail}
-                        messageError={t?.messages_error || {}}
+                        messageError={t_form?.messages_error || {}}
                       />
                     </div>
                     <div className="col">
@@ -183,7 +184,7 @@ export default function SectionContactCustom() {
                         className=""
                         type="text"
                         name="phone"
-                        label={t?.field?.phone?.label || ""}
+                        label={t_form?.field?.phone?.label || ""}
                         defaultValue={formData?.phone?.value || ""}
                         onChange={(obj) => {
                           updateForm(obj);
@@ -192,7 +193,7 @@ export default function SectionContactCustom() {
                         setSubmit={setSubmit}
                         required={true}
                         validate={validateText}
-                        messageError={t?.messages_error || {}}
+                        messageError={t_form?.messages_error || {}}
                       />
                     </div>
                   </div>
@@ -202,7 +203,7 @@ export default function SectionContactCustom() {
                         className=""
                         type="text"
                         name="topic"
-                        label={t?.field?.contact_topic?.label || ""}
+                        label={t_form?.field?.contact_topic?.label || ""}
                         defaultValue={formData?.topic?.value || ""}
                         onChange={(obj) => {
                           updateForm(obj);
@@ -211,14 +212,14 @@ export default function SectionContactCustom() {
                         setSubmit={setSubmit}
                         required={true}
                         validate={validateText}
-                        messageError={t?.messages_error || {}}
+                        messageError={t_form?.messages_error || {}}
                       />
                     </div>
                     <div className="col">
                       <Textarea
                         className=""
                         name="contact_desc"
-                        label={t?.field?.contact_desc?.label || ""}
+                        label={t_form?.field?.contact_desc?.label || ""}
                         defaultValue={formData?.contact_desc?.value || ""}
                         onChange={(obj) => {
                           updateForm(obj);
@@ -227,13 +228,17 @@ export default function SectionContactCustom() {
                         setSubmit={setSubmit}
                         required={true}
                         validate={validateText}
-                        messageError={t?.messages_error || {}}
+                        messageError={t_form?.messages_error || {}}
                       />
                     </div>
                   </div>
                 </div>
                 <div className="wrap-btn">
-                  <Button type="submit" className={`btn-submit`} icon={<i className="fa-solid fa-circle-check"></i>}>
+                  <Button
+                    type="submit"
+                    className={`btn-submit`}
+                    icon={<i className="fa-solid fa-circle-check"></i>}
+                  >
                     Submit
                   </Button>
                 </div>

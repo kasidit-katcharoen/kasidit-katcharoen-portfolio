@@ -16,8 +16,11 @@ body {
   position: relative;
   background-color: var(--c-bg);
   color: var(--c-f);
-  @include font-size(22px);
   @include font-family-main();
+  @include font-size(18px);
+  @media (max-width: 767px) {
+    // @include font-size(16px);
+  }
 }
 
 #content {
@@ -59,7 +62,8 @@ i {
   }
 }
 
-.disable, .disabled {
+.disable,
+.disabled {
   pointer-events: none;
   opacity: 0.5;
 }
@@ -86,28 +90,25 @@ input {
   outline: none;
 }
 
-textarea{
+textarea {
   display: block;
 }
+
+
+// =================== custom class ===================
 
 .c-red {
   color: var(--c-red_500);
 }
 
-// =================== custom class ===================
-
 .c-gd {
   @include font-color-fill(var(--c-gd));
 }
 
-.text-image {
-  font-size: 80px;
-  font-weight: bold;
-  text-transform: uppercase;
-  background: url("/images/profile/profile.jpg") no-repeat center;
-  background-size: cover;
-  -webkit-background-clip: text;
-  color: transparent;
+[data-theme~="dark"] {
+  .theme-dark-invert {
+    filter: invert(1);
+  }
 }
 
 @media (max-width: 767px) {

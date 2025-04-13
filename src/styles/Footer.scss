@@ -52,6 +52,11 @@
             &:not(:first-child) {
               margin-top: 15px;
             }
+            i {
+              &::before {
+                @include font-size(14px);
+              }
+            }
           }
         }
       }
@@ -76,7 +81,7 @@
     }
   }
   .tt-col {
-    @include font-size(26px);
+    // @include font-size(26px);
   }
 }
 

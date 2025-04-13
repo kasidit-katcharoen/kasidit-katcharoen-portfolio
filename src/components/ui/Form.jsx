@@ -43,7 +43,7 @@ export default function Form() {
   }, [formValid]);
 
   useEffect(() => {
-    console.log("formData", formData);
+    // console.log("formData", formData);
   }, [formData]);
 
   useEffect(() => {

@@ -4,7 +4,7 @@
 .sec-about {
   position: relative;
   z-index: 3;
-  // min-height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -14,7 +14,7 @@
   .wrapper {
     // min-height: 100vh;
     position: relative;
-    z-index: 2;
+    z-index: 3;
     max-width: 1280px;
     width: 100%;
     margin: 0 auto;
@@ -23,7 +23,7 @@
       @include font-size(50px, 40px);
     }
     .content-box {
-      margin-top: 30px;
+      margin-top: 60px;
       width: 100%;
       height: 100%;
       display: flex;
@@ -44,7 +44,7 @@
       }
       .detail-box {
         margin: 0 auto;
-        max-width: 720px;
+        max-width: 660px;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -55,7 +55,7 @@
         }
         .txt-desc {
           // margin-top: 30px;
-          @include font-size(24px, 20px);
+          // @include font-size(24px, 20px);
           color: var(--c-f7);
         }
         .wrap-btn {
@@ -66,7 +66,7 @@
   }
   .bg-box {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     max-width: 100vw;
     overflow: hidden;
     margin: 30px 0 0;
@@ -85,8 +85,21 @@
       }
     }
     .marquee-text {
-      color: var(--c-f1);
-      @include font-size(20vw);
+      color: var(--c-f-bg);
+      @include font-size(15vw);
+      // line-height: 0.5;
+      &.f-size-sm{
+        margin-top: -3vw;
+        @include font-size(2vw);
+        // line-height: 0.5;
+      }
+    }
+    .text-bg {
+      white-space: nowrap;
+      @include font-size(60vw);
+      @include text-wave(var(--c-f-bg));
+      animation-duration: 20s;
+      opacity: 0.1;
     }
   }
 }
@@ -123,13 +136,18 @@
       }
     }
     .bg-box {
-      // top: 0;
       .marquee-img {
         img {
         }
       }
       .marquee-text {
-        @include font-size(40vw);
+        @include font-size(25vw);
+        &.f-size-sm{
+          margin-top: -5vw;
+          @include font-size(5vw);
+        }
+      }
+      .text-bg {
       }
     }
   }

@@ -12,7 +12,7 @@
   overflow: hidden;
   white-space: nowrap;
   border: 1px solid var(--c-bd);
-  min-width: 110px;
+  min-width: 100px;
   .box-1 {
     position: relative;
     z-index: 1;
@@ -25,10 +25,10 @@
       height: 8px;
       background-color: var(--c-f);
       border-radius: 50%;
-      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.5s var(--transition-timing);
     }
     span {
-      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.5s var(--transition-timing);
     }
   }
   .box-2 {
@@ -43,7 +43,7 @@
     opacity: 0;
     visibility: hidden;
     transform: translate(0, -50%);
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.5s var(--transition-timing);
     color: var(--c-theme);
     i {
       @include font-size(12px);

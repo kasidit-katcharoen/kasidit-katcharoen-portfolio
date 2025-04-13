@@ -6,6 +6,7 @@ import SectionAbout from "@/src/components/SectionAbout";
 import SectionHomeBanner from "@/src/components/SectionHomeBanner";
 import SectionSkills from "@/src/components/SectionSkills";
 import SectionContact from "@/src/components/SectionContact";
+import SectionProjects from "@/src/components/SectionProjects";
 
 export default function Home() {
   useEffect(() => {
@@ -17,6 +18,7 @@ export default function Home() {
         <SectionHomeBanner />
         <SectionAbout />
         <SectionSkills />
+        <SectionProjects />
         <SectionContact />
       </div>
     </>

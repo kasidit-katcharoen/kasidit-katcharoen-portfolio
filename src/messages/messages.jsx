@@ -52,6 +52,12 @@ const messages = {
         tools: "Tools",
       },
     },
+    SectionProjects: {
+      title:'Projects',
+    },
+    SectionContact: {
+      title:'Contact',
+    },
     Footer: {
       home: "Home",
       about: "About",
@@ -135,6 +141,12 @@ const messages = {
         "framework&labary": "เฟรมเวิร์กและไลบรารี",
         tools: "เครื่องมือ",
       },
+    },
+    SectionProjects: {
+      title:'โครงการ',
+    },
+    SectionContact: {
+      title:'ติดต่อ',
     },
     Footer: {
       home: "หน้าหลัก",

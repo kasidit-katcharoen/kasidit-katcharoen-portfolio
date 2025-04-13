@@ -61,7 +61,7 @@ export default function SectionHomeBanner() {
   const getApiHomebanner = async () => {
     try {
       const res = await axios.get("/api/homebanner");
-      console.log("res", res.data);
+      // console.log("res", res.data);
 
       return res;
     } catch (error) {
@@ -69,7 +69,7 @@ export default function SectionHomeBanner() {
     }
   };
   useEffect(() => {
-    // getApiHomebanner();
+    getApiHomebanner();
   }, []);
   return (
     <>
@@ -100,8 +100,13 @@ export default function SectionHomeBanner() {
                 repeat={Infinity}
               />
               <div className="txt-4">{t?.sub || ""}</div>
-              <div className="wrap-btn">
+              <div className="wrap-bottom">
                 <Button href={"/contact"}>{t?.btnContact || ""}</Button>
+                <div className="group-contact">
+                  <div className="list-contact"></div>
+                  <div className="list-contact"></div>
+                  <div className="list-contact"></div>
+                </div>
               </div>
             </div>
           </div>

@@ -95,7 +95,7 @@
           max-width: 700px;
           width: 100%;
           padding: 60px 40px 40px;
-          border-radius: 8px;
+          border-radius: 12px;
           overflow: hidden;
           // background: rgba(var(--c-theme-rgb), 0.6);
           border: 1px solid var(--c-bd2);
@@ -107,7 +107,7 @@
             right: 0;
             bottom: 0;
             z-index: -1;
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
             background-color: rgba(var(--c-bg-rgb), 0.6);
             -webkit-backdrop-filter: blur(8px);

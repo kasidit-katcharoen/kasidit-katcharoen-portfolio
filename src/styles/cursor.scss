@@ -4,20 +4,19 @@
 .blend {
   // mix-blend-mode: difference;
   position: fixed;
-  z-index: 999; 
-  border-radius: 9999px; 
-  pointer-events: none; 
-
-  display: grid; 
-  place-content: center; 
-
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
+  z-index: 999;
+  border-radius: 9999px;
+  pointer-events: none;
+  display: grid;
+  place-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   background-color: var(--c-theme-ops);
   color: var(--c-theme);
   will-change: transform;
+  // border: 1px solid var(--c-theme);
   &.is-hover {
     // background-color: var(--c-white);
     // color: var(--c-black);

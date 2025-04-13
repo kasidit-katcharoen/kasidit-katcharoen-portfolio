@@ -9,7 +9,7 @@
       padding: 16px 16px 8px;
       width: 100%;
       border: 1px solid var(--c-input);
-      border-radius: 8px;
+      border-radius: 12px;
       &::placeholder {
         color: var(--c-input);
       }
@@ -32,7 +32,7 @@
       left: 16px;
       transform: translateY(-50%);
       color: var(--c-theme-ops);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.3s var(--transition-timing);
     }
     .message-error {
       position: absolute;

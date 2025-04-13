@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "@/src/styles/SectionAbout.scss";
 import Link from "next/link";
 import { useLocale } from "next-intl";
@@ -11,6 +11,9 @@ import Button from "./ui/Button";
 import { Parallax } from "react-scroll-parallax";
 import Marquee from "react-fast-marquee";
 import MarqueeScroll from "@/src/hooks/MarqueeScroll";
+import { getTheme } from "../hooks/useThemeData";
+import { useTheme } from "next-themes";
+import { Particles } from "./magicui/particles";
 
 export default function About() {
   const locale = useLocale();
@@ -66,13 +69,24 @@ export default function About() {
         >
           <MarqueeScroll
             className={"marquee-text f-bol"}
+            direction={"right"}
+            gradient={true}
+            gradientWidth={"15vw"}
+            speed={0.5}
+          >
+            {[...Array(10)].map((v, i) => (
+              <p key={i}>KASIDIT KATCHAROEN GUN&nbsp;</p>
+            ))}
+          </MarqueeScroll>
+          <MarqueeScroll
+            className={"marquee-text f-size-sm f-bol"}
             direction={"left"}
             gradient={true}
-            gradientWidth={"100px"}
-            speed={0.8}
+            gradientWidth={"15vw"}
+            speed={0.2}
           >
-            {[...Array(99)].map((v, i) => (
-              <p key={i}>&nbsp;KASIDIT KATCHAROEN GUN&nbsp;</p>
+            {[...Array(20)].map((v, i) => (
+              <p key={i}>FRONTEND DEVELOPER | FULLSTSCK DEVELOPER |&nbsp;</p>
             ))}
           </MarqueeScroll>
         </div>

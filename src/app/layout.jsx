@@ -1,8 +1,6 @@
 import "@/src/styles/shadcn.css";
 import "@/src/styles/layout.scss";
 import "@/src/styles/components.scss";
-import "swiper/css";
-import "swiper/css/pagination";
 import "aos/dist/aos.css";
 import "@/public/fontawesome/css/all.min.css";
 
@@ -30,7 +28,7 @@ export default function RootLayout({ children }) {
       <html lang={locale || localeDefault} suppressHydrationWarning>
         <body>
           <ThemeProvider defaultTheme="system">
-            <Cursor />
+            {/* <Cursor /> */}
             <PreNextTopLoader />
             <ScrollProgress />
             <Header />
