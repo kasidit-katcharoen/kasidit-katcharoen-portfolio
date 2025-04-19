@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
     <NextIntlClientProvider>
       <html lang={locale || localeDefault} suppressHydrationWarning>
         <body>
-          <ThemeProvider defaultTheme="system">
+          <ThemeProvider defaultTheme="light">
             {/* <Cursor /> */}
             <PreNextTopLoader />
             <ScrollProgress />
