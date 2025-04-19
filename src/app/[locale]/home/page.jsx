@@ -7,6 +7,7 @@ import SectionHomeBanner from "@/src/components/SectionHomeBanner";
 import SectionSkills from "@/src/components/SectionSkills";
 import SectionContact from "@/src/components/SectionContact";
 import SectionProjects from "@/src/components/SectionProjects";
+import ParallaxSection from "@/src/hooks/ParallaxSection";
 
 export default function Home() {
   useEffect(() => {

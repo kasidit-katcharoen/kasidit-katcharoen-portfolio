@@ -71,17 +71,22 @@ export default function SectionHomeBanner() {
   useEffect(() => {
     getApiHomebanner();
   }, []);
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  if (!mounted) return null; // ป้องกัน hydration error
   return (
     <>
-      <div className="sec-banner">
+      <div id="sec-banner" className="sec-banner">
         {elementParticles || ""}
         <div className="wrapper">
           <div className="overlay-box">
             <div
               className="txt-box"
-              data-aos="fade-up"
+              data-aos="fade-in"
               data-aos-duration="1000"
-              data-aos-once={true}
+              data-aos-once={false}
             >
               <div className="txt-1">{t?.hello}</div>
               <span className="txt-2 f-bol c-gd">
@@ -90,10 +95,7 @@ export default function SectionHomeBanner() {
               <br />
               <TypeAnimation
                 wrapper="div"
-                sequence={[
-                  `${t?.position || ""}`,
-                  5000,``,1000,
-                ]}
+                sequence={[`${t?.position || ""}`, 5000, ``, 1000]}
                 className="txt-3 f-reg"
                 speed={50}
                 deletionSpeed={50}
@@ -113,9 +115,9 @@ export default function SectionHomeBanner() {
           <div className="img-box">
             <Parallax speed={0}>
               <img
-                data-aos="fade-up"
+                data-aos="fade-in"
                 data-aos-duration="1000"
-                data-aos-once={true}
+                data-aos-once={false}
                 className="img-banner shadow"
                 src={`/images/profile/profile3.jpg`}
                 width={100}
@@ -126,9 +128,9 @@ export default function SectionHomeBanner() {
             </Parallax>
             {/* <div
               className="animation-box"
-              data-aos="fade-up"
+              data-aos="fade-in"
               data-aos-duration="1000"
-              data-aos-once={true}
+              data-aos-once={false}
             >
               <div data-dot={1}></div>
               <div data-dot={2}></div>
@@ -138,7 +140,15 @@ export default function SectionHomeBanner() {
           </div>
         </div>
 
-        <div className="srolling-down">SCROLL</div>
+        <div
+          className="srolling-down"
+          // data-aos="fade-in"
+          // data-aos-duration="1000"
+          // data-aos-once={false}
+        >
+          <span>SCROLL</span>
+          <i className="fa-solid fa-angles-down"></i>
+        </div>
       </div>
     </>
   );

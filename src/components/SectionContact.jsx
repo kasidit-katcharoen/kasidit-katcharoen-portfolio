@@ -61,7 +61,7 @@ export default function SectionContactCustom() {
   if (!mounted) return null; // ป้องกัน hydration error
   return (
     <>
-      <div className="sec-contact">
+      <div id="sec-contact" className="sec-contact">
         {/* <iframe
             src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d4820.592538759047!2d102.41681327237538!3d15.599897240061214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1zNy8yIOC4li7guKvguJnguK3guIfguILguLLguKEgNSDguJUu4Lia4Lix4Lin4LmD4Lir4LiN4LmIIOC4rS7guJrguLHguKfguYPguKvguI3guYgg4LiZ4LiE4Lij4Lij4Liy4LiK4Liq4Li14Lih4LiyIDMwMTIwIOC4m-C4o-C4sOC5gOC4l-C4qOC5hOC4l-C4og!5e0!3m2!1sth!2sth!4v1743064990055!5m2!1sth!2sth"
             style={{border:0,width:"100vw",height:"600px"}}
@@ -84,9 +84,9 @@ export default function SectionContactCustom() {
         <div className="wrapper">
           <div
             className="title-sec"
-            data-aos="fade-up"
+            data-aos="fade-in"
             data-aos-duration="1000"
-            data-aos-once={true}
+            data-aos-once={false}
           >
             <span className="c-gd f-bol" data-underline="gradient">
               {t?.title || ""}
@@ -94,17 +94,17 @@ export default function SectionContactCustom() {
           </div>
           <div
             className="content-box"
-            data-aos="fade-up"
+            data-aos="fade-in"
             data-aos-duration="1000"
-            data-aos-once={true}
+            data-aos-once={false}
           >
             <div className="card-form">
               {/* <img
                 className="img-form"
                 src={`${
                   theme == "light"
-                    ? "/images/home/bg15.jpg"
-                    : "/images/home/bg2.jpg"
+                    ? "/images/bg/bg15.jpg"
+                    : "/images/bg/bg2.jpg"
                 }`}
                 alt="bg"
               /> */}

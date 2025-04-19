@@ -37,7 +37,7 @@
     position: relative;
     padding: 10px 30px;
     border-radius: 50px;
-    max-width: 1340px;
+    max-width: 1440px;
     // max-width: 1280px;
     width: 100%;
     margin: 0 auto;
@@ -69,7 +69,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      column-gap: 30px;
+      column-gap: 60px;
     }
     .logo {
       display: flex;
@@ -86,7 +86,7 @@
       .wrap-menu {
         display: flex;
         align-items: center;
-        column-gap: 30px;
+        column-gap: 50px;
         .item-menu {
           a {
             // @include font-size(18px);

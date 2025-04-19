@@ -6,9 +6,8 @@ import messages from "@/src/messages/messages.jsx";
 import { Particles } from "./magicui/particles";
 import { useTheme } from "next-themes";
 import { getTheme } from "../hooks/useThemeData";
-import { DotPattern } from "./magicui/dot-pattern";
-import { cn } from "../lib/utils";
 import { skills } from "@/src/hooks/useCommon";
+import ParallaxSection from "../hooks/ParallaxSection";
 
 export default function SectionSkills() {
   const locale = useLocale();
@@ -17,35 +16,10 @@ export default function SectionSkills() {
   const [cate, setCate] = useState("all");
   const [elementSkills, setElementSkills] = useState("");
   const { theme, setTheme } = useTheme();
-  const [particlesColor, setParticlesColor] = useState(
-    getTheme(theme).particlesColor || []
-  );
-  const [elementParticles, setElementParticles] = useState("");
-
-  useEffect(() => {
-    setParticlesColor(getTheme(theme).particlesColor || []);
-  }, [theme]);
-
-  useEffect(() => {
-    setElementParticles(() => (
-      <>
-        {particlesColor
-          ? particlesColor.map((v, k) => (
-              <Particles
-                key={k}
-                className="absolute inset-0 z-1"
-                size={0.8}
-                staticity={50}
-                quantity={getTheme(theme).particlesQuantity / particlesColor.length}
-                ease={80}
-                color={v || ""}
-                refresh
-              />
-            ))
-          : ""}
-      </>
-    ));
-  }, [particlesColor]);
+  const [bgParallaxSection, setBgParallaxSection] = useState({
+    light: "/images/bg/bg7.jpg",
+    dark: "/images/bg/bg2.jpg",
+  });
 
   const cateSkills = [
     { label: tdcs?.all || "", value: "all" },
@@ -65,13 +39,13 @@ export default function SectionSkills() {
                 href={v.url}
                 className="list-skill shadow"
                 key={new Date().getTime + k}
-                data-aos="fade-up"
+                data-aos="fade-in"
                 data-aos-delay={50 * k}
-                data-aos-duration="1000"
-                data-aos-once={true}
+                data-aos-duration="300"
+                data-aos-once={false}
               >
                 <img src={v.img} className={`${v.class}`} alt={v.name} />
-                <div className="txt-name">{v.label||'-'}</div>
+                <div className="txt-name">{v.label || "-"}</div>
               </a>
             );
           }
@@ -84,53 +58,59 @@ export default function SectionSkills() {
   useEffect(() => {
     changeFillterSkills();
   }, [cate]);
+
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  if (!mounted) return null; // ป้องกัน hydration error
   return (
     <>
-      <div className="section-skills">
-        {/* {elementParticles || ""} */}
-        {/* <div className="absolute inset-0 z-1 flex size-full items-center justify-center">
-          <DotPattern
-            className={cn(
-              "[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]"
-            )}
-          />
-        </div> */}
-        <div className="wrapper">
-          <div
-            className="title-sec"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-once={true}
-          >
-            <span className="c-gd f-bol" data-underline="gradient">
-              {t?.title || ""}
-            </span>
-          </div>
-          <div
-            className="txt-sub-sec"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-once={true}
-          >
-            {t?.desc || ""}
-          </div>
-          <div className="content-box">
+      <div id="section-skills" className="section-skills">
+        <ParallaxSection className={'absolute z-1'} backgroundImage={bgParallaxSection?.[theme] || ""}/>
+          <div className="wrapper">
             <div
-              className="cate-box"
-              data-aos="fade-up"
+              className="title-sec"
+              data-aos="fade-in"
               data-aos-duration="1000"
-              data-aos-once={true}
+              data-aos-once={false}
             >
-              <Dropdown
-                className="dropdown-skills"
-                dataList={cateSkills}
-                defaultValue={"all"}
-                callback={(data) => setCate(data?.value || "all")}
-              />
+              <span className="c-gd f-bol" data-underline="gradient">
+                {t?.title || ""}
+              </span>
             </div>
-            <div className="group-skills">{elementSkills || ""}</div>
+            <div
+              className="txt-sub-sec"
+              data-aos="fade-in"
+              data-aos-duration="1000"
+              data-aos-once={false}
+            >
+              {t?.desc || ""}
+            </div>
+            <div className="content-box">
+              <div
+                className="cate-box"
+                data-aos="fade-in"
+                data-aos-duration="1000"
+                data-aos-once={false}
+              >
+                <Dropdown
+                  className="dropdown-skills"
+                  dataList={cateSkills}
+                  defaultValue={"all"}
+                  callback={(data) => setCate(data?.value || "all")}
+                />
+              </div>
+              <div
+                className="group-skills"
+                // data-aos="fade-in"
+                // data-aos-duration="1000"
+                // data-aos-once={false}
+              >
+                {elementSkills || ""}
+              </div>
+            </div>
           </div>
-        </div>
       </div>
     </>
   );

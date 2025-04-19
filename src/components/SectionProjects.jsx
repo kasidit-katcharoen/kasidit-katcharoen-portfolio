@@ -68,16 +68,21 @@ export default function SectionProjects() {
     }
   }, []);
 
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  if (!mounted) return null; // ป้องกัน hydration error
   return (
     <>
       {projects?.[locale]?.length > 0 ? (
-        <div className="sec-projects">
+        <div id="sec-projects" className="sec-projects">
           <div className="wrapper">
             <div
               className="title-sec"
-              data-aos="fade-up"
+              data-aos="fade-in"
               data-aos-duration="1000"
-              data-aos-once={true}
+              data-aos-once={false}
             >
               <span className="c-gd f-bol" data-underline="gradient">
                 {t?.title || ""}
@@ -85,9 +90,9 @@ export default function SectionProjects() {
             </div>
             <div
               className="content-box"
-              data-aos="fade-up"
+              data-aos="fade-in"
               data-aos-duration="1000"
-              data-aos-once={true}
+              data-aos-once={false}
             >
               <Swiper
                 className="swiper-projects"
@@ -114,9 +119,9 @@ export default function SectionProjects() {
                   swiperRef.current = swiper; // เก็บ instance เอาไว้ใช้ใน useEffect
                 }}
                 slidesPerView={"auto"}
-                autoHeight={true}
+                // autoHeight={true}
                 centeredSlides={true}
-                spaceBetween={15}
+                spaceBetween={30}
                 grabCursor={true}
                 onAutoplayTimeLeft={onAutoplayTimeLeft}
               >
@@ -133,8 +138,8 @@ export default function SectionProjects() {
                     <SwiperSlide key={i}>
                       {labelYear ? (
                         <div className="year-box">
-                          <div className="dot"></div>
                           <div className="txt-year f-reg">{labelYear}</div>
+                          <div className="dot"></div>
                         </div>
                       ) : (
                         ""
@@ -155,23 +160,44 @@ export default function SectionProjects() {
                                 target={"bank"}
                                 className="txt-name f-reg"
                               >
-                                {v?.name || "-"}
+                                {v?.name || v?.type || ""}
                                 <i className="fa-solid fa-arrow-up-right-from-square"></i>
                               </Link>
                             ) : (
                               <div className="txt-name f-reg">
-                                {v?.name || "-"}
+                                {v?.name || v?.type || ""}
                               </div>
                             )}
                             {v?.desc ? (
-                              <div className="txt-desc">{v?.desc || "-"}</div>
+                              Array.isArray(v?.desc) ? (
+                                <ul className="txt-desc">
+                                  {v?.desc.map((vv, ii) => (
+                                    <li key={ii} className="list-desc">
+                                      {vv || ""}
+                                    </li>
+                                  ))}
+                                </ul>
+                              ) : (
+                                <div className="txt-desc">{v?.desc || ""}</div>
+                              )
                             ) : (
                               ""
                             )}
+                            {/* {v?.desc ? (
+                              <ul className="txt-desc">
+                                {Array.isArray(v?.desc)
+                                  ? v?.desc.map((vv, ii) => (
+                                      <li key={ii} className="list-desc">{vv || ""}</li>
+                                    ))
+                                  : v?.desc || ""}
+                              </ul>
+                            ) : (
+                              ""
+                            )} */}
                           </div>
                           <div className="group-tag">
-                            {v?.address ? (
-                              <div className="tag-list">{v?.address || ""}</div>
+                            {v?.owner ? (
+                              <div className="tag-list">{v?.owner || ""}</div>
                             ) : (
                               ""
                             )}
@@ -233,6 +259,17 @@ export default function SectionProjects() {
                   </button>
                 </div>
               </Swiper>
+              <div
+                className="note-box"
+                data-aos="fade-in"
+                data-aos-duration="1000"
+                data-aos-once={false}
+              >
+                หมายเหตุ:
+                เนื่องจากข้อมูลและเนื้อหาในระบบเป็นทรัพย์สินของทางบริษัท
+                จึงไม่สามารถเปิดเผยรายละเอียดทั้งหมดได้
+                {/* ใช้เพื่ออ้างอิงและแสดงถึงประสบณ์การทำงานที่ผ่านมาเท่านั้น */}
+              </div>
             </div>
           </div>
         </div>
