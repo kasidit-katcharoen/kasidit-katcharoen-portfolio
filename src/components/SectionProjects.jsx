@@ -68,11 +68,11 @@ export default function SectionProjects() {
     }
   }, []);
 
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-  if (!mounted) return null; // ป้องกัน hydration error
+  // const [mounted, setMounted] = useState(false);
+  // useEffect(() => {
+  //   setMounted(true);
+  // }, []);
+  // if (!mounted) return null; // ป้องกัน hydration error
   return (
     <>
       {projects?.[locale]?.length > 0 ? (
