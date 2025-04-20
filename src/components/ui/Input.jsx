@@ -90,9 +90,9 @@ export default function Input({
       <div className="input-inner">
         <input
           ref={ref}
-          className={`input ${className || ""} ${inputData?.value ? "has-value" : ""} ${
-            disabled ? "disabled" : ""
-          }`}
+          className={`input ${className || ""} ${
+            inputData?.value ? "has-value" : ""
+          } ${disabled ? "disabled" : ""}`}
           name={inputData?.name || ""}
           value={inputData?.value || ""}
           onChange={(e) => handleChange(e)}

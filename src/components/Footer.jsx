@@ -7,6 +7,7 @@ import messages from "../messages/messages";
 import { useLocale } from "next-intl";
 import { locales } from "../i18n/routing";
 import { usePathname } from "next/navigation";
+import { scrollTo } from "../hooks/useCommon";
 
 export default function Footer() {
     const pathname = usePathname();
@@ -23,7 +24,7 @@ export default function Footer() {
           <div className="inner">
             <div className="row">
               <div className="col left">
-                <div className="logo-box">
+                <div className="logo-box" onClick={()=>{scrollTo('#sec-home-banner')}}>
                   <span className="f-bol">
                     KK<span className="c-gd">DEV</span>
                   </span>
@@ -34,58 +35,38 @@ export default function Footer() {
                 <div className="group-menu">
                   <div className="row-menu">
                     <div className="col-menu">
-                      <Link
-                        href="/home"
-                        className={`list-menu ${
-                          pageActive == "home" ||
-                          locales
-                            .map((locale) => locale.code)
-                            .includes(pageActive)
-                            ? "active"
-                            : ""
-                        }`}
+                      <div onClick={()=>{scrollTo('#sec-home-banner')}}
+                        className={`list-menu`}
                         data-hover="underline"
                       >
                         {t?.home || ""}
-                      </Link>
-                      <Link
-                        href="/about"
-                        className={`list-menu ${
-                          pageActive == "about" ? "active" : ""
-                        }`}
+                      </div>
+                      <div onClick={()=>{scrollTo('#sec-about')}}
+                        className={`list-menu`}
                         data-hover="underline"
                       >
                         {t?.about || ""}
-                      </Link>
-                      <Link
-                        href="/skills"
-                        className={`list-menu ${
-                          pageActive == "skills" ? "active" : ""
-                        }`}
+                      </div>
+                      <div onClick={()=>{scrollTo('#sec-skills')}}
+                        className={`list-menu`}
                         data-hover="underline"
                       >
                         {t?.skills || ""}
-                      </Link>
+                      </div>
                     </div>
                     <div className="col-menu">
-                      <Link
-                        href="/works"
-                        className={`list-menu ${
-                          pageActive == "works" ? "active" : ""
-                        }`}
+                      <div onClick={()=>{scrollTo('#sec-works')}}
+                        className={`list-menu`}
                         data-hover="underline"
                       >
                         {t?.works || ""}
-                      </Link>
-                      <Link
-                        href="/contact"
-                        className={`list-menu ${
-                          pageActive == "contact" ? "active" : ""
-                        }`}
+                      </div>
+                      <div onClick={()=>{scrollTo('#sec-contact')}}
+                        className={`list-menu`}
                         data-hover="underline"
                       >
                         {t?.contact || ""}
-                      </Link>
+                      </div>
                     </div>
                   </div>
                 </div>

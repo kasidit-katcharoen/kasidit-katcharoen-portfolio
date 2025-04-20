@@ -88,7 +88,7 @@
         align-items: center;
         column-gap: 50px;
         .item-menu {
-          a {
+          .txt-menu {
             // @include font-size(18px);
           }
         }
@@ -326,13 +326,14 @@
                   content: "";
                   width: 20px;
                 }
-                a {
+                .txt-menu {
                   background: var(--c-gd);
                   -webkit-background-clip: text; /* ✅ ทำให้สี background ใช้กับ text */
                   -webkit-text-fill-color: transparent;
                 }
               }
-              a {
+              .txt-menu {
+                cursor: pointer;
                 padding: 5px 0;
                 @include font-size(50px, 40px);
               }
@@ -383,7 +384,7 @@
       .menu-page {
         .wrap-menu {
           .item-menu {
-            a {
+            .txt-menu {
             }
           }
         }
@@ -492,11 +493,11 @@
                 &.active {
                   &::before {
                   }
-                  a {
+                  .txt-menu {
                     /* ✅ ทำให้สี background ใช้กับ text */
                   }
                 }
-                a {
+                .txt-menu {
                 }
               }
             }

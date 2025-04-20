@@ -1,5 +1,5 @@
 "use client";
-import "@/src/styles/SectionProjects.scss";
+import "@/src/styles/SectionWorks.scss";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -19,9 +19,9 @@ import messages from "../messages/messages";
 
 let cntYear = 0;
 let labelYear = "";
-export default function SectionProjects() {
+export default function SectionWorks() {
   const locale = useLocale();
-  const t = messages?.[locale]?.["SectionProjects"] || "";
+  const t = messages?.[locale]?.["SectionWorks"] || "";
   const swiperRef = useRef(null);
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -76,7 +76,7 @@ export default function SectionProjects() {
   return (
     <>
       {projects?.[locale]?.length > 0 ? (
-        <div id="sec-projects" className="sec-projects">
+        <div id="sec-works" className="sec-works">
           <div className="wrapper">
             <div
               className="title-sec"

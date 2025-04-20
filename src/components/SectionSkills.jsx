@@ -30,7 +30,7 @@ export default function SectionSkills() {
 
   const changeFillterSkills = () => {
     setElementSkills("");
-    setTimeout(() => {
+    // setTimeout(() => {
       setElementSkills(() => {
         let elm = skills.map((v, k) => {
           if (v.cate === cate || cate === "all") {
@@ -39,10 +39,10 @@ export default function SectionSkills() {
                 href={v.url}
                 className="list-skill shadow"
                 key={new Date().getTime + k}
-                data-aos="fade-in"
-                data-aos-delay={50 * k}
-                data-aos-duration="300"
-                data-aos-once={false}
+                // data-aos="fade-in"
+                // data-aos-delay={50 * k}
+                // data-aos-duration="300"
+                // data-aos-once={false}
               >
                 <img src={v.img} className={`${v.class}`} alt={v.name} />
                 <div className="txt-name">{v.label || "-"}</div>
@@ -52,7 +52,7 @@ export default function SectionSkills() {
         });
         return elm;
       });
-    }, 10);
+    // }, 10);
   };
 
   useEffect(() => {
@@ -66,7 +66,7 @@ export default function SectionSkills() {
   if (!mounted) return null; // ป้องกัน hydration error
   return (
     <>
-      <div id="section-skills" className="section-skills">
+      <section id="sec-skills" className="sec-skills">
         <ParallaxSection className={'absolute z-1'} backgroundImage={bgParallaxSection?.[theme] || ""}/>
           <div className="wrapper">
             <div
@@ -103,15 +103,15 @@ export default function SectionSkills() {
               </div>
               <div
                 className="group-skills"
-                // data-aos="fade-in"
-                // data-aos-duration="1000"
-                // data-aos-once={false}
+                data-aos="fade-in"
+                data-aos-duration="1000"
+                data-aos-once={false}
               >
                 {elementSkills || ""}
               </div>
             </div>
           </div>
-      </div>
+      </section>
     </>
   );
 }

@@ -1,7 +1,5 @@
 "use client";
 
-import messages from "../messages/messages";
-
 export function validateEmail(value) {
   let callback = {
     valid: true,
@@ -34,6 +32,72 @@ export function validateText(value) {
   }
   return callback;
 }
+
+export function validPhone(value) {
+  let callback = {
+    valid: true,
+    message: "",
+  };
+  if (!value) {
+    callback.valid = false;
+    callback.message = "empty";
+    return callback;
+  }
+  // ลบช่องว่างหรือขีดก่อนตรวจ
+  const cleaned = value.replace(/[\s-]/g, '');
+  // เช็กว่าเป็นตัวเลขทั้งหมดและมี 10 หลัก (เบอร์มือถือไทย)
+  const regex = /^0\d{9}$/;
+  if (!regex.test(cleaned)) {
+    callback.valid = false;
+    callback.message = "invalid";
+  }
+  return callback;
+}
+
+export function scrollTo(selector, duration = 800) {
+  let element = null;
+
+  if (selector.startsWith('#')) {
+    element = document.getElementById(selector.substring(1));
+  } else if (selector.startsWith('.')) {
+    element = document.querySelector(selector);
+  } else {
+    console.error("Invalid selector. Use '#' for ID or '.' for class.");
+    return;
+  }
+
+  if (!element) {
+    console.error("Element not found:", selector);
+    return;
+  }
+
+  const startPosition = window.pageYOffset;
+  const targetPosition = element.getBoundingClientRect().top + startPosition;
+  const distance = targetPosition - startPosition;
+  let startTime = null;
+
+  function animation(currentTime) {
+    if (startTime === null) startTime = currentTime;
+    const timeElapsed = currentTime - startTime;
+    const progress = Math.min(timeElapsed / duration, 1);
+    const ease = easeInOutCubic(progress);
+    window.scrollTo(0, startPosition + distance * ease);
+
+    if (progress < 1) {
+      requestAnimationFrame(animation);
+    }
+  }
+
+  function easeInOutCubic(t) {
+    return t < 0.5
+      ? 4 * t * t * t
+      : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  }
+
+  requestAnimationFrame(animation);
+}
+
+
 
 export const skills = [
   {

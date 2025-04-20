@@ -78,7 +78,7 @@ export default function SectionHomeBanner() {
   if (!mounted) return null; // ป้องกัน hydration error
   return (
     <>
-      <div id="sec-banner" className="sec-banner">
+      <div id="sec-home-banner" className="sec-home-banner">
         {elementParticles || ""}
         <div className="wrapper">
           <div className="overlay-box">

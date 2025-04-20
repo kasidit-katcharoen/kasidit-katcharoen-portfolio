@@ -15,6 +15,7 @@ import messages from "@/src/messages/messages.jsx";
 import useScrollDirection from "../hooks/useScrollDirection";
 import useScrolled from "../hooks/useScrolled";
 import ThemeSwitcher from "@/src/components/ThemeSwitcher";
+import { scrollTo } from "../hooks/useCommon";
 
 export default function Header() {
   const locale = useLocale();
@@ -104,69 +105,67 @@ export default function Header() {
         } ${scrolled ? "scrolled" : ""}`}
       >
         <div className="wrap-header shadow">
-          <Link href="/home" className="logo">
+          <div className="logo">
             <div className="icon">
               <img src={Logo.Image} wigth="30" alt="" />
             </div>
             <div className="txt f-bol">
               KK<span className="c-gd">DEV</span>
             </div>
-          </Link>
+          </div>
           <div className="wrapper">
             <div className="hide-xs">
               <div className="menu-page">
                 <ul className="wrap-menu">
                   <li className="item-menu">
-                    <Link
-                      className={`${
-                        pageActive == "home" ||
-                        locales
-                          .map((locale) => locale.code)
-                          .includes(pageActive)
-                          ? "active"
-                          : ""
-                      }`}
+                    <div
+                      onClick={() => {
+                        scrollTo("#sec-home-banner");
+                      }}
                       data-hover="underline"
-                      href="/home"
                     >
                       {t?.home || ""}
-                    </Link>
+                    </div>
                   </li>
                   <li className="item-menu">
-                    <Link
-                      className={`${pageActive == "about" ? "active" : ""}`}
+                    <div
+                      onClick={() => {
+                        scrollTo("#sec-about");
+                      }}
                       data-hover="underline"
-                      href="/about"
                     >
                       {t?.about || ""}
-                    </Link>
+                    </div>
                   </li>
                   <li className="item-menu">
-                    <Link
-                      className={`${pageActive == "skills" ? "active" : ""}`}
+                    <div
+                      onClick={() => {
+                        scrollTo("#sec-skills");
+                      }}
                       data-hover="underline"
-                      href="/skills"
                     >
                       {t?.skills || ""}
-                    </Link>
+                    </div>
                   </li>
                   <li className="item-menu">
-                    <Link
-                      className={`${pageActive == "works" ? "active" : ""}`}
+                    <div
+                      onClick={() => {
+                        scrollTo("#sec-works");
+                      }}
                       data-hover="underline"
-                      href="/works"
                     >
                       {t?.works || ""}
-                    </Link>
+                    </div>
                   </li>
                   <li className="item-menu">
-                    <Link
-                      className={`${pageActive == "contact" ? "active" : ""}`}
+                    <div
+                      onClick={() => {
+                        scrollTo("#sec-contact");
+                      }}
                       data-hover="underline"
-                      href="/contact"
                     >
                       {t?.contact || ""}
-                    </Link>
+                    </div>
                   </li>
                 </ul>
               </div>
@@ -234,19 +233,59 @@ export default function Header() {
               </div> */}
                 <ul className="wrap-menu f-med">
                   <li className="item-menu">
-                    <Link href="/home">{t?.home || ""}</Link>
+                    <div
+                      className="txt-menu"
+                      onClick={() => {
+                        scrollTo("#sec-home-banner");
+                        setOpenMenu(false);
+                      }}
+                    >
+                      {t?.home || ""}
+                    </div>
                   </li>
                   <li className="item-menu">
-                    <Link href="/about">{t?.about || ""}</Link>
+                    <div
+                      className="txt-menu"
+                      onClick={() => {
+                        scrollTo("#sec-about");
+                        setOpenMenu(false);
+                      }}
+                    >
+                      {t?.about || ""}
+                    </div>
                   </li>
                   <li className="item-menu">
-                    <Link href="/skills">{t?.skills || ""}</Link>
+                    <div
+                      className="txt-menu"
+                      onClick={() => {
+                        scrollTo("#sec-skills");
+                        setOpenMenu(false);
+                      }}
+                    >
+                      {t?.skills || ""}
+                    </div>
                   </li>
                   <li className="item-menu">
-                    <Link href="/works">{t?.works || ""}</Link>
+                    <div
+                      className="txt-menu"
+                      onClick={() => {
+                        scrollTo("#sec-works");
+                        setOpenMenu(false);
+                      }}
+                    >
+                      {t?.works || ""}
+                    </div>
                   </li>
                   <li className="item-menu">
-                    <Link href="/contact">{t?.contact || ""}</Link>
+                    <div
+                      className="txt-menu"
+                      onClick={() => {
+                        scrollTo("#sec-contact");
+                        setOpenMenu(false);
+                      }}
+                    >
+                      {t?.contact || ""}
+                    </div>
                   </li>
                 </ul>
               </div>
@@ -256,18 +295,27 @@ export default function Header() {
                 <div className="contact-box">
                   <div className="list-cc tel">
                     <div className="label-txt">Tel :</div>
-                    <Link href="tel:0935460996" className="val-txt">
+                    <div
+                      onClick={() => {
+                        scrollTo("");
+                      }}
+                      href="tel:0935460996"
+                      className="val-txt"
+                    >
                       0935460996
-                    </Link>
+                    </div>
                   </div>
                   <div className="list-cc email">
                     <div className="label-txt">Email :</div>
-                    <Link
+                    <div
+                      onClick={() => {
+                        scrollTo("");
+                      }}
                       href="mailto:kasidit.kat@gmail.com"
                       className="val-txt"
                     >
                       kasidit.kat@gmail.com
-                    </Link>
+                    </div>
                   </div>
                   <div className="list-cc lineid">
                     <div className="label-txt">Line ID :</div>

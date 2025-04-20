@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import "@/src/styles/SectionContact.scss";
 import Input from "./ui/Input";
-import { validateEmail, validateText } from "../hooks/useCommon";
+import { validateEmail, validateText, validPhone } from "../hooks/useCommon";
 import Button from "./ui/Button";
 import { useLocale } from "next-intl";
 import messages from "../messages/messages";
@@ -192,7 +192,7 @@ export default function SectionContactCustom() {
                         submit={submit}
                         setSubmit={setSubmit}
                         required={true}
-                        validate={validateText}
+                        validate={validPhone}
                         messageError={t_form?.messages_error || {}}
                       />
                     </div>
@@ -239,7 +239,7 @@ export default function SectionContactCustom() {
                     className={`btn-submit`}
                     icon={<i className="fa-solid fa-circle-check"></i>}
                   >
-                    Submit
+                    {t_form?.submit || ""}
                   </Button>
                 </div>
               </form>

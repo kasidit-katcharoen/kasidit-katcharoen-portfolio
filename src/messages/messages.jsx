@@ -52,8 +52,8 @@ const messages = {
         tools: "Tools",
       },
     },
-    SectionProjects: {
-      title:'Projects',
+    SectionWorks: {
+      title:'Works',
     },
     SectionContact: {
       title:'Contact',
@@ -142,8 +142,8 @@ const messages = {
         tools: "เครื่องมือ",
       },
     },
-    SectionProjects: {
-      title:'โครงการ',
+    SectionWorks: {
+      title:'การทำงาน',
     },
     SectionContact: {
       title:'ติดต่อ',
