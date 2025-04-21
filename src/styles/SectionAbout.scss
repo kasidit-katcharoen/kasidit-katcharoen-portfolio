@@ -47,7 +47,7 @@
       }
       .detail-box {
         margin: 0 auto;
-        max-width: 660px;
+        max-width: 800px;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -58,7 +58,7 @@
         }
         .txt-desc {
           // margin-top: 30px;
-          // @include font-size(24px, 20px);
+          @include font-size(22px);
           color: var(--c-f7);
         }
         .wrap-btn {

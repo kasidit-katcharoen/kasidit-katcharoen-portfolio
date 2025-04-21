@@ -12,11 +12,14 @@ export default function Input({
   disabled = false,
   autoComplete = "off",
   submit = false,
+  numberOnly = false,
   setSubmit = () => {},
   messageError = {},
   onChange = () => {},
   validate = () => {},
   callback = () => {},
+  minLength = 0,
+  maxLength = 999999,
 }) {
   const ref = useRef(null);
   const [inputData, setInputData] = useState({
@@ -31,6 +34,11 @@ export default function Input({
 
   const handleChange = (e) => {
     const _this = e.target;
+    if (numberOnly) {
+      if (!/^\d*$/.test(_this?.value)) {
+        return;
+      }
+    }
     // setValue(_this?.value || "");
     setInputData((pre) => ({ ...pre, value: _this?.value || "" }));
   };
@@ -97,6 +105,8 @@ export default function Input({
           value={inputData?.value || ""}
           onChange={(e) => handleChange(e)}
           autoComplete={autoComplete || "off"}
+          maxLength={maxLength}
+          minLength={minLength}
         />
         {label ? (
           <label className="input-label">

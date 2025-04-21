@@ -97,7 +97,21 @@ export function scrollTo(selector, duration = 800) {
   requestAnimationFrame(animation);
 }
 
+export function calculateAge(birthdateStr="1999-08-24") {
+  // "1995-04-20"
+  const today = new Date();
+  const birthDate = new Date(birthdateStr);
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const monthDiff = today.getMonth() - birthDate.getMonth();
+  const dayDiff = today.getDate() - birthDate.getDate();
 
+  // ถ้ายังไม่ถึงวันเกิดปีนี้ → อายุ -1
+  if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+    age--;
+  }
+
+  return age;
+}
 
 export const skills = [
   {

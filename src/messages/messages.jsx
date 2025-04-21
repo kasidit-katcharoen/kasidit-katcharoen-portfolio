@@ -1,3 +1,5 @@
+import { calculateAge } from "../hooks/useCommon";
+
 const messages = {
   en: {
     notFound: {
@@ -26,19 +28,16 @@ const messages = {
       title: "ABOUT ME",
       title_sub: "Kasidit Katcharoen",
       desc: `
-          Hello, my name is Kasidit Katcharoen (Gun). 
-          I'm 25 years old and I graduated Bachelor's degree 
-          in Business Computer (Continuing Program) from 
-          Faculty of Business Administration at Rajamangala 
-          University of Technology Isan.  I'm passionate about 
-          continuous learning and skill development to 
-          enhance my capabilities. My goal is to optimize 
-          web applications for maximum efficiency and benefit.  
-          I strongly hope to apply these skills to contribute to 
-          organizational growth and create innovative solutions 
-          that effectively meet user needs.  Ultimately, 
-          I aspire to drive technological advancements 
-          that will benefit both businesses and society in the future.
+          Hello, my name is Kasidit Katcharoen (Gun), a Frontend Developer.
+          I graduated Bachelor's degree in Business Computer (Continuing Program) 
+          from the Faculty of Business Administration, Rajamangala University of 
+          Technology Isan.I'm highly committed to continuously learning, growing, 
+          and sharpening my skills in order to build efficient and high-performing 
+          web applications. I strongly believe that my technical expertise and 
+          passion can contribute significantly to the success of any organization.
+          My goal is to create user-centric solutions that truly meet user needs, 
+          and to push the boundaries of technology for the benefit of both business 
+          and society in the future.
       `,
       btnViewMore: "View More",
     },
@@ -121,7 +120,7 @@ const messages = {
       title: "เกี่ยวกับฉัน",
       title_sub: "กษิดิศ กาศเจริญ",
       desc: `
-          สวัสดีครับ ชื่อ นายกษิดิศ กาศเจริญ (กันต์) อายุ 25 ปี สำเร็จการศึกษาระดับปริญญาตรี 
+          สวัสดีครับผม นายกษิดิศ กาศเจริญ (กันต์) เป็น Frontend Developer สำเร็จการศึกษาระดับปริญญาตรี 
           สาขาคอมพิวเตอร์ธุรกิจ (ต่อเนื่อง) คณะบริหารธุรกิจ จากมหาวิทยาลัยเทคโนโลยีราชมงคลอีสาน 
           ผมได้มุ่งมั่นศึกษา เรียนรู้ และเพิ่มทักษะความสามารถของตัวเองอยู่เสมอ 
           เพื่อที่จะพัฒนาเว็บแอปพลิเคชั่นให้มีประสิทธิภาพจนเกิดประโยชน์สูงสุด 

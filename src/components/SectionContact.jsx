@@ -84,7 +84,7 @@ export default function SectionContactCustom() {
         <div className="wrapper">
           <div
             className="title-sec"
-            data-aos="fade-in"
+            data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-once={false}
           >
@@ -94,7 +94,7 @@ export default function SectionContactCustom() {
           </div>
           <div
             className="content-box"
-            data-aos="fade-in"
+            data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-once={false}
           >
@@ -189,6 +189,8 @@ export default function SectionContactCustom() {
                         onChange={(obj) => {
                           updateForm(obj);
                         }}
+                        numberOnly={true}
+                        maxLength={10}
                         submit={submit}
                         setSubmit={setSubmit}
                         required={true}

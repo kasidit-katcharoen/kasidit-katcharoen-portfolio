@@ -80,7 +80,7 @@ export default function SectionWorks() {
           <div className="wrapper">
             <div
               className="title-sec"
-              data-aos="fade-in"
+              data-aos="fade-up"
               data-aos-duration="1000"
               data-aos-once={false}
             >
@@ -90,7 +90,7 @@ export default function SectionWorks() {
             </div>
             <div
               className="content-box"
-              data-aos="fade-in"
+              data-aos="fade-up"
               data-aos-duration="1000"
               data-aos-once={false}
             >
@@ -261,7 +261,7 @@ export default function SectionWorks() {
               </Swiper>
               <div
                 className="note-box"
-                data-aos="fade-in"
+                data-aos="fade-up"
                 data-aos-duration="1000"
                 data-aos-once={false}
               >

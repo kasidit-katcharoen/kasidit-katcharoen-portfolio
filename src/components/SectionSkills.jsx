@@ -30,7 +30,7 @@ export default function SectionSkills() {
 
   const changeFillterSkills = () => {
     setElementSkills("");
-    // setTimeout(() => {
+    setTimeout(() => {
       setElementSkills(() => {
         let elm = skills.map((v, k) => {
           if (v.cate === cate || cate === "all") {
@@ -39,10 +39,10 @@ export default function SectionSkills() {
                 href={v.url}
                 className="list-skill shadow"
                 key={new Date().getTime + k}
-                // data-aos="fade-in"
-                // data-aos-delay={50 * k}
-                // data-aos-duration="300"
-                // data-aos-once={false}
+                data-aos="fade-up"
+                data-aos-delay={50 * k}
+                data-aos-duration="1000"
+                data-aos-once={false}
               >
                 <img src={v.img} className={`${v.class}`} alt={v.name} />
                 <div className="txt-name">{v.label || "-"}</div>
@@ -52,7 +52,7 @@ export default function SectionSkills() {
         });
         return elm;
       });
-    // }, 10);
+    }, 50);
   };
 
   useEffect(() => {
@@ -71,7 +71,7 @@ export default function SectionSkills() {
           <div className="wrapper">
             <div
               className="title-sec"
-              data-aos="fade-in"
+              data-aos="fade-up"
               data-aos-duration="1000"
               data-aos-once={false}
             >
@@ -81,7 +81,7 @@ export default function SectionSkills() {
             </div>
             <div
               className="txt-sub-sec"
-              data-aos="fade-in"
+              data-aos="fade-up"
               data-aos-duration="1000"
               data-aos-once={false}
             >
@@ -90,7 +90,7 @@ export default function SectionSkills() {
             <div className="content-box">
               <div
                 className="cate-box"
-                data-aos="fade-in"
+                data-aos="fade-up"
                 data-aos-duration="1000"
                 data-aos-once={false}
               >
@@ -103,9 +103,9 @@ export default function SectionSkills() {
               </div>
               <div
                 className="group-skills"
-                data-aos="fade-in"
-                data-aos-duration="1000"
-                data-aos-once={false}
+                // data-aos="fade-up"
+                // data-aos-duration="1000"
+                // data-aos-once={false}
               >
                 {elementSkills || ""}
               </div>

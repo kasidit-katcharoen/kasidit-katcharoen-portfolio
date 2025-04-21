@@ -30,7 +30,7 @@ export default function About() {
         <div className="wrapper">
           <div
             className="title-sec"
-            data-aos="fade-in"
+            data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-once={false}
           >
@@ -42,7 +42,7 @@ export default function About() {
             <div className="detail-box">
               {/* <div
                   className="txt-title f-med"
-                  data-aos="fade-in"
+                  data-aos="fade-up"
                   data-aos-duration="1000"
                   data-aos-once={false}
                 >
@@ -50,35 +50,35 @@ export default function About() {
                 </div> */}
               <div
                 className="txt-desc"
-                data-aos="fade-in"
+                data-aos="fade-up"
                 data-aos-duration="1000"
                 data-aos-once={false}
               >
                 {t?.desc || ""}
               </div>
-              <div
+              {/* <div
                 className="wrap-btn"
-                data-aos="fade-in"
+                data-aos="fade-up"
                 data-aos-duration="1000"
                 data-aos-once={false}
               >
                 <Button href={"/about"}>{t?.btnViewMore || ""}</Button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
         <div
           className="bg-box"
-          data-aos="fade-in"
+          data-aos="fade-up"
           data-aos-duration="1000"
           data-aos-once={false}
         >
           <MarqueeScroll
             className={"marquee-text f-bol"}
-            direction={"right"}
+            direction={"left"}
             gradient={true}
             gradientWidth={"15vw"}
-            speed={0.5}
+            speed={1}
           >
             {[...Array(10)].map((v, i) => (
               <p key={i}>KASIDIT KATCHAROEN GUN&nbsp;</p>
@@ -89,7 +89,7 @@ export default function About() {
             direction={"left"}
             gradient={true}
             gradientWidth={"15vw"}
-            speed={0.2}
+            speed={0.5}
           >
             {[...Array(20)].map((v, i) => (
               <p key={i}>FRONTEND DEVELOPER | FULLSTSCK DEVELOPER |&nbsp;</p>

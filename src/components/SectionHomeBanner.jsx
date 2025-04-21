@@ -21,6 +21,7 @@ import { useTheme } from "next-themes";
 import { getTheme } from "../hooks/useThemeData";
 import Button from "@/src/components/ui/Button";
 import { Parallax } from "react-scroll-parallax";
+import { scrollTo } from "../hooks/useCommon";
 
 export default function SectionHomeBanner() {
   const locale = useLocale();
@@ -84,7 +85,7 @@ export default function SectionHomeBanner() {
           <div className="overlay-box">
             <div
               className="txt-box"
-              data-aos="fade-in"
+              data-aos="fade-up"
               data-aos-duration="1000"
               data-aos-once={false}
             >
@@ -103,7 +104,14 @@ export default function SectionHomeBanner() {
               />
               <div className="txt-4">{t?.sub || ""}</div>
               <div className="wrap-bottom">
-                <Button href={"/contact"}>{t?.btnContact || ""}</Button>
+                <Button
+                  // href={"/contact"}
+                  onClick={() => {
+                    scrollTo("#sec-contact");
+                  }}
+                >
+                  {t?.btnContact || ""}
+                </Button>
                 <div className="group-contact">
                   <div className="list-contact"></div>
                   <div className="list-contact"></div>
@@ -115,7 +123,7 @@ export default function SectionHomeBanner() {
           <div className="img-box">
             <Parallax speed={0}>
               <img
-                data-aos="fade-in"
+                data-aos="fade-up"
                 data-aos-duration="1000"
                 data-aos-once={false}
                 className="img-banner shadow"
@@ -128,7 +136,7 @@ export default function SectionHomeBanner() {
             </Parallax>
             {/* <div
               className="animation-box"
-              data-aos="fade-in"
+              data-aos="fade-up"
               data-aos-duration="1000"
               data-aos-once={false}
             >
@@ -142,7 +150,7 @@ export default function SectionHomeBanner() {
 
         <div
           className="srolling-down"
-          // data-aos="fade-in"
+          // data-aos="fade-up"
           // data-aos-duration="1000"
           // data-aos-once={false}
         >

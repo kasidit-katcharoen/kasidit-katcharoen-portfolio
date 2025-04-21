@@ -100,7 +100,7 @@ export default function Footer() {
         <div className="bottom-box">
           <div className="inner-box">
             <div className="copyright-box">
-              <span>Copyright 2025 by Kasidit Katcharoen</span>
+              <span>Copyright {new Date().getFullYear()} by Kasidit Katcharoen</span>
             </div>
             <div className="des-box">
               <span>Portfolio kasidit katcharoen developer</span>
