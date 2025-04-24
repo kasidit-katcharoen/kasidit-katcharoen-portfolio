@@ -68,10 +68,6 @@ export default function Textarea({
   }, [textareaData?.value]);
 
   useEffect(() => {
-    setTextareaData((pre) => ({ ...pre, value: defaultValue || "" }));
-  }, [defaultValue]);
-
-  useEffect(() => {
     if (submit) {
       setTextareaData((pre) => ({ ...pre, show_error: true }));
     }

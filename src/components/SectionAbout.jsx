@@ -78,7 +78,7 @@ export default function About() {
             direction={"left"}
             gradient={true}
             gradientWidth={"15vw"}
-            speed={1}
+            speed={0.8}
           >
             {[...Array(10)].map((v, i) => (
               <p key={i}>KASIDIT KATCHAROEN GUN&nbsp;</p>
@@ -89,7 +89,7 @@ export default function About() {
             direction={"left"}
             gradient={true}
             gradientWidth={"15vw"}
-            speed={0.5}
+            speed={0.2}
           >
             {[...Array(20)].map((v, i) => (
               <p key={i}>FRONTEND DEVELOPER | FULLSTSCK DEVELOPER |&nbsp;</p>

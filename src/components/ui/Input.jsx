@@ -75,10 +75,6 @@ export default function Input({
   }, [inputData?.value]);
 
   useEffect(() => {
-    setInputData((pre) => ({ ...pre, value: defaultValue || "" }));
-  }, [defaultValue]);
-
-  useEffect(() => {
     if (submit) {
       setInputData((pre) => ({ ...pre, show_error: true }));
     }
