@@ -8,6 +8,7 @@ import { useTheme } from "next-themes";
 import { getTheme } from "../hooks/useThemeData";
 import { skills } from "@/src/hooks/useCommon";
 import ParallaxSection from "../hooks/ParallaxSection";
+import { Skeleton } from "@mui/material";
 
 export default function SectionSkills() {
   const locale = useLocale();
@@ -18,7 +19,7 @@ export default function SectionSkills() {
   const { theme, setTheme } = useTheme();
   const [bgParallaxSection, setBgParallaxSection] = useState({
     light: "/images/bg/bg7.jpg",
-    dark: "/images/bg/bg2.jpg",
+    dark: "/images/bg/bg10.jpg",
   });
 
   const cateSkills = [

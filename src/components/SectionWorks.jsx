@@ -205,7 +205,6 @@ export default function SectionWorks() {
                               {v?.year || ""}
                             </div>
                           </div>
-
                           <div className="group-tag">
                             {v?.positions?.map((vv, ii) => (
                               <div
@@ -213,6 +212,14 @@ export default function SectionWorks() {
                                 className={`tag-list f-reg ${
                                   positionsOptions(vv)?.class || ""
                                 }`}
+                              >
+                                {vv || ""}
+                              </div>
+                            )) || ""}
+                            {v?.responsibility?.map((vv, ii) => (
+                              <div
+                                key={ii}
+                                className={`tag-list f-reg`}
                               >
                                 {vv || ""}
                               </div>
