@@ -870,3 +870,5 @@ export const projects = {
     },
   ],
 };
+
+export const test = {}
