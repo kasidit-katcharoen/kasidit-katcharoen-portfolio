@@ -61,7 +61,7 @@ export default function SectionHomeBanner() {
 
   const getApiHomebanner = async () => {
     try {
-      const res = await axios.get("/api/homebanner");
+      const res = await axios.get("/api/users");
       // console.log("res", res.data);
 
       return res;

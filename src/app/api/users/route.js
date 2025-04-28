@@ -1,13 +1,29 @@
-import clientPromise from "@/src/database/mongodb";
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
 
 export async function GET() {
   try {
-    const MONGODB_DB = process.env.MONGODB_DB;
-    const client = await clientPromise;
-    const db = client.db(MONGODB_DB);
-    const users = await db.collection("users").find().limit(20).toArray();
+    const users = await prisma.users.findMany();
     return Response.json(users);
   } catch (error) {
-    return Response.json({ error: error.message }, { status: 500 });
+    console.error('GET /api/users error:', error);
+    return new Response('Internal Server Error', { status: 500 });
+  }
+}
+
+export async function POST(request) {
+  try {
+    const body = await request.json();
+    const user = await prisma.users.create({
+      data: {
+        name: body.name,
+        email: body.email,
+      },
+    });
+    return Response.json(user);
+  } catch (error) {
+    console.error('POST /api/users error:', error);
+    return new Response('Internal Server Error', { status: 500 });
   }
 }
