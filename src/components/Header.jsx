@@ -20,6 +20,7 @@ import { scrollTo } from "../hooks/useCommon";
 export default function Header() {
   const locale = useLocale();
   const t = messages?.[locale]?.["Header"] || "";
+  const t_general = messages?.[locale]?.["general"] || "";
   const pathname = usePathname();
   const [openMenu, setOpenMenu] = useState(false);
   const [pageActive, setPageActive] = useState(null);
@@ -201,7 +202,7 @@ export default function Header() {
       <nav id="navbar" className={`navbar ${openMenu ? "active" : ""}`}>
         <div
           className="bg-dim"
-          // data-cursor-label={'ปิด'}
+          data-cursor-label={t_general?.close || ""}
           onClick={(e) => {
             setOpenMenu(false);
           }}

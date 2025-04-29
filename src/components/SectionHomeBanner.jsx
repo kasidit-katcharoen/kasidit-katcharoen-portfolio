@@ -22,6 +22,8 @@ import { getTheme } from "../hooks/useThemeData";
 import Button from "@/src/components/ui/Button";
 import { Parallax } from "react-scroll-parallax";
 import { scrollTo } from "../hooks/useCommon";
+import Image from "next/image";
+import imgProfile from '@/public/images/profile/profile3.jpg';
 
 export default function SectionHomeBanner() {
   const locale = useLocale();
@@ -121,15 +123,13 @@ export default function SectionHomeBanner() {
           </div>
           <div className="img-box">
             <Parallax speed={0}>
-              <img
+              <Image
+                src={imgProfile}
+                alt="banner"
                 data-aos="fade-up"
                 data-aos-duration="1000"
                 data-aos-once={false}
                 className="img-banner shadow"
-                src={`/images/profile/profile3.jpg`}
-                width={100}
-                height={100}
-                alt="banner"
                 // data-cursor-label="ดูรูปภาพ"
               />
             </Parallax>
