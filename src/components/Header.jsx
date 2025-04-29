@@ -20,6 +20,7 @@ import { scrollTo } from "../hooks/useCommon";
 export default function Header() {
   const locale = useLocale();
   const t = messages?.[locale]?.["Header"] || "";
+  const t_general = messages?.[locale]?.["general"] || "";
   const pathname = usePathname();
   const [openMenu, setOpenMenu] = useState(false);
   const [pageActive, setPageActive] = useState(null);
@@ -105,94 +106,105 @@ export default function Header() {
         } ${scrolled ? "scrolled" : ""}`}
       >
         <div className="wrap-header shadow">
-          <div className="logo">
+          <div
+            className="logo"
+            onClick={() => {
+              scrollTo("#sec-home-banner");
+              setOpenMenu(false);
+            }}
+            data-cursor-label={t_general?.click || ""}
+          >
             <div className="icon">
               <img src={Logo.Image} wigth="30" alt="" />
             </div>
             <div className="txt f-bol">
-              KK<span className="c-gd">DEV</span>
+              KASIDIT<span className="c-gd"></span>
             </div>
           </div>
-          <div className="wrapper">
-            <div className="hide-xs">
-              <div className="menu-page">
-                <ul className="wrap-menu">
-                  <li className="item-menu">
-                    <div
-                      onClick={() => {
-                        scrollTo("#sec-home-banner");
-                      }}
-                      data-hover="underline"
-                    >
-                      {t?.home || ""}
-                    </div>
-                  </li>
-                  <li className="item-menu">
-                    <div
-                      onClick={() => {
-                        scrollTo("#sec-about");
-                      }}
-                      data-hover="underline"
-                    >
-                      {t?.about || ""}
-                    </div>
-                  </li>
-                  <li className="item-menu">
-                    <div
-                      onClick={() => {
-                        scrollTo("#sec-skills");
-                      }}
-                      data-hover="underline"
-                    >
-                      {t?.skills || ""}
-                    </div>
-                  </li>
-                  <li className="item-menu">
-                    <div
-                      onClick={() => {
-                        scrollTo("#sec-works");
-                      }}
-                      data-hover="underline"
-                    >
-                      {t?.works || ""}
-                    </div>
-                  </li>
-                  <li className="item-menu">
-                    <div
-                      onClick={() => {
-                        scrollTo("#sec-contact");
-                      }}
-                      data-hover="underline"
-                    >
-                      {t?.contact || ""}
-                    </div>
-                  </li>
-                </ul>
-              </div>
+          <div className="hide-xs">
+            <div className="menu-page">
+              <ul className="wrap-menu">
+                <li className="item-menu">
+                  <div
+                    onClick={() => {
+                      scrollTo("#sec-home-banner");
+                    }}
+                    data-cursor-label={t_general?.click || ""}
+                    data-hover="underline"
+                  >
+                    {t?.home || ""}
+                  </div>
+                </li>
+                <li className="item-menu">
+                  <div
+                    onClick={() => {
+                      scrollTo("#sec-about");
+                    }}
+                    data-cursor-label={t_general?.click || ""}
+                    data-hover="underline"
+                  >
+                    {t?.about || ""}
+                  </div>
+                </li>
+                <li className="item-menu">
+                  <div
+                    onClick={() => {
+                      scrollTo("#sec-skills");
+                    }}
+                    data-cursor-label={t_general?.click || ""}
+                    data-hover="underline"
+                  >
+                    {t?.skills || ""}
+                  </div>
+                </li>
+                <li className="item-menu">
+                  <div
+                    onClick={() => {
+                      scrollTo("#sec-works");
+                    }}
+                    data-cursor-label={t_general?.click || ""}
+                    data-hover="underline"
+                  >
+                    {t?.works || ""}
+                  </div>
+                </li>
+                <li className="item-menu">
+                  <div
+                    onClick={() => {
+                      scrollTo("#sec-contact");
+                    }}
+                    data-cursor-label={t_general?.click || ""}
+                    data-hover="underline"
+                  >
+                    {t?.contact || ""}
+                  </div>
+                </li>
+              </ul>
             </div>
+          </div>
 
-            <div className="navigator-box">
-              {/* <div className="hide-xs">
+          <div className="navigator-box">
+            {/* <div className="hide-xs">
                 <SearchHighlight />
               </div> */}
-              <div className="hide-xs">
-                <ThemeSwitcher />
-              </div>
-              <div className="hide-xs">
-                <DropdownLang />
-              </div>
-              <div className="navigator-inner" data-hover="solid">
-                <div
-                  className={`btn-menu ${openMenu ? "active" : ""}`}
-                  // data-hover="solid"
-                  onClick={(e) => {
-                    setOpenMenu(!openMenu);
-                  }}
-                >
-                  <div className="line n1"></div>
-                  <div className="line n2"></div>
-                  <div className="line n3"></div>
-                </div>
+            <div className="hide-xs">
+              <ThemeSwitcher />
+            </div>
+            <div className="hide-xs">
+              <DropdownLang />
+            </div>
+            <div className="navigator-inner" data-hover="solid">
+              <div
+                className={`btn-menu ${openMenu ? "active" : ""}`}
+                // data-hover="solid"
+                onClick={(e) => {
+                  setOpenMenu(!openMenu);
+                }}
+                data-cursor-label={t_general?.click || ""}
+              >
+                <div className="line n1"></div>
+                <div className="line n2"></div>
+                <div className="line n3"></div>
               </div>
             </div>
           </div>
@@ -201,7 +213,7 @@ export default function Header() {
       <nav id="navbar" className={`navbar ${openMenu ? "active" : ""}`}>
         <div
           className="bg-dim"
-          // data-cursor-label={'ปิด'}
+          data-cursor-label={t_general?.close || ""}
           onClick={(e) => {
             setOpenMenu(false);
           }}
@@ -239,6 +251,7 @@ export default function Header() {
                         scrollTo("#sec-home-banner");
                         setOpenMenu(false);
                       }}
+                      data-cursor-label={t_general?.click || ""}
                     >
                       {t?.home || ""}
                     </div>
@@ -250,6 +263,7 @@ export default function Header() {
                         scrollTo("#sec-about");
                         setOpenMenu(false);
                       }}
+                      data-cursor-label={t_general?.click || ""}
                     >
                       {t?.about || ""}
                     </div>
@@ -261,6 +275,7 @@ export default function Header() {
                         scrollTo("#sec-skills");
                         setOpenMenu(false);
                       }}
+                      data-cursor-label={t_general?.click || ""}
                     >
                       {t?.skills || ""}
                     </div>
@@ -272,6 +287,7 @@ export default function Header() {
                         scrollTo("#sec-works");
                         setOpenMenu(false);
                       }}
+                      data-cursor-label={t_general?.click || ""}
                     >
                       {t?.works || ""}
                     </div>
@@ -283,6 +299,7 @@ export default function Header() {
                         scrollTo("#sec-contact");
                         setOpenMenu(false);
                       }}
+                      data-cursor-label={t_general?.click || ""}
                     >
                       {t?.contact || ""}
                     </div>
@@ -301,6 +318,7 @@ export default function Header() {
                       }}
                       href="tel:0935460996"
                       className="val-txt"
+                      data-cursor-label={t_general?.click || ""}
                     >
                       0935460996
                     </div>
@@ -313,6 +331,7 @@ export default function Header() {
                       }}
                       href="mailto:kasidit.kat@gmail.com"
                       className="val-txt"
+                      data-cursor-label={t_general?.click || ""}
                     >
                       kasidit.kat@gmail.com
                     </div>

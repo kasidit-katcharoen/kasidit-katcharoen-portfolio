@@ -18,7 +18,7 @@ import { Cursor } from "../components/cursor";
 
 export const metadata = {
   title: "Portfolio | KKDEV",
-  description: "Portfolio kasidit katcharoen developer",
+  description: "Kasidit Katcharoen | Frontend Developer | Full Stack Developer",
 };
 
 export default function RootLayout({ children }) {
@@ -26,9 +26,24 @@ export default function RootLayout({ children }) {
   return (
     <NextIntlClientProvider>
       <html lang={locale || localeDefault} suppressHydrationWarning>
+        <link
+          rel="icon"
+          type="image/png"
+          href="/favicon/favicon-96x96.png"
+          sizes="96x96"
+        />
+        <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon/favicon.ico" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/favicon/apple-touch-icon.png"
+        />
+        <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+        <link rel="manifest" href="/favicon/site.webmanifest" />
         <body>
           <ThemeProvider defaultTheme="light">
-            {/* <Cursor /> */}
+            <Cursor />
             <PreNextTopLoader />
             <ScrollProgress />
             <Header />

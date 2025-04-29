@@ -15,9 +15,16 @@
   text-align: center;
   background-color: var(--c-theme-ops);
   color: var(--c-theme);
+  @include font-size(14px);
   will-change: transform;
   // border: 1px solid var(--c-theme);
   &.is-hover {
+    [data-theme="light"] & {
+      background-color: rgba(var(--c-theme-ops-rgb), 0.85);
+    } 
+    [data-theme="dark"] & {
+      background-color: rgba(var(--c-theme-ops-rgb), 0.85);
+    }
     // background-color: var(--c-white);
     // color: var(--c-black);
     // mix-blend-mode: unset;

@@ -52,10 +52,10 @@ const messages = {
       },
     },
     SectionWorks: {
-      title:'Works',
+      title: "Works",
     },
     SectionContact: {
-      title:'Contact',
+      title: "Contact",
     },
     Footer: {
       home: "Home",
@@ -92,6 +92,11 @@ const messages = {
           label: "Contact description",
         },
       },
+    },
+    general: {
+      click: "Click",
+      link: "Link",
+      close: "Close",
     },
   },
   th: {
@@ -142,10 +147,10 @@ const messages = {
       },
     },
     SectionWorks: {
-      title:'การทำงาน',
+      title: "การทำงาน",
     },
     SectionContact: {
-      title:'ติดต่อ',
+      title: "ติดต่อ",
     },
     Footer: {
       home: "หน้าหลัก",
@@ -181,6 +186,11 @@ const messages = {
           label: "รายละเอียด",
         },
       },
+    },
+    general: {
+      click: "คลิก",
+      link: "ลิงค์",
+      close: "ปิด",
     },
   },
 };
