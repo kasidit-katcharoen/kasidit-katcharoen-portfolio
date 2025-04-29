@@ -5,8 +5,11 @@ import { useEffect, useRef, useState, useTransition } from "react";
 import { localeDefault, locales, routing } from "@/src/i18n/routing";
 import "@/src/styles/ui/DropdownLang.scss";
 import { useLocale } from "next-intl";
+import messages from "@/src/messages/messages";
 
 export default function DropdownLang() {
+  const locale = useLocale();
+  const t_general = messages?.[locale]?.["general"] || "";
   const router = useRouter();
   const pathname = usePathname();
   const [isPending, startTransition] = useTransition();
@@ -77,7 +80,11 @@ export default function DropdownLang() {
   return (
     <>
       <div ref={ddRef} className={`dd-lang ${isOpen ? "active" : ""}`}>
-        <div className="dd-inner" onClick={() => setIsOpen(!isOpen)}>
+        <div
+          className="dd-inner"
+          onClick={() => setIsOpen(!isOpen)}
+          data-cursor-label={t_general?.click || ""}
+        >
           <img
             className="dd-flag"
             src={`/flags/${findObjLang(lang)?.flag || ""}.svg`}
@@ -101,6 +108,7 @@ export default function DropdownLang() {
                   key={i}
                   className={`dd-list ${v.code === lang ? "active" : ""}`}
                   onClick={() => changeLanguage(v.code)}
+                  data-cursor-label={t_general?.click || ""}
                 >
                   <div className="dd-txt">
                     <div className="img-box">

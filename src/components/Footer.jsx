@@ -10,13 +10,14 @@ import { usePathname } from "next/navigation";
 import { scrollTo } from "../hooks/useCommon";
 
 export default function Footer() {
-    const pathname = usePathname();
+  const pathname = usePathname();
   const [pageActive, setPageActive] = useState(null);
   const locale = useLocale();
   const t = messages?.[locale]?.["Footer"] || "";
-    useEffect(() => {
-      setPageActive(() => pathname.split("/")[pathname.split("/")?.length - 1]);
-    }, [pathname]);
+  const t_general = messages?.[locale]?.["general"] || "";
+  useEffect(() => {
+    setPageActive(() => pathname.split("/")[pathname.split("/")?.length - 1]);
+  }, [pathname]);
   return (
     <>
       <div id="footer" className="">
@@ -24,9 +25,15 @@ export default function Footer() {
           <div className="inner">
             <div className="row">
               <div className="col left">
-                <div className="logo-box" onClick={()=>{scrollTo('#sec-home-banner')}}>
+                <div
+                  className="logo-box"
+                  data-cursor-label={t_general?.click || ""}
+                  onClick={() => {
+                    scrollTo("#sec-home-banner");
+                  }}
+                >
                   <span className="f-bol">
-                    KK<span className="c-gd">DEV</span>
+                    KASIDIT<span className="c-gd"></span>
                   </span>
                 </div>
               </div>
@@ -35,19 +42,31 @@ export default function Footer() {
                 <div className="group-menu">
                   <div className="row-menu">
                     <div className="col-menu">
-                      <div onClick={()=>{scrollTo('#sec-home-banner')}}
+                      <div
+                        onClick={() => {
+                          scrollTo("#sec-home-banner");
+                        }}
+                        data-cursor-label={t_general?.click || ""}
                         className={`list-menu`}
                         data-hover="underline"
                       >
                         {t?.home || ""}
                       </div>
-                      <div onClick={()=>{scrollTo('#sec-about')}}
+                      <div
+                        onClick={() => {
+                          scrollTo("#sec-about");
+                        }}
+                        data-cursor-label={t_general?.click || ""}
                         className={`list-menu`}
                         data-hover="underline"
                       >
                         {t?.about || ""}
                       </div>
-                      <div onClick={()=>{scrollTo('#sec-skills')}}
+                      <div
+                        onClick={() => {
+                          scrollTo("#sec-skills");
+                        }}
+                        data-cursor-label={t_general?.click || ""}
                         className={`list-menu`}
                         data-hover="underline"
                       >
@@ -55,13 +74,21 @@ export default function Footer() {
                       </div>
                     </div>
                     <div className="col-menu">
-                      <div onClick={()=>{scrollTo('#sec-works')}}
+                      <div
+                        onClick={() => {
+                          scrollTo("#sec-works");
+                        }}
+                        data-cursor-label={t_general?.click || ""}
                         className={`list-menu`}
                         data-hover="underline"
                       >
                         {t?.works || ""}
                       </div>
-                      <div onClick={()=>{scrollTo('#sec-contact')}}
+                      <div
+                        onClick={() => {
+                          scrollTo("#sec-contact");
+                        }}
+                        data-cursor-label={t_general?.click || ""}
                         className={`list-menu`}
                         data-hover="underline"
                       >
@@ -74,7 +101,11 @@ export default function Footer() {
               <div className="col right">
                 <div className="tt-col ">{t?.contact || ""}</div>
                 <div className="group-contact">
-                  <Link href="tel:0935460996" className="contact-list">
+                  <Link
+                    href="tel:0935460996"
+                    className="contact-list"
+                    data-cursor-label={t_general?.click || ""}
+                  >
                     {/* <img src="/icon/mobile.png" width="15" alt="" /> */}
                     <i className="fa-solid fa-phone c-gd"></i>
                     <span className="txt">0935460996</span>
@@ -82,6 +113,7 @@ export default function Footer() {
                   <Link
                     href="mailto:kasidit.kat@gmail.com"
                     className="contact-list"
+                    data-cursor-label={t_general?.click || ""}
                   >
                     {/* <img src="/icon/gmail1.png" width="15" alt="" /> */}
                     <i className="fa-solid fa-envelope c-gd"></i>
@@ -100,7 +132,9 @@ export default function Footer() {
         <div className="bottom-box">
           <div className="inner-box">
             <div className="copyright-box">
-              <span>Copyright {new Date().getFullYear()} by Kasidit Katcharoen</span>
+              <span>
+                Copyright {new Date().getFullYear()} by Kasidit Katcharoen
+              </span>
             </div>
             <div className="des-box">
               <span>Portfolio kasidit katcharoen developer</span>

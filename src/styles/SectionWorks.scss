@@ -41,7 +41,7 @@
       .swiper-projects {
         // margin-top: 60px;
         position: relative;
-        padding: var(--swiper-projects-padding-top) 0 calc(var(--swiper-projects-padding-top) + 20px);
+        padding: calc(var(--swiper-projects-padding-top) + 20px) 0 calc(var(--swiper-projects-padding-top) + 20px);
         width: 100%;
         overflow: visible !important;
         .line {
@@ -70,7 +70,7 @@
                 }
               }
               .card {
-                transform: scale(1.08);
+                transform: scale(1.1);
                 // transform: translateY(-10px);
                 // background-color: var(--c-bg1);
               }
@@ -107,6 +107,8 @@
               }
             }
             .card {
+              max-width: 300px;
+              width: 100%;
               // transform: translateY(30px);
               background-color: var(--c-card);
               transition: transform 0.5s var(--transition-timing);

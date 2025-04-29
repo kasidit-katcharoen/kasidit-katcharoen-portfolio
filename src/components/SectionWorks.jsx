@@ -22,6 +22,7 @@ let labelYear = "";
 export default function SectionWorks() {
   const locale = useLocale();
   const t = messages?.[locale]?.["SectionWorks"] || "";
+  const t_general = messages?.[locale]?.["general"] || "";
   const swiperRef = useRef(null);
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -159,6 +160,7 @@ export default function SectionWorks() {
                                 href={v?.url || ""}
                                 target={"bank"}
                                 className="txt-name f-reg"
+                                data-cursor-label={t_general?.link || ""}
                               >
                                 {v?.name || v?.type || ""}
                                 <i className="fa-solid fa-arrow-up-right-from-square"></i>
@@ -217,10 +219,7 @@ export default function SectionWorks() {
                               </div>
                             )) || ""}
                             {v?.responsibility?.map((vv, ii) => (
-                              <div
-                                key={ii}
-                                className={`tag-list f-reg`}
-                              >
+                              <div key={ii} className={`tag-list f-reg`}>
                                 {vv || ""}
                               </div>
                             )) || ""}
