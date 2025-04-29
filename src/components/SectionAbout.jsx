@@ -26,7 +26,7 @@ export default function About() {
   if (!mounted) return null; // ป้องกัน hydration error
   return (
     <>
-      <section id="sec-about" className="sec-about">
+      <div id="sec-about" className="sec-about">
         <div className="wrapper">
           <div
             className="title-sec"
@@ -96,7 +96,7 @@ export default function About() {
             ))}
           </MarqueeScroll>
         </div>
-      </section>
+      </div>
     </>
   );
 }

@@ -70,7 +70,7 @@
                 }
               }
               .card {
-                transform: scale(1.1);
+                transform: scale(1.08);
                 // transform: translateY(-10px);
                 // background-color: var(--c-bg1);
               }
@@ -109,7 +109,7 @@
             .card {
               // transform: translateY(30px);
               background-color: var(--c-card);
-              transition: transform 0.8s var(--transition-timing);
+              transition: transform 0.5s var(--transition-timing);
               border-radius: 8px;
               border: 1px solid var(--c-bd1);
               overflow: hidden;

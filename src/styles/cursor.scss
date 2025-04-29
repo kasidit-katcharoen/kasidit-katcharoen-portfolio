@@ -18,12 +18,6 @@
   will-change: transform;
   // border: 1px solid var(--c-theme);
   &.is-hover {
-    [data-theme="light"] & {
-      background-color: rgba(var(--c-theme-ops-rgb), 0.8);
-    }
-    [data-theme="dark"] & {
-      background-color: rgba(var(--c-theme-ops-rgb), 0.9);
-    }
     // background-color: var(--c-white);
     // color: var(--c-black);
     // mix-blend-mode: unset;

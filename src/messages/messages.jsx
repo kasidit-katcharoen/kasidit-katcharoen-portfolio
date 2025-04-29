@@ -93,10 +93,6 @@ const messages = {
         },
       },
     },
-    general:{
-      click:'Click',
-      link:'Link',
-    }
   },
   th: {
     notFound: {
@@ -186,10 +182,6 @@ const messages = {
         },
       },
     },
-    general:{
-      click:'คลิก',
-      link:'ลิงค์',
-    }
   },
 };
 

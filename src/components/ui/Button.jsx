@@ -3,8 +3,6 @@
 import Link from "next/link";
 import "@/src/styles/ui/Button.scss";
 import { useEffect, useState } from "react";
-import { useLocale } from "next-intl";
-import messages from "@/src/messages/messages";
 
 export default function Button({
   children,
@@ -16,8 +14,6 @@ export default function Button({
   icon = <i className="fa-solid fa-arrow-right"></i>,
   iconPosition = "right",
 }) {
-  const locale = useLocale();
-  const t_general = messages?.[locale]?.general || {};
   const handleClick = () => {
     onClick();
   };
@@ -33,7 +29,6 @@ export default function Button({
           href={href}
           className={`${className || ""}`}
           data-btn={`${dataBtn || ""} ${iconPosition || ""}`}
-          data-cursor-label={t_general?.click}
         >
           <div className="box-1">
             {iconPosition == "right" ? <div className="dot"></div> : ""}
@@ -51,7 +46,6 @@ export default function Button({
           type={type || ""}
           className={`${className || ""}`}
           data-btn={dataBtn || ""}
-          data-cursor-label={t_general?.click}
           onClick={(e) => {
             handleClick(e);
           }}

@@ -22,14 +22,13 @@ let labelYear = "";
 export default function SectionWorks() {
   const locale = useLocale();
   const t = messages?.[locale]?.["SectionWorks"] || "";
-  const t_general = messages?.[locale]?.general || {};
   const swiperRef = useRef(null);
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
   const [swiperIsMulti, setSwiperIsMulti] = useState(
-    projects?.[locale]?.length > 10 ? true : false
+    projects?.[locale]?.length > 15 ? true : false
   );
   const onAutoplayTimeLeft = (s, time, progress) => {
     if (progressCircle.current) {
@@ -77,7 +76,7 @@ export default function SectionWorks() {
   return (
     <>
       {projects?.[locale]?.length > 0 ? (
-        <section id="sec-works" className="sec-works">
+        <div id="sec-works" className="sec-works">
           <div className="wrapper">
             <div
               className="title-sec"
@@ -99,12 +98,12 @@ export default function SectionWorks() {
                 className="swiper-projects"
                 modules={[Autoplay, Navigation, FreeMode, Mousewheel]}
                 pagination={{ clickable: true }}
-                speed={800}
+                speed={500}
                 freeMode={true}
                 mousewheel={{
                   forceToAxis: true,
-                  sensitivity: 0.8, // นี่แหละ "ความหนึด"
-                  releaseOnEdges: true,
+                  // sensitivity: 0.8, // นี่แหละ "ความหนึด"
+                  // releaseOnEdges: true,
                 }}
                 // autoplay={
                 //   swiperIsMulti
@@ -159,7 +158,6 @@ export default function SectionWorks() {
                               <Link
                                 href={v?.url || ""}
                                 target={"bank"}
-                                data-cursor-label={t_general?.link}
                                 className="txt-name f-reg"
                               >
                                 {v?.name || v?.type || ""}
@@ -281,7 +279,7 @@ export default function SectionWorks() {
               </div>
             </div>
           </div>
-        </section>
+        </div>
       ) : (
         ""
       )}

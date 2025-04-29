@@ -62,12 +62,12 @@ export function scrollTo(selector, duration = 800) {
   } else if (selector.startsWith('.')) {
     element = document.querySelector(selector);
   } else {
-    // console.error("Invalid selector. Use '#' for ID or '.' for class.");
+    console.error("Invalid selector. Use '#' for ID or '.' for class.");
     return;
   }
 
   if (!element) {
-    // console.error("Element not found:", selector);
+    console.error("Element not found:", selector);
     return;
   }
 
@@ -235,14 +235,6 @@ export const skills = [
     url: null,
   },
   {
-    img: "/images/skills/prisma.svg",
-    name: "prisma",
-    label: "Prisma",
-    class: "size-leg theme-dark-invert",
-    cate: "tool",
-    url: null,
-  },
-  {
     img: "/images/skills/mongodb.svg",
     name: "mongodb",
     label: "MongoDB",
@@ -251,18 +243,10 @@ export const skills = [
     url: null,
   },
   {
-    img: "/images/skills/postgresSQL.svg",
-    name: "postgresSQL",
-    label: "PostgresSQL",
+    img: "/images/skills/vscode.svg",
+    name: "vscode",
+    label: "VS Code",
     class: "",
-    cate: "tool",
-    url: null,
-  },
-  {
-    img: "/images/skills/vercel.svg",
-    name: "vercel",
-    label: "Vercel",
-    class: "size-leg theme-dark-invert",
     cate: "tool",
     url: null,
   },
@@ -291,14 +275,6 @@ export const skills = [
     url: null,
   },
   {
-    img: "/images/skills/vscode.svg",
-    name: "vscode",
-    label: "VS Code",
-    class: "",
-    cate: "tool",
-    url: null,
-  },
-  {
     img: "/images/skills/figma.svg",
     name: "figma",
     label: "Figma",
@@ -307,17 +283,17 @@ export const skills = [
     url: null,
   },
   {
-    img: "/images/skills/fibery.png",
-    name: "fibery",
-    label: "Fibery",
+    img: "/images/skills/postgresSQL.svg",
+    name: "postgresSQL",
+    label: "PostgresSQL",
     class: "",
     cate: "tool",
     url: null,
   },
   {
-    img: "/images/skills/jira.svg",
-    name: "jira",
-    label: "Jira",
+    img: "/images/skills/fibery.png",
+    name: "fibery",
+    label: "Fibery",
     class: "",
     cate: "tool",
     url: null,
