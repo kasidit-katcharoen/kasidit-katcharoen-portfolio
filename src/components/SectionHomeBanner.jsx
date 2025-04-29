@@ -1,13 +1,5 @@
-"use client"; // ใช้ใน Next.js 13+ เพื่อให้ทำงานฝั่ง Client
+"use client";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import {
-  Pagination,
-  EffectFade,
-  Navigation,
-  Autoplay,
-  EffectCards,
-} from "swiper/modules"; // นำเข้าโมดูลที่ต้องใช้
 import "@/src/styles/SectionHomeBanner.scss";
 import "aos/dist/aos.css";
 import { TypeAnimation } from "react-type-animation";
@@ -22,8 +14,26 @@ import { getTheme } from "../hooks/useThemeData";
 import Button from "@/src/components/ui/Button";
 import { Parallax } from "react-scroll-parallax";
 import { scrollTo } from "../hooks/useCommon";
+import imgProfile from "@/public/images/profile/profile3.jpg";
+import Image from "next/image";
 
-export default function SectionHomeBanner() {
+export async function getServerSideProps() {
+  try {
+    const res = await axios.get("/api/users");
+    // console.log("res", res.data);
+    return {
+      props: {
+        users: res?.data||null,
+      },
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export default function SectionHomeBanner(props) {
+  console.log('props',props);
+  
   const locale = useLocale();
   const t = messages?.[locale]?.["SectionHomeBanner"] || "";
   const { theme, setTheme } = useTheme();
@@ -70,7 +80,7 @@ export default function SectionHomeBanner() {
     }
   };
   useEffect(() => {
-    getApiHomebanner();
+    // getApiHomebanner();
   }, []);
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
@@ -79,7 +89,7 @@ export default function SectionHomeBanner() {
   if (!mounted) return null; // ป้องกัน hydration error
   return (
     <>
-      <div id="sec-home-banner" className="sec-home-banner">
+      <section id="sec-home-banner" className="sec-home-banner">
         {elementParticles || ""}
         <div className="wrapper">
           <div className="overlay-box">
@@ -122,15 +132,13 @@ export default function SectionHomeBanner() {
           </div>
           <div className="img-box">
             <Parallax speed={0}>
-              <img
+              <Image
+                className="img-banner shadow"
+                src={imgProfile}
+                alt="banner"
                 data-aos="fade-up"
                 data-aos-duration="1000"
                 data-aos-once={false}
-                className="img-banner shadow"
-                src={`/images/profile/profile3.jpg`}
-                width={100}
-                height={100}
-                alt="banner"
                 // data-cursor-label="ดูรูปภาพ"
               />
             </Parallax>
@@ -157,7 +165,7 @@ export default function SectionHomeBanner() {
           <span>SCROLL</span>
           <i className="fa-solid fa-angles-down"></i>
         </div>
-      </div>
+      </section>
     </>
   );
 }

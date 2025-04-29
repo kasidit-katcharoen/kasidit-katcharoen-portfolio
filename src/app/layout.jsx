@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
       <html lang={locale || localeDefault} suppressHydrationWarning>
         <body>
           <ThemeProvider defaultTheme="light">
-            <Cursor />
+            {/* <Cursor /> */}
             <PreNextTopLoader />
             <ScrollProgress />
             <Header />

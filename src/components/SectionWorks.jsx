@@ -77,7 +77,7 @@ export default function SectionWorks() {
   return (
     <>
       {projects?.[locale]?.length > 0 ? (
-        <div id="sec-works" className="sec-works">
+        <section id="sec-works" className="sec-works">
           <div className="wrapper">
             <div
               className="title-sec"
@@ -281,7 +281,7 @@ export default function SectionWorks() {
               </div>
             </div>
           </div>
-        </div>
+        </section>
       ) : (
         ""
       )}
