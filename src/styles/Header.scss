@@ -56,8 +56,8 @@
       right: 0;
       bottom: 0;
       z-index: -1;
-      -webkit-backdrop-filter: blur(6px);
-      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
       [data-theme~="light"] & {
         background-color: rgba(var(--c-bg-rgb), 0.8);
       }
@@ -72,6 +72,7 @@
       column-gap: 60px;
     }
     .logo {
+      width: 120px;
       display: flex;
       align-items: center;
       .icon {
@@ -229,8 +230,8 @@
     bottom: 0;
     z-index: 1;
     background: rgba(var(--c-bg-rgb), 0.1);
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
     opacity: 0;
     visibility: hidden;
     transition: all 0.5s ease-in-out;

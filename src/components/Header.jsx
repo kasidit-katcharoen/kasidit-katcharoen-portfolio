@@ -113,7 +113,7 @@ export default function Header() {
               KK<span className="c-gd">DEV</span>
             </div>
           </div>
-          <div className="wrapper">
+          {/* <div className="wrapper"> */}
             <div className="hide-xs">
               <div className="menu-page">
                 <ul className="wrap-menu">
@@ -195,7 +195,7 @@ export default function Header() {
                 </div>
               </div>
             </div>
-          </div>
+          {/* </div> */}
         </div>
       </div>
       <nav id="navbar" className={`navbar ${openMenu ? "active" : ""}`}>
