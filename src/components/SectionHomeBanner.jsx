@@ -69,7 +69,7 @@ export default function SectionHomeBanner() {
     }
   };
   useEffect(() => {
-    getApiHomebanner();
+    // getApiHomebanner();
   }, []);
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
