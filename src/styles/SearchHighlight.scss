@@ -1,0 +1,55 @@
+@import "mixin.scss";
+@import "variable.scss";
+
+.search-container {
+    position: relative;
+    z-index: 99;
+    max-width: 100%;
+    width: 100%;
+    input {
+      width: 100%;
+      padding: 3px;
+      border: 1px solid var(--c-bd2);
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      background-color: transparent;
+      &:focus,&:focus-visible{
+          outline:none;
+          border-top: none;
+          border-left: none;
+          border-right: none;
+          border-bottom: 1px solid var(--c-bd);
+      }
+    }
+    .suggestions {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      z-index: 99;
+      list-style-type: none;
+      padding: 0;
+      margin: 5px 0;
+      border: 1px solid var(--c-bd1);
+      border-radius: 8px;
+      max-height: 150px;
+      overflow-y: auto;
+      background-color: var(--c-bg);
+    }
+    .suggestions li {
+      padding: 8px;
+      cursor: pointer;
+    }
+    .suggestions li:hover {
+      background-color: var(--c-bg1);
+    }
+    .highlight {
+      background-color: var(--c-bg-ops);
+      color: var(--c-f-ops);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .search-container{
+    }
+  }

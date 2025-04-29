@@ -1,0 +1,66 @@
+@import "../mixin.scss";
+@import "../variable.scss";
+
+.textarea-wrapper {
+  .textarea-inner {
+    position: relative;
+    textarea {
+      outline: none;
+      padding: 19px 16px 8px;
+      width: 100%;
+      border: 1px solid var(--c-input);
+      border-radius: 8px;
+      resize: none;
+      &::placeholder {
+        color: var(--c-input);
+      }
+      &:focus,
+      &:focus-visible,
+      &.has-value {
+        border: 1px solid var(--c-input-action);
+        ~.textarea-label{
+          will-change: top, transform;
+          top: 6px;
+          @include font-size(12px);
+        }
+      }
+    }
+    .textarea-label {
+      pointer-events: none;
+      position: absolute;
+      top: 15px;
+      left: 16px;
+      color: var(--c-theme-ops);
+      transition: all 0.3s var(--transition-timing);
+      
+    }
+    .message-error {
+      position: absolute;
+      top: calc(100% + 2px);
+      display: flex;
+      width: 100%;
+      align-items: center;
+      // justify-content: flex-end;
+      column-gap: 3px;
+      color: var(--c-red_500);
+      opacity: 1;
+      visibility: visible;
+      .label-error {
+        @include font-size(14px);
+      }
+      i {
+        @include font-size(8px);
+      }
+    }
+  }
+  &.textarea-error {
+    .textarea-inner {
+      textarea {
+        border-color: var(--c-red_500);
+      }
+      .textarea-label {
+        // color: var(--c-red_500);
+      }
+    }
+  }
+}

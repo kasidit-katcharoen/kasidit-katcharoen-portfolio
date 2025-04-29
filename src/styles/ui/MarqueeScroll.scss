@@ -1,0 +1,63 @@
+@import "../mixin.scss";
+@import "../variable.scss";
+:root {
+  --c-marquee-scroll-gradient: var(--c-theme);
+  --w-marquee-scroll-gradient: 200px;
+}
+.marquee-scroll {
+  width: 100%;
+  overflow: hidden;
+  &.scroll-fade {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 2;
+      background: linear-gradient(
+        to right,
+        var(--c-marquee-scroll-gradient) 0%,
+        transparent 100%
+      );
+      width: var(--w-marquee-scroll-gradient);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      background: linear-gradient(
+        to left,
+        var(--c-marquee-scroll-gradient) 0%,
+        transparent 100%
+      );
+      width: var(--w-marquee-scroll-gradient);
+    }
+  }
+  .marquee-scroll-content {
+    position: relative;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+}
+
+@media (max-width: 767px) {
+    .marquee-scroll {
+        &.scroll-fade {
+          &::before {
+            width: 50px;
+          }
+          &::after {
+            width: 50px;
+          }
+        }
+        .marquee-scroll-content {
+        }
+      }
+}
