@@ -17,23 +17,7 @@ import { scrollTo } from "../hooks/useCommon";
 import imgProfile from "@/public/images/profile/profile3.jpg";
 import Image from "next/image";
 
-export async function getServerSideProps() {
-  try {
-    const res = await axios.get("/api/users");
-    // console.log("res", res.data);
-    return {
-      props: {
-        users: res?.data||null,
-      },
-    }
-  } catch (error) {
-    console.log(error);
-  }
-}
-
 export default function SectionHomeBanner(props) {
-  console.log('props',props);
-  
   const locale = useLocale();
   const t = messages?.[locale]?.["SectionHomeBanner"] || "";
   const { theme, setTheme } = useTheme();
@@ -80,7 +64,7 @@ export default function SectionHomeBanner(props) {
     }
   };
   useEffect(() => {
-    // getApiHomebanner();
+    getApiHomebanner();
   }, []);
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
