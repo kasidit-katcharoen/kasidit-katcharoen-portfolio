@@ -19,7 +19,7 @@ export default function SectionSkills() {
   const { theme, setTheme } = useTheme();
   const [bgParallaxSection, setBgParallaxSection] = useState({
     light: "/images/bg/bg7.jpg",
-    dark: "/images/bg/bg10.jpg",
+    dark: "/images/bg/bg23.jpg",
   });
 
   const cateSkills = [
