@@ -105,7 +105,7 @@ export default function SectionHomeBanner() {
                 repeat={Infinity}
               />
               <h2 className="d-none">{t?.position || ""}</h2>
-              <div className="txt-4">{t?.sub || ""}</div>
+              <h3 className="txt-4">{t?.sub || ""}</h3>
               <div className="wrap-bottom">
                 <Button
                   // href={"/contact"}

@@ -88,9 +88,9 @@ export default function SectionContactCustom() {
             data-aos-duration="1000"
             data-aos-once={false}
           >
-            <span className="c-gd f-bol" data-underline="gradient">
+            <h2 className="c-gd f-bol" data-underline="gradient">
               {t?.title || ""}
-            </span>
+            </h2>
           </div>
           <div
             className="content-box"

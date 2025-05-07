@@ -99,7 +99,7 @@ export default function Header() {
 
   return (
     <>
-      <div
+      <header
         id="header"
         className={`header ${
           scrollDirection === "down" ? "scroll-down" : "scroll-up"
@@ -209,7 +209,7 @@ export default function Header() {
             </div>
           </div>
         </div>
-      </div>
+      </header>
       <nav id="navbar" className={`navbar ${openMenu ? "active" : ""}`}>
         <div
           className="bg-dim"
@@ -229,6 +229,7 @@ export default function Header() {
             <div
               className="btn-close"
               data-hover="solid"
+              data-cursor-label={t_general?.close || ""}
               onClick={(e) => {
                 setOpenMenu(false);
               }}
@@ -237,7 +238,7 @@ export default function Header() {
               <div className="line n2"></div>
             </div>
           </div>
-          <div className="navbar-wrapper" data-lenis-prevent>
+          <div className="navbar-wrapper">
             <div className="card-inner">
               <div className="top-box">
                 {/* <div className="navbar-search-box">

@@ -147,12 +147,12 @@ export default function Footer() {
         <div className="bottom-box">
           <div className="inner-box">
             <div className="copyright-box">
-              <span>
+              <h3>
                 Copyright {new Date().getFullYear()} by Kasidit Katcharoen
-              </span>
+              </h3>
             </div>
             <div className="des-box">
-              <span>Portfolio kasidit katcharoen developer</span>
+              <h3>Kasidit Katcharoen Portfolio</h3>
             </div>
           </div>
         </div>
