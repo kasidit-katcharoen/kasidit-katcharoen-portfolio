@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 export const Cursor = () => {
   const { x, y, isHover, label } = useMousePosition();
-  const size = isHover ? 60 : 6;
+  const size = isHover ? 65 : 6;
   
   return (
     <motion.div

@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState, useTransition } from "react";
 import "@/src/styles/ui/Dropdown.scss";
 import { dataDropdownMock } from "@/src/common";
+import { useLocale } from "next-intl";
+import messages from "@/src/messages/messages";
 
 export default function Dropdown({
   className = "",
@@ -11,6 +13,8 @@ export default function Dropdown({
   dataList = dataDropdownMock(),
   callback = () => {},
 }) {
+  const locale = useLocale();
+  const t_general = messages?.[locale]?.["general"] || "";
   const [isTop, setIsTop] = useState(true);
   const [isBottom, setIsBottom] = useState(false);
   const ddRef = useRef(null);
@@ -72,7 +76,11 @@ export default function Dropdown({
           dataValue?.value ? "selected" : ""
         } ${isOpen ? "open" : ""}`}
       >
-        <div className="dd-inner" onClick={() => setIsOpen(!isOpen)}>
+        <div
+          className="dd-inner"
+          onClick={() => setIsOpen(!isOpen)}
+          data-cursor-label={t_general?.click || ""}
+        >
           <span
             className="dd-label"
             dangerouslySetInnerHTML={{
@@ -97,6 +105,7 @@ export default function Dropdown({
                     v?.value === dataValue?.value ? "active" : ""
                   }`}
                   onClick={() => (setIsOpen(false), setDataValue(v))}
+                  data-cursor-label={t_general?.select || ""}
                 >
                   <div className="dd-txt">
                     <span

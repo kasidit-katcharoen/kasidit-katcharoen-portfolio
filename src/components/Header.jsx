@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 
 import Lenis from "@studio-freight/lenis";
 import { useLocale } from "next-intl";
-import { Link } from "../i18n/navigation";
+import Link from "next/link";
 import DropdownLang from "@/src/components/ui/DropdownLang";
 import { locales } from "../i18n/routing";
 import messages from "@/src/messages/messages.jsx";
@@ -30,33 +30,33 @@ export default function Header() {
   const [isDestop, setIsDestop] = useState(false);
   const scrolled = useScrolled(100);
 
-  // const lenisRef = useRef(null);
-  // useEffect(() => {
-  //   const lenis = new Lenis({
-  //     smooth: true,
-  //   });
-  //   lenisRef.current = lenis;
-  //   const raf = (time) => {
-  //     lenis.raf(time);
-  //     requestAnimationFrame(raf);
-  //   };
-  //   requestAnimationFrame(raf);
+  const lenisRef = useRef(null);
+  useEffect(() => {
+    const lenis = new Lenis({
+      smooth: true,
+    });
+    lenisRef.current = lenis;
+    const raf = (time) => {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    };
+    requestAnimationFrame(raf);
 
-  //   return () => lenis.destroy();
-  // }, []);
-  // const handleStopScroll = () => {
-  //   lenisRef.current?.stop(); // ปิด Scroll
-  // };
-  // const handleStartScroll = () => {
-  //   lenisRef.current?.start(); // เปิด Scroll
-  // };
+    return () => lenis.destroy();
+  }, []);
+  const handleStopScroll = () => {
+    lenisRef.current?.stop(); // ปิด Scroll
+  };
+  const handleStartScroll = () => {
+    lenisRef.current?.start(); // เปิด Scroll
+  };
   useEffect(() => {
     if (openMenu) {
-      document.body.style.overflow = "hidden";
-      // handleStopScroll();
+      // document.body.style.overflow = "hidden";
+      handleStopScroll();
     } else {
-      document.body.style.overflow = "auto";
-      // handleStartScroll();
+      // document.body.style.overflow = "auto";
+      handleStartScroll();
     }
   }, [openMenu]);
 
@@ -310,36 +310,46 @@ export default function Header() {
                 <div className="hr"></div>
                 <div className="address-txt">{t?.address || ""}</div>
                 <div className="contact-box">
-                  <div className="list-cc tel">
-                    <div className="label-txt">Tel :</div>
-                    <div
-                      onClick={() => {
-                        scrollTo("");
-                      }}
-                      href="tel:0935460996"
-                      className="val-txt"
-                      data-cursor-label={t_general?.click || ""}
-                    >
-                      0935460996
-                    </div>
-                  </div>
-                  <div className="list-cc email">
-                    <div className="label-txt">Email :</div>
-                    <div
-                      onClick={() => {
-                        scrollTo("");
-                      }}
-                      href="mailto:kasidit.kat@gmail.com"
-                      className="val-txt"
-                      data-cursor-label={t_general?.click || ""}
-                    >
-                      kasidit.kat@gmail.com
-                    </div>
-                  </div>
-                  <div className="list-cc lineid">
-                    <div className="label-txt">Line ID :</div>
-                    <div className="val-txt">kasidit2408</div>
-                  </div>
+                  <Link
+                    className="list-cc tel"
+                    href="tel:0935460996"
+                    target="_blank"
+                    rel="noreferrer"
+                    data-cursor-label={t_general?.click || ""}
+                  >
+                    <i className="fa-solid fa-phone c-gd"></i>
+                    {/* <div className="val-txt">0935460996</div> */}
+                  </Link>
+                  <Link
+                    className="list-cc email"
+                    href="mailto:kasidit.kat@gmail.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    data-cursor-label={t_general?.click || ""}
+                  >
+                    <i className="fa-solid fa-envelope c-gd"></i>
+                    {/* <div className="val-txt">kasidit.kat@gmail.com</div> */}
+                  </Link>
+                  <Link
+                    className="list-cc facebook"
+                    href="https://www.facebook.com/profile.php?id=61554603137737&locale=th_TH"
+                    target="_blank"
+                    rel="noreferrer"
+                    data-cursor-label={t_general?.click || ""}
+                  >
+                    <i className="fa-brands fa-facebook"></i>
+                    {/* <div className="val-txt">Kasidit Katcharoen</div> */}
+                  </Link>
+                  <Link
+                    className="list-cc lineid"
+                    href="https://line.me/ti/p/~kasidit2408"
+                    target="_blank"
+                    rel="noreferrer"
+                    data-cursor-label={t_general?.click || ""}
+                  >
+                    <i className="fa-brands fa-line c-gd"></i>
+                    {/* <div className="val-txt">kasidit2408</div> */}
+                  </Link>
                 </div>
               </div>
             </div>

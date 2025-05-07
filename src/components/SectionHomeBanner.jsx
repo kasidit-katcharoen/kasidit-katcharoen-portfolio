@@ -23,11 +23,13 @@ import Button from "@/src/components/ui/Button";
 import { Parallax } from "react-scroll-parallax";
 import { scrollTo } from "../hooks/useCommon";
 import Image from "next/image";
-import imgProfile from '@/public/images/profile/profile3.jpg';
+import imgProfile from "@/public/images/profile/profile3.jpg";
+import Link from "next/link";
 
 export default function SectionHomeBanner() {
   const locale = useLocale();
   const t = messages?.[locale]?.["SectionHomeBanner"] || "";
+  const t_general = messages?.[locale]?.["general"] || "";
   const { theme, setTheme } = useTheme();
   const [particlesColor, setParticlesColor] = useState(
     getTheme(theme).particlesColor || []
@@ -91,10 +93,9 @@ export default function SectionHomeBanner() {
               data-aos-once={false}
             >
               <div className="txt-1">{t?.hello}</div>
-              <span className="txt-2 f-bol c-gd">
+              <h1 className="txt-2 f-bol c-gd">
                 {t?.fname} {t?.lname}
-              </span>
-              <br />
+              </h1>
               <TypeAnimation
                 wrapper="div"
                 sequence={[`${t?.position || ""}`, 5000, ``, 1000]}
@@ -103,6 +104,7 @@ export default function SectionHomeBanner() {
                 deletionSpeed={50}
                 repeat={Infinity}
               />
+              <h2 className="d-none">{t?.position || ""}</h2>
               <div className="txt-4">{t?.sub || ""}</div>
               <div className="wrap-bottom">
                 <Button
@@ -113,10 +115,43 @@ export default function SectionHomeBanner() {
                 >
                   {t?.btnContact || ""}
                 </Button>
+                <div className="hr-x"></div>
                 <div className="group-contact">
-                  <div className="list-contact"></div>
-                  <div className="list-contact"></div>
-                  <div className="list-contact"></div>
+                  <Link
+                    href="tel:0935460996"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="list-contact"
+                    data-cursor-label={t_general?.click || ""}
+                  >
+                    <i className="fa-solid fa-phone c-gd"></i>
+                  </Link>
+                  <Link
+                    href="mailto:kasidit.kat@gmail.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="list-contact"
+                    data-cursor-label={t_general?.click || ""}
+                  >
+                    <i className="fa-solid fa-envelope c-gd"></i>
+                  </Link>
+                  <Link
+                    href="https://www.facebook.com/profile.php?id=61554603137737&locale=th_TH"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="list-contact"
+                    data-cursor-label={t_general?.click || ""}
+                  >
+                    <i className="fa-brands fa-facebook"></i>
+                  </Link>
+                  <Link
+                    href="https://line.me/ti/p/~kasidit2408"
+                    target="_blank"
+                    rel="noreferrer"
+                    data-cursor-label={t_general?.click || ""}
+                  >
+                    <i className="fa-brands fa-line c-gd"></i>
+                  </Link>
                 </div>
               </div>
             </div>
