@@ -88,7 +88,7 @@ export default function SectionHomeBanner() {
           <div className="overlay-box">
             <div
               className="txt-box"
-              data-aos="fade-up"
+              data-aos="fade-left"
               data-aos-duration="1000"
               data-aos-once={false}
             >
@@ -161,7 +161,7 @@ export default function SectionHomeBanner() {
               <Image
                 src={imgProfile}
                 alt="banner"
-                data-aos="fade-up"
+                data-aos="fade-right"
                 data-aos-duration="1000"
                 data-aos-once={false}
                 className="img-banner shadow"
