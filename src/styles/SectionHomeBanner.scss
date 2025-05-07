@@ -4,13 +4,16 @@
 .sec-home-banner {
   max-width: 100vw;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
   position: relative;
   z-index: 2;
   background-size: cover;
   background-position: center;
   padding: calc(var(--header-height) + 20px) 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;;
   &::before {
     content: "";
     pointer-events: none;
@@ -101,7 +104,7 @@
       .img-banner {
         border-radius: 8px;
         width: 100%;
-        max-height: 50dvh;
+        // max-height: 50dvh;
         object-fit: cover;
         object-position: center;
       }
@@ -168,7 +171,7 @@
   top: auto;
   left: 50%;
   right: 0;
-  bottom: 30px;
+  bottom: 20px;
   z-index: 999;
   pointer-events: none;
   display: flex;
@@ -179,19 +182,27 @@
   animation: scrollingDown 3s ease-in-out infinite;
 }
 
-@media (max-width: 1470px) {
-  .sec-home-banner .wrapper .img-box {
-    // max-width: 50%;
-    .img-banner {
-      max-height: 60dvh;
+@media (max-width: 980) {
+  .sec-home-banner{
+    .wrapper {
+      flex-direction: column-reverse;
+      row-gap: 20px;
+      align-items: flex-start;
+      .overlay-box {
+        max-width: 100%;
+      }
+      .img-box {
+        max-width: 100%;
+      }
     }
-  }
+  } 
+  
 }
 
 @media (max-width: 767px) {
   .sec-home-banner {
     // padding: calc(var(--header-height)  + 30px) 20px calc(var(--header-height) * 2);
-    padding: calc(var(--header-height)  + 30px) 20px 30px;
+    // padding: var(--header-height) 20px 30px;
     // min-height: 100dvh;
     // height: auto;
     &::before {
@@ -207,11 +218,8 @@
       }
     }
     .wrapper {
-      flex-direction: column-reverse;
-      row-gap: 30px;
       .overlay-box {
-        max-width: 100%;
-        text-align: center;
+        // text-align: center;
         .txt-box {
           .txt-1 {
           }
@@ -220,18 +228,17 @@
           .txt-3 {
           }
           .txt-4 {
-            max-width: 400px;
-            margin: 0 auto;
+            // max-width: 400px;
+            // margin: 0 auto;
           }
           .wrap-bottom {
-            margin-top: 20px;
-            justify-content: center;
-            flex-direction: column;
+            // margin-top: 20px;
+            // justify-content: center;
+            // flex-direction: column;
           }
         }
       }
       .img-box {
-        max-width: 100%;
         .img-banner {
           // max-height: 300px;
         }
@@ -239,6 +246,6 @@
     }
   }
   .srolling-down{
-    bottom: 10px;
+    bottom: 0;
   }
 }
