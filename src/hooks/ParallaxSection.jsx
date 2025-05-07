@@ -6,7 +6,7 @@ export default function ParallaxSection({
 }) {
   return (
     <div
-      className={`h-full w-full bg-fixed bg-center bg-cover flex items-center justify-center ${className}`}
+      className={`h-full w-full bg-cover bg-center lg:bg-fixed ${className}`}
       style={{
         backgroundImage: `url('${backgroundImage || "/images/bg/bg1.jpg"}')`,
       }}

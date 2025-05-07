@@ -30,33 +30,33 @@ export default function Header() {
   const [isDestop, setIsDestop] = useState(false);
   const scrolled = useScrolled(100);
 
-  const lenisRef = useRef(null);
-  useEffect(() => {
-    const lenis = new Lenis({
-      smooth: true,
-    });
-    lenisRef.current = lenis;
-    const raf = (time) => {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    };
-    requestAnimationFrame(raf);
+  // const lenisRef = useRef(null);
+  // useEffect(() => {
+  //   const lenis = new Lenis({
+  //     smooth: true,
+  //   });
+  //   lenisRef.current = lenis;
+  //   const raf = (time) => {
+  //     lenis.raf(time);
+  //     requestAnimationFrame(raf);
+  //   };
+  //   requestAnimationFrame(raf);
 
-    return () => lenis.destroy();
-  }, []);
-  const handleStopScroll = () => {
-    lenisRef.current?.stop(); // ปิด Scroll
-  };
-  const handleStartScroll = () => {
-    lenisRef.current?.start(); // เปิด Scroll
-  };
+  //   return () => lenis.destroy();
+  // }, []);
+  // const handleStopScroll = () => {
+  //   lenisRef.current?.stop(); // ปิด Scroll
+  // };
+  // const handleStartScroll = () => {
+  //   lenisRef.current?.start(); // เปิด Scroll
+  // };
   useEffect(() => {
     if (openMenu) {
-      // document.body.style.overflow = "hidden";
-      handleStopScroll();
+      document.body.style.overflow = "hidden";
+      // handleStopScroll();
     } else {
-      // document.body.style.overflow = "auto";
-      handleStartScroll();
+      document.body.style.overflow = "auto";
+      // handleStartScroll();
     }
   }, [openMenu]);
 

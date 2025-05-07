@@ -99,15 +99,6 @@ export default function SectionContactCustom() {
             data-aos-once={false}
           >
             <div className="card-form">
-              {/* <img
-                className="img-form"
-                src={`${
-                  theme == "light"
-                    ? "/images/bg/bg15.jpg"
-                    : "/images/bg/bg2.jpg"
-                }`}
-                alt="bg"
-              /> */}
               <form
                 className="form-box shadow"
                 action=""

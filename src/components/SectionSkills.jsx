@@ -18,7 +18,7 @@ export default function SectionSkills() {
   const [elementSkills, setElementSkills] = useState("");
   const { theme, setTheme } = useTheme();
   const [bgParallaxSection, setBgParallaxSection] = useState({
-    light: "/images/bg/bg7.jpg",
+    light: "/images/bg/bg17.jpg",
     dark: "/images/bg/bg23.jpg",
   });
 
@@ -68,7 +68,7 @@ export default function SectionSkills() {
   return (
     <>
       <section id="sec-skills" className="sec-skills">
-        <ParallaxSection className={'absolute z-1'} backgroundImage={bgParallaxSection?.[theme] || ""}/>
+        <ParallaxSection className={'absolute z-1 flex items-center justify-center'} backgroundImage={bgParallaxSection?.[theme] || ""}/>
           <div className="wrapper">
             <div
               className="title-sec"

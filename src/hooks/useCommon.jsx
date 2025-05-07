@@ -493,7 +493,7 @@ export const projects = {
     },
     {
       // img: "/images/projects/project0.jpg",
-      img: "/images/projects/project5.jpg",
+      img: "/images/projects/project0.jpg",
       name: "CMS (Content Management System)",
       type: "CMS (Content Management System)",
       url: "",
@@ -804,7 +804,7 @@ export const projects = {
     },
     {
       // img: "/images/projects/project0.jpg",
-      img: "/images/projects/project5.jpg",
+      img: "/images/projects/project0.jpg",
       name: "CMS (Content Management System)",
       type: "CMS (Content Management System)",
       url: "",

@@ -45,7 +45,7 @@
     }
   }
   [data-theme~="dark"] & {
-    background-image: url("/images/bg/bg16.jpg");
+    background-image: url("/images/bg/bg26.jpg");
     &::after {
       background-color: rgba(var(--c-bg-rgb), 0.4);
       -webkit-backdrop-filter: blur(2px);
@@ -55,7 +55,6 @@
   .marquee-text {
     position: relative;
     z-index: 3;
-    // height: 10dvh;
     @include font-size(200px);
     overflow: hidden;
     color: rgba(var(--c-theme-ops-rgb), 0.1);
@@ -63,7 +62,6 @@
   .wrapper {
     position: relative;
     z-index: 2;
-    // max-width: calc(1280px + (20px * 2));
     max-width: calc(1440px + (20px * 2));
     width: 100%;
     height: 100%;
@@ -75,24 +73,8 @@
     }
     .content-box {
       margin: 60px auto 0;
-      // border-radius: 8ox;
-      // overflow: hidden;
       .card-form {
-        // display: flex;
-        // .img-form{
-        //   max-width: 400px;
-        //   width: 100%;
-        //   object-fit: cover;
-        //   object-position: center;
-        //   [data-theme~="light"] & {
-        //     background-image: url("/images/bg/bg15.jpg");
-        //   }
-        //   [data-theme~="dark"] & {
-        //     background-image: url("/images/bg/bg2.jpg");
-        //   }
-        // }
         .form-box {
-          // border: 1px solid var(--c-bd1);
           margin: 0 auto;
           position: relative;
           max-width: 700px;
@@ -100,7 +82,6 @@
           padding: 60px 40px 40px;
           border-radius: 8px;
           overflow: hidden;
-          // background: rgba(var(--c-theme-rgb), 0.6);
           border: 1px solid var(--c-bd2);
           &::after {
             content: "";
