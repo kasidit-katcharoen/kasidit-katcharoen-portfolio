@@ -34,9 +34,9 @@ export default function About() {
             data-aos-duration="1000"
             data-aos-once={false}
           >
-            <span className="c-gd f-bol" data-underline="gradient">
+            <h2 className="c-gd f-bol" data-underline="gradient">
               {t?.title || ""}
-            </span>
+            </h2>
           </div>
           <div className="content-box">
             <div className="detail-box">
@@ -48,14 +48,14 @@ export default function About() {
                 >
                   {t?.title_sub || ""}
                 </div> */}
-              <div
+              <h3
                 className="txt-desc"
                 data-aos="fade-up"
                 data-aos-duration="1000"
                 data-aos-once={false}
               >
                 {t?.desc || ""}
-              </div>
+              </h3>
               {/* <div
                 className="wrap-btn"
                 data-aos="fade-up"
@@ -81,7 +81,7 @@ export default function About() {
             speed={0.9}
           >
             {[...Array(10)].map((v, i) => (
-              <p key={i}>KASIDIT KATCHAROEN GUN&nbsp;</p>
+              <span key={i}>KASIDIT KATCHAROEN GUN&nbsp;</span>
             ))}
           </MarqueeScroll>
           <MarqueeScroll
@@ -92,7 +92,7 @@ export default function About() {
             speed={0.5}
           >
             {[...Array(20)].map((v, i) => (
-              <p key={i}>FRONTEND DEVELOPER | FULLSTSCK DEVELOPER |&nbsp;</p>
+              <span key={i}>FRONTEND DEVELOPER | FULLSTSCK DEVELOPER |&nbsp;</span>
             ))}
           </MarqueeScroll>
         </div>

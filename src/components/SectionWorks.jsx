@@ -85,9 +85,9 @@ export default function SectionWorks() {
               data-aos-duration="1000"
               data-aos-once={false}
             >
-              <span className="c-gd f-bol" data-underline="gradient">
+              <h2 className="c-gd f-bol" data-underline="gradient">
                 {t?.title || ""}
-              </span>
+              </h2>
             </div>
             <div
               className="content-box"
@@ -165,13 +165,13 @@ export default function SectionWorks() {
                                 className="txt-name f-reg"
                                 data-cursor-label={t_general?.link || ""}
                               >
-                                {v?.name || v?.type || ""}
+                                <h3>{v?.name || v?.type || ""}</h3>
                                 <i className="fa-solid fa-arrow-up-right-from-square"></i>
                               </Link>
                             ) : (
-                              <div className="txt-name f-reg">
+                              <h3 className="txt-name f-reg">
                                 {v?.name || v?.type || ""}
-                              </div>
+                              </h3>
                             )}
                             {v?.desc ? (
                               Array.isArray(v?.desc) ? (

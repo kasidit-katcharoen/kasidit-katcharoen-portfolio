@@ -46,7 +46,7 @@ export default function SectionSkills() {
                 data-aos-once={false}
               >
                 <img src={v.img} className={`${v.class}`} alt={v.name} />
-                <div className="txt-name">{v.label || "-"}</div>
+                <h3 className="txt-name">{v.label || "-"}</h3>
               </a>
             );
           }
@@ -76,9 +76,9 @@ export default function SectionSkills() {
               data-aos-duration="1000"
               data-aos-once={false}
             >
-              <span className="c-gd f-bol" data-underline="gradient">
+              <h2 className="c-gd f-bol" data-underline="gradient">
                 {t?.title || ""}
-              </span>
+              </h2>
             </div>
             <div
               className="txt-sub-sec"
