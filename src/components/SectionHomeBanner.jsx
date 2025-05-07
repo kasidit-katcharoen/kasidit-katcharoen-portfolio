@@ -115,7 +115,7 @@ export default function SectionHomeBanner() {
                 >
                   {t?.btnContact || ""}
                 </Button>
-                <div className="hr-x"></div>
+                <div className="hr-x hide-xs"></div>
                 <div className="group-contact">
                   <Link
                     href="tel:0935460996"

@@ -190,9 +190,10 @@
 
 @media (max-width: 767px) {
   .sec-home-banner {
-    padding: calc(var(--header-height)  + 30px) 20px calc(var(--header-height) * 2);
+    // padding: calc(var(--header-height)  + 30px) 20px calc(var(--header-height) * 2);
+    padding: calc(var(--header-height)  + 30px) 20px 30px;
     // min-height: 100dvh;
-    height: auto;
+    // height: auto;
     &::before {
     }
     &::after {
@@ -222,16 +223,22 @@
             max-width: 400px;
             margin: 0 auto;
           }
-          .wrap-btn {
+          .wrap-bottom {
+            margin-top: 20px;
+            justify-content: center;
+            flex-direction: column;
           }
         }
       }
       .img-box {
         max-width: 100%;
         .img-banner {
-          max-height: 300px;
+          // max-height: 300px;
         }
       }
     }
+  }
+  .srolling-down{
+    bottom: 10px;
   }
 }
