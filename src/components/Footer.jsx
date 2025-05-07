@@ -119,11 +119,26 @@ export default function Footer() {
                     <i className="fa-solid fa-envelope c-gd"></i>
                     <span className="txt">kasidit.kat@gmail.com</span>
                   </Link>
-                  <div className="contact-list">
-                    {/* <img src="/icon/line.png" width="15" alt="" /> */}
+                  <Link
+                    className="contact-list"
+                    href="https://www.facebook.com/profile.php?id=61554603137737&locale=th_TH"
+                    target="_blank"
+                    rel="noreferrer"
+                    data-cursor-label={t_general?.click || ""}
+                  >
+                    <i className="fa-brands fa-facebook"></i>
+                    <div className="txt">Kasidit Katcharoen</div>
+                  </Link>
+                  <Link
+                    className="contact-list"
+                    href="https://line.me/ti/p/~kasidit2408"
+                    target="_blank"
+                    rel="noreferrer"
+                    data-cursor-label={t_general?.click || ""}
+                  >
                     <i className="fa-brands fa-line c-gd"></i>
-                    <span className="txt">kasidit2408</span>
-                  </div>
+                    <div className="txt">kasidit2408</div>
+                  </Link>
                 </div>
               </div>
             </div>

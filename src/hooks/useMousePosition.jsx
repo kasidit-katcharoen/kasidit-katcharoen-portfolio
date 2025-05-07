@@ -9,9 +9,20 @@ export const useMousePosition = () => {
   });
 
   const updateMousePosition = (e) => {
-    const element = e.target.closest("[data-cursor-label]");
+    const disableArrEeclector = [
+      ".disable",
+      ".event-none",
+      ".swiper-button-disabled",
+    ];
+    const disableStr = disableArrEeclector
+      .map((v, i) => {
+        return ":not(" + v + ")";
+      })
+      .join("")||'';
+
+    const element = e.target.closest("[data-cursor-label]" + disableStr);
     const label = element?.getAttribute("data-cursor-label") || "";
-    
+
     setMousePosition({
       x: e.clientX,
       y: e.clientY,

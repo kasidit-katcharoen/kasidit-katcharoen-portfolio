@@ -136,7 +136,10 @@ export default function SectionWorks() {
                   }
 
                   return (
-                    <SwiperSlide key={i}>
+                    <SwiperSlide
+                      key={i}
+                      data-cursor-label={t_general?.drag || ""}
+                    >
                       {labelYear ? (
                         <div className="year-box">
                           <div className="txt-year f-reg">{labelYear}</div>
@@ -257,10 +260,18 @@ export default function SectionWorks() {
                 )}
 
                 <div className="wrap-btn">
-                  <button ref={prevRef} className="swiper-button-prev shadow">
+                  <button
+                    ref={prevRef}
+                    className="swiper-button-prev shadow"
+                    data-cursor-label={t_general?.click || ""}
+                  >
                     <i className="fa-solid fa-arrow-left"></i>
                   </button>
-                  <button ref={nextRef} className="swiper-button-next shadow">
+                  <button
+                    ref={nextRef}
+                    className="swiper-button-next shadow"
+                    data-cursor-label={t_general?.click || ""}
+                  >
                     <i className="fa-solid fa-arrow-right"></i>
                   </button>
                 </div>
