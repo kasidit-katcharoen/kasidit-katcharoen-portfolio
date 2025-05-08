@@ -12,6 +12,7 @@ const messages = {
       about: "About",
       skills: "Skills",
       works: "Works",
+      experiences:'Experiences',
       contact: "Contact",
       address:
         "7/2 Nong Kham 5 Rd., Bua Yai, Bua Yai, Nakhon Ratchasima 30120, Thailand",
@@ -51,8 +52,9 @@ const messages = {
         tools: "Tools",
       },
     },
-    SectionWorks: {
-      title: "Works",
+    SectionExperiences: {
+      title: "Experiences",
+      note:'Note: Due to the proprietary nature of the data and content within the system, full details cannot be disclosed. This information is provided solely for reference and to demonstrate past work experience.',
     },
     SectionContact: {
       title: "Contact",
@@ -62,6 +64,7 @@ const messages = {
       about: "About",
       skills: "Skills",
       works: "Works",
+      experiences:'Experiences',
       contact: "Contact",
       address:
         "7/2 Nong Kham 5 Rd., Bua Yai, Bua Yai, Nakhon Ratchasima 30120, Thailand",
@@ -110,8 +113,9 @@ const messages = {
     Header: {
       home: "หน้าหลัก",
       about: "เกี่ยวกับ",
-      skills: "ความสามารถ",
+      skills: "ทักษะ",
       works: "การทำงาน",
+      experiences:'ประสบการณ์',
       contact: "ติดต่อ",
       address: "7/2 ถ.หนองขาม 5 ต.บัวใหญ่ อ.บัวใหญ่ นครราชสีมา 30120 ประเทศไทย",
     },
@@ -148,8 +152,9 @@ const messages = {
         tools: "เครื่องมือ",
       },
     },
-    SectionWorks: {
-      title: "การทำงาน",
+    SectionExperiences: {
+      title: "ประสบการณ์",
+      note:'หมายเหตุ: เนื่องจากข้อมูลและเนื้อหาในระบบเป็นทรัพย์สินของทางบริษัท จึงไม่สามารถเปิดเผยรายละเอียดทั้งหมดได้ ใช้เพื่ออ้างอิงและแสดงถึงประสบณ์การทำงานที่ผ่านมาเท่านั้น',
     },
     SectionContact: {
       title: "ติดต่อ",
@@ -157,8 +162,9 @@ const messages = {
     Footer: {
       home: "หน้าหลัก",
       about: "เกี่ยวกับ",
-      skills: "ความสามารถ",
+      skills: "ทักษะ",
       works: "การทำงาน",
+      experiences:'ประสบการณ์',
       contact: "ติดต่อ",
       address: "7/2 ถ.หนองขาม 5 ต.บัวใหญ่ อ.บัวใหญ่ นครราชสีมา 30120 ประเทศไทย",
     },

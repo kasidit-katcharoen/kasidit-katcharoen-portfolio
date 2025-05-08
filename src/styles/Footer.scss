@@ -41,6 +41,7 @@
           .list-menu {
             margin-top: 15px;
             display: block;
+            text-transform: uppercase;
           }
         }
         .group-contact {
@@ -81,6 +82,8 @@
     }
   }
   .tt-col {
+    text-transform: uppercase;
+
     // @include font-size(26px);
   }
 }

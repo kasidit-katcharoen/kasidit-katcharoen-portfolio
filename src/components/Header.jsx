@@ -165,7 +165,7 @@ export default function Header() {
                     data-cursor-label={t_general?.click || ""}
                     data-hover="underline"
                   >
-                    {t?.works || ""}
+                    {t?.experiences || ""}
                   </div>
                 </li>
                 <li className="item-menu">
@@ -290,7 +290,7 @@ export default function Header() {
                       }}
                       data-cursor-label={t_general?.click || ""}
                     >
-                      {t?.works || ""}
+                      {t?.experiences || ""}
                     </div>
                   </li>
                   <li className="item-menu">

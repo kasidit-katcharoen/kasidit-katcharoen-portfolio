@@ -82,7 +82,7 @@ export default function Footer() {
                         className={`list-menu`}
                         data-hover="underline"
                       >
-                        {t?.works || ""}
+                        {t?.experiences || ""}
                       </div>
                       <div
                         onClick={() => {
