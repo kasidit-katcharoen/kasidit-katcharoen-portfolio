@@ -348,11 +348,23 @@ export const skills = [
   },
 ];
 
-export const projects = {
+import project0 from "@/public/images/projects/project0.jpg";
+import project1 from "@/public/images/projects/project1.png";
+import project2 from "@/public/images/projects/project2.png";
+import project3 from "@/public/images/projects/project3.png";
+import project4 from "@/public/images/projects/project4.png";
+import project6 from "@/public/images/projects/project6.png";
+import project7 from "@/public/images/projects/project7.png";
+import project8 from "@/public/images/projects/project8.png";
+import project9 from "@/public/images/projects/project9.png";
+import project10 from "@/public/images/projects/project10.png";
+import project11 from "@/public/images/projects/project11.png";
+import project from "@/public/images/projects/project.png";
+
+export const experiences = {
   en: [
     {
-      // img: "/images/projects/project0.jpg",
-      img: "/images/projects/project11.png",
+      img: project11,
       name: "ThaiMassage",
       type: "Booking Website",
       url: "https://datainfo.mnrh.go.th/ruenthai/ThaiMassage/Index.php",
@@ -382,8 +394,7 @@ export const projects = {
       ],
     },
     {
-      // img: "/images/projects/project0.jpg",
-      img: "/images/projects/project1.png",
+      img: project1,
       name: "CMG - Central Marketing Group",
       type: "Business Website",
       url: "https://www.cmg.co.th/en/home",
@@ -410,8 +421,7 @@ export const projects = {
       ],
     },
     {
-      // img: "/images/projects/project0.jpg",
-      img: "/images/projects/project2.png",
+      img: project2,
       name: "SHERA",
       type: "e-commerce website",
       url: "https://www.shera.com/",
@@ -435,8 +445,7 @@ export const projects = {
       ],
     },
     {
-      // img: "/images/projects/project0.jpg",
-      img: "/images/projects/project3.png",
+      img: project3,
       name: "Magic Love House",
       type: "e-commerce website",
       url: "https://www.magiclovehouse.com/",
@@ -464,8 +473,7 @@ export const projects = {
       ],
     },
     {
-      // img: "/images/projects/project0.jpg",
-      img: "/images/projects/project4.png",
+      img: project4,
       name: "Ananda",
       type: "e-commerce website",
       url: "https://www.ananda.co.th/th/home",
@@ -492,8 +500,7 @@ export const projects = {
       ],
     },
     {
-      // img: "/images/projects/project0.jpg",
-      img: "/images/projects/project0.jpg",
+      img: project0,
       name: "CMS (Content Management System)",
       type: "CMS (Content Management System)",
       url: "",
@@ -517,8 +524,7 @@ export const projects = {
       ],
     },
     {
-      // img: "/images/projects/project0.jpg",
-      img: "/images/projects/project6.png",
+      img: project6,
       name: "punthaicoffee",
       type: "e-commerce website",
       url: "https://www.punthaicoffee.com/home",
@@ -545,8 +551,7 @@ export const projects = {
       ],
     },
     {
-      // img: "/images/projects/project0.jpg",
-      img: "/images/projects/project7.png",
+      img: project7,
       name: "sacit",
       type: "Business Website",
       url: "https://www.sacit.or.th/th/home",
@@ -570,8 +575,7 @@ export const projects = {
       ],
     },
     {
-      // img: "/images/projects/project0.jpg",
-      img: "/images/projects/project8.png",
+      img: project8,
       name: "Domino's",
       type: "e-commerce website",
       url: "https://www.dominospizza.co.th/home",
@@ -591,8 +595,7 @@ export const projects = {
       tools: ["html", "less", "js", "reactjs", "sourcetree", "figma", "fibery"],
     },
     {
-      // img: "/images/projects/project0.jpg",
-      img: "/images/projects/project9.png",
+      img: project9,
       name: "thailandprivilege",
       type: "e-commerce website",
       url: "https://www.thailandprivilege.co.th/home",
@@ -610,8 +613,7 @@ export const projects = {
       tools: ["html", "less", "js", "nextjs", "sourcetree", "figma", "fibery"],
     },
     {
-      // img: "/images/projects/project0.jpg",
-      img: "/images/projects/project10.png",
+      img: project10,
       name: "unique",
       type: "Business Website",
       url: "https://www.unique.co.th/home",
@@ -629,8 +631,7 @@ export const projects = {
       tools: ["html", "less", "js", "nextjs", "sourcetree", "figma", "fibery"],
     },
     {
-      // img: "/images/projects/project.png",
-      img: "/images/projects/project.png",
+      img: project,
       name: "Kasidit Katcharoen Portfolio",
       type: "Kasidit Katcharoen Portfolio",
       url: "#",
@@ -662,8 +663,7 @@ export const projects = {
   ],
   th: [
     {
-      // img: "/images/projects/project0.jpg",
-      img: "/images/projects/project11.png",
+      img: project11,
       name: "ThaiMassage",
       type: "Booking Website",
       url: "https://datainfo.mnrh.go.th/ruenthai/ThaiMassage/Index.php",
@@ -693,8 +693,7 @@ export const projects = {
       ],
     },
     {
-      // img: "/images/projects/project0.jpg",
-      img: "/images/projects/project1.png",
+      img: project1,
       name: "CMG - Central Marketing Group",
       type: "Business Website",
       url: "https://www.cmg.co.th/en/home",
@@ -721,8 +720,7 @@ export const projects = {
       ],
     },
     {
-      // img: "/images/projects/project0.jpg",
-      img: "/images/projects/project2.png",
+      img: project2,
       name: "SHERA",
       type: "e-commerce website",
       url: "https://www.shera.com/",
@@ -746,8 +744,7 @@ export const projects = {
       ],
     },
     {
-      // img: "/images/projects/project0.jpg",
-      img: "/images/projects/project3.png",
+      img: project3,
       name: "Magic Love House",
       type: "e-commerce website",
       url: "https://www.magiclovehouse.com/",
@@ -775,8 +772,7 @@ export const projects = {
       ],
     },
     {
-      // img: "/images/projects/project0.jpg",
-      img: "/images/projects/project4.png",
+      img: project4,
       name: "Ananda",
       type: "e-commerce website",
       url: "https://www.ananda.co.th/th/home",
@@ -803,8 +799,7 @@ export const projects = {
       ],
     },
     {
-      // img: "/images/projects/project0.jpg",
-      img: "/images/projects/project0.jpg",
+      img: project0,
       name: "CMS (Content Management System)",
       type: "CMS (Content Management System)",
       url: "",
@@ -828,8 +823,7 @@ export const projects = {
       ],
     },
     {
-      // img: "/images/projects/project0.jpg",
-      img: "/images/projects/project6.png",
+      img: project6,
       name: "punthaicoffee",
       type: "e-commerce website",
       url: "https://www.punthaicoffee.com/home",
@@ -856,8 +850,7 @@ export const projects = {
       ],
     },
     {
-      // img: "/images/projects/project0.jpg",
-      img: "/images/projects/project7.png",
+      img: project7,
       name: "sacit",
       type: "Business Website",
       url: "https://www.sacit.or.th/th/home",
@@ -881,8 +874,7 @@ export const projects = {
       ],
     },
     {
-      // img: "/images/projects/project0.jpg",
-      img: "/images/projects/project8.png",
+      img: project8,
       name: "Domino's",
       type: "e-commerce website",
       url: "https://www.dominospizza.co.th/home",
@@ -902,8 +894,7 @@ export const projects = {
       tools: ["html", "less", "js", "reactjs", "sourcetree", "figma", "fibery"],
     },
     {
-      // img: "/images/projects/project0.jpg",
-      img: "/images/projects/project9.png",
+      img: project9,
       name: "thailandprivilege",
       type: "e-commerce website",
       url: "https://www.thailandprivilege.co.th/home",
@@ -921,8 +912,7 @@ export const projects = {
       tools: ["html", "less", "js", "nextjs", "sourcetree", "figma", "fibery"],
     },
     {
-      // img: "/images/projects/project0.jpg",
-      img: "/images/projects/project10.png",
+      img: project10,
       name: "unique",
       type: "Business Website",
       url: "https://www.unique.co.th/home",
@@ -940,8 +930,7 @@ export const projects = {
       tools: ["html", "less", "js", "nextjs", "sourcetree", "figma", "fibery"],
     },
     {
-      // img: "/images/projects/project.png",
-      img: "/images/projects/project.png",
+      img: project,
       name: "Kasidit Katcharoen Portfolio",
       type: "Kasidit Katcharoen Portfolio",
       url: "#",

@@ -1,5 +1,5 @@
 "use client";
-import "@/src/styles/SectionWorks.scss";
+import "@/src/styles/SectionExperiences.scss";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -12,16 +12,17 @@ import {
   Navigation,
   Pagination,
 } from "swiper/modules";
-import { projects, skills } from "@/src/hooks/useCommon";
+import { experiences, skills } from "@/src/hooks/useCommon";
 import { useLocale } from "next-intl";
 import Link from "next/link";
 import messages from "../messages/messages";
+import Image from "next/image";
 
 let cntYear = 0;
 let labelYear = "";
-export default function SectionWorks() {
+export default function SectionExperiences() {
   const locale = useLocale();
-  const t = messages?.[locale]?.["SectionWorks"] || "";
+  const t = messages?.[locale]?.["SectionExperiences"] || "";
   const t_general = messages?.[locale]?.["general"] || "";
   const swiperRef = useRef(null);
   const prevRef = useRef(null);
@@ -29,7 +30,7 @@ export default function SectionWorks() {
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
   const [swiperIsMulti, setSwiperIsMulti] = useState(
-    projects?.[locale]?.length > 15 ? true : false
+    experiences?.[locale]?.length > 15 ? true : false
   );
   const onAutoplayTimeLeft = (s, time, progress) => {
     if (progressCircle.current) {
@@ -76,8 +77,8 @@ export default function SectionWorks() {
   // if (!mounted) return null; // ป้องกัน hydration error
   return (
     <>
-      {projects?.[locale]?.length > 0 ? (
-        <div id="sec-works" className="sec-works">
+      {experiences?.[locale]?.length > 0 ? (
+        <div id="sec-experiences" className="sec-experiences">
           <div className="wrapper">
             <div
               className="title-sec"
@@ -96,7 +97,7 @@ export default function SectionWorks() {
               data-aos-once={false}
             >
               <Swiper
-                className="swiper-projects"
+                className="swiper-experiences"
                 modules={[Autoplay, Navigation, FreeMode, Mousewheel]}
                 pagination={{ clickable: true }}
                 speed={500}
@@ -127,7 +128,7 @@ export default function SectionWorks() {
                 onAutoplayTimeLeft={onAutoplayTimeLeft}
               >
                 <div className="line"></div>
-                {projects?.[locale]?.map((v, i) => {
+                {experiences?.[locale]?.map((v, i) => {
                   if (v?.year != cntYear) {
                     cntYear = v?.year;
                     labelYear = v?.year;
@@ -151,7 +152,7 @@ export default function SectionWorks() {
                       <div className="card shadow">
                         {v?.img ? (
                           <div className="img-box">
-                            <img src={v?.img} alt="" />
+                            <Image src={v?.img} alt="" />
                           </div>
                         ) : (
                           ""
@@ -282,10 +283,7 @@ export default function SectionWorks() {
                 data-aos-duration="1000"
                 data-aos-once={false}
               >
-                หมายเหตุ:
-                เนื่องจากข้อมูลและเนื้อหาในระบบเป็นทรัพย์สินของทางบริษัท
-                จึงไม่สามารถเปิดเผยรายละเอียดทั้งหมดได้
-                {/* ใช้เพื่ออ้างอิงและแสดงถึงประสบณ์การทำงานที่ผ่านมาเท่านั้น */}
+                {t?.note||''}
               </div>
             </div>
           </div>

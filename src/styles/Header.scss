@@ -92,6 +92,7 @@
         align-items: center;
         column-gap: 40px;
         .item-menu {
+          text-transform: uppercase;
           .txt-menu {
             // @include font-size(18px);
           }
@@ -337,6 +338,7 @@
                 }
               }
               .txt-menu {
+                text-transform: uppercase;
                 cursor: pointer;
                 padding: 5px 0;
                 @include font-size(50px, 40px);
