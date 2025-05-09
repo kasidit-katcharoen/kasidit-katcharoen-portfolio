@@ -67,7 +67,7 @@ export function scrollTo(selector, duration = 800) {
   }
 
   if (!element) {
-    console.error("Element not found:", selector);
+    // console.error("Element not found:", selector);
     return;
   }
 

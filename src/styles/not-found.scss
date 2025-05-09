@@ -1,0 +1,30 @@
+
+@import "mixin.scss";
+@import "variable.scss";
+
+#not-found-page{
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .txt-404{
+        @include font-size(150px);
+        @include text-wave(var(--c-f-bg));
+        animation-duration: 8s;
+    }
+    .txt-title{
+        @include font-size(30px);
+    }
+    .txt-desc{
+        text-align: center;
+        margin-top: 20px;
+        @include font-size(20px);
+        color: var(--c-f);
+        max-width: 320px;
+    }
+    .wrap-btn{
+        margin-top: 20px;
+    }
+}

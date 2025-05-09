@@ -76,7 +76,7 @@ export default function Footer() {
                     <div className="col-menu">
                       <div
                         onClick={() => {
-                          scrollTo("#sec-works");
+                          scrollTo("#sec-experiences");
                         }}
                         data-cursor-label={t_general?.click || ""}
                         className={`list-menu`}

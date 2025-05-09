@@ -3,9 +3,10 @@ import { calculateAge } from "../hooks/useCommon";
 const messages = {
   en: {
     notFound: {
+      404: "404",
       title: "Page not found",
       desc: "Please check the link you came from or go back to the home page.",
-      btn: "home page",
+      btn: "Home page",
     },
     Header: {
       home: "Home",
@@ -106,6 +107,7 @@ const messages = {
   },
   th: {
     notFound: {
+      404: "404",
       title: "ไม่พบหน้า",
       desc: "กรุณาตรวจสอบลิงก์ที่คุณมาหรือกลับไปที่หน้าแรก",
       btn: "หน้าแรก",
