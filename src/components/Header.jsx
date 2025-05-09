@@ -160,7 +160,7 @@ export default function Header() {
                 <li className="item-menu">
                   <div
                     onClick={() => {
-                      scrollTo("#sec-works");
+                      scrollTo("#sec-experiences");
                     }}
                     data-cursor-label={t_general?.click || ""}
                     data-hover="underline"
@@ -285,7 +285,7 @@ export default function Header() {
                     <div
                       className="txt-menu"
                       onClick={() => {
-                        scrollTo("#sec-works");
+                        scrollTo("#sec-experiences");
                         setOpenMenu(false);
                       }}
                       data-cursor-label={t_general?.click || ""}

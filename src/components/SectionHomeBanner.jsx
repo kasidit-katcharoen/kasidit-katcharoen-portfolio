@@ -85,6 +85,31 @@ export default function SectionHomeBanner() {
       <div id="sec-home-banner" className="sec-home-banner">
         {elementParticles || ""}
         <div className="wrapper">
+          <div className="img-box">
+            <Parallax speed={0}>
+              <Image
+                src={imgProfile}
+                alt="banner"
+                data-aos="fade-right"
+                data-aos-duration="1000"
+                data-aos-once={false}
+                className="img-banner shadow"
+                loading="eager"
+                data-cursor-label="ดูรูปภาพ"
+              />
+            </Parallax>
+            {/* <div
+              className="animation-box"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-once={false}
+            >
+              <div data-dot={1}></div>
+              <div data-dot={2}></div>
+              <div data-dot={3}></div>
+              <div data-dot={4}></div>
+            </div> */}
+          </div>
           <div className="overlay-box">
             <div
               className="txt-box"
@@ -155,30 +180,6 @@ export default function SectionHomeBanner() {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="img-box">
-            <Parallax speed={0}>
-              <Image
-                src={imgProfile}
-                alt="banner"
-                data-aos="fade-right"
-                data-aos-duration="1000"
-                data-aos-once={false}
-                className="img-banner shadow"
-                // data-cursor-label="ดูรูปภาพ"
-              />
-            </Parallax>
-            {/* <div
-              className="animation-box"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              data-aos-once={false}
-            >
-              <div data-dot={1}></div>
-              <div data-dot={2}></div>
-              <div data-dot={3}></div>
-              <div data-dot={4}></div>
-            </div> */}
           </div>
         </div>
 

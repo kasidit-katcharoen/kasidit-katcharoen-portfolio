@@ -3,6 +3,7 @@
 
 .blend {
   // mix-blend-mode: difference;
+  overflow: hidden;
   position: fixed;
   z-index: 999;
   border-radius: 9999px;
@@ -20,15 +21,52 @@
   color: var(--c-black);
   &.is-hover {
     background-color: rgba(var(--c-white-rgb), 0.8);
+    &::before,
+    &::after {
+      display: block;
+    }
+  }
+  &::before,
+  &::after {
+    content: "";
+    display: none;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transform-origin: center;
+    border-radius: 50%;
+    background-color: rgba(var(--c-white-rgb), 0.8);
+    animation: ripple 2s infinite ease-out;
+    z-index: -1;
+  }
+  &::before {
+    content: "";
+    animation-delay: 0.25s;
+  }
+  &::after {
+    content: "";
+    animation-delay: 0.5s;
   }
   [data-theme="light"] & {
-
   }
   [data-theme="dark"] & {
-
   }
 }
 
 [data-cursor-label] {
   // cursor: none;
+}
+
+@keyframes ripple {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(10);
+    opacity: 0;
+  }
 }

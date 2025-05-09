@@ -10,6 +10,7 @@ export const useMousePosition = () => {
 
   const updateMousePosition = (e) => {
     const disableArrEeclector = [
+      ".cursor-label-none",
       ".disable",
       ".event-none",
       ".swiper-button-disabled",
