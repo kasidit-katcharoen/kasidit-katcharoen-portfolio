@@ -95,7 +95,7 @@ export default function SectionHomeBanner() {
                 data-aos-once={false}
                 className="img-banner shadow"
                 loading="eager"
-                data-cursor-label="ดูรูปภาพ"
+                // data-cursor-label={t_general?.viewImage || ""}
               />
             </Parallax>
             {/* <div
