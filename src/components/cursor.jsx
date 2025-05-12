@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 export const Cursor = () => {
   const { x, y, isHover, label } = useMousePosition();
-  const size = isHover ? 65 : 6;
+  const size = isHover ? 80 : 6;
   
   return (
     <motion.div
@@ -20,7 +20,7 @@ export const Cursor = () => {
       }}
       transition={{ type: "tween", ease: "backOut", duration: 0.3 }}
     >
-      <div className="cursor-label">{label}</div>
+      <div className="cursor-label" dangerouslySetInnerHTML={{ __html: label }}></div>
     </motion.div>
   );
 };

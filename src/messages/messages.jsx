@@ -13,7 +13,7 @@ const messages = {
       about: "About",
       skills: "Skills",
       works: "Works",
-      experiences:'Experiences',
+      experiences: "Experiences",
       contact: "Contact",
       address:
         "7/2 Nong Kham 5 Rd., Bua Yai, Bua Yai, Nakhon Ratchasima 30120, Thailand",
@@ -55,7 +55,7 @@ const messages = {
     },
     SectionExperiences: {
       title: "Experiences",
-      note:'Note: Due to the proprietary nature of the data and content within the system, full details cannot be disclosed. This information is provided solely for reference and to demonstrate past work experience.',
+      note: "Note: Due to the proprietary nature of the data and content within the system, full details cannot be disclosed. This information is provided solely for reference and to demonstrate past work experience.",
     },
     SectionContact: {
       title: "Contact",
@@ -65,7 +65,7 @@ const messages = {
       about: "About",
       skills: "Skills",
       works: "Works",
-      experiences:'Experiences',
+      experiences: "Experiences",
       contact: "Contact",
       address:
         "7/2 Nong Kham 5 Rd., Bua Yai, Bua Yai, Nakhon Ratchasima 30120, Thailand",
@@ -103,6 +103,7 @@ const messages = {
       close: "Close",
       select: "Select",
       drag: "Drag",
+      viewImage: "View Image",
     },
   },
   th: {
@@ -117,7 +118,7 @@ const messages = {
       about: "เกี่ยวกับ",
       skills: "ทักษะ",
       works: "การทำงาน",
-      experiences:'ประสบการณ์',
+      experiences: "ประสบการณ์",
       contact: "ติดต่อ",
       address: "7/2 ถ.หนองขาม 5 ต.บัวใหญ่ อ.บัวใหญ่ นครราชสีมา 30120 ประเทศไทย",
     },
@@ -156,7 +157,7 @@ const messages = {
     },
     SectionExperiences: {
       title: "ประสบการณ์",
-      note:'หมายเหตุ: เนื่องจากข้อมูลและเนื้อหาในระบบเป็นทรัพย์สินของทางบริษัท จึงไม่สามารถเปิดเผยรายละเอียดทั้งหมดได้ ใช้เพื่ออ้างอิงและแสดงถึงประสบณ์การทำงานที่ผ่านมาเท่านั้น',
+      note: "หมายเหตุ: เนื่องจากข้อมูลและเนื้อหาในระบบเป็นทรัพย์สินของทางบริษัท จึงไม่สามารถเปิดเผยรายละเอียดทั้งหมดได้ ใช้เพื่ออ้างอิงและแสดงถึงประสบณ์การทำงานที่ผ่านมาเท่านั้น",
     },
     SectionContact: {
       title: "ติดต่อ",
@@ -166,7 +167,7 @@ const messages = {
       about: "เกี่ยวกับ",
       skills: "ทักษะ",
       works: "การทำงาน",
-      experiences:'ประสบการณ์',
+      experiences: "ประสบการณ์",
       contact: "ติดต่อ",
       address: "7/2 ถ.หนองขาม 5 ต.บัวใหญ่ อ.บัวใหญ่ นครราชสีมา 30120 ประเทศไทย",
     },
@@ -203,6 +204,7 @@ const messages = {
       close: "ปิด",
       select: "เลือก",
       drag: "ลาก",
+      viewImage: "ดูรูปภาพ"
     },
   },
 };
