@@ -87,6 +87,7 @@ export default function Textarea({
       <div className="textarea-inner">
         <textarea
           ref={ref}
+          id={`textarea_${name}`}
           className={`input ${className || ""} ${textareaData?.value ? "has-value" : ""} ${
             disabled ? "disabled" : ""
           }`}
@@ -97,7 +98,7 @@ export default function Textarea({
           autoComplete={autoComplete || "off"}
         />
         {label ? (
-          <label className="textarea-label">
+          <label htmlFor={`textarea_${name}`} className="textarea-label">
             <span>{label}</span>
             {required ? <span className="c-red"> *</span> : ""}
           </label>

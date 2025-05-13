@@ -94,6 +94,7 @@ export default function Input({
       <div className="input-inner">
         <input
           ref={ref}
+          id={`input_${name}`}
           className={`input ${className || ""} ${
             inputData?.value ? "has-value" : ""
           } ${disabled ? "disabled" : ""}`}
@@ -105,7 +106,7 @@ export default function Input({
           minLength={minLength}
         />
         {label ? (
-          <label className="input-label">
+          <label htmlFor={`input_${name}`} className="input-label">
             <span>{label}</span>
             {required ? <span className="c-red"> *</span> : ""}
           </label>

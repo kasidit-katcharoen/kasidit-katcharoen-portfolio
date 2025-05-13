@@ -56,6 +56,7 @@ export default function Button({
           onClick={(e) => {
             handleClick(e);
           }}
+          title="button"
         >
           <div className="box-1">
             {iconPosition == "right" ? <div className="dot"></div> : ""}
