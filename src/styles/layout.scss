@@ -78,6 +78,11 @@ i {
 
 .d-none {
   display: none !important;
+}
+
+.hide {
+  height: 0px !important;
+  width: 0px !important;
   overflow: hidden !important;
   visibility: hidden !important;
 }

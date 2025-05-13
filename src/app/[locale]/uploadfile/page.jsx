@@ -39,7 +39,7 @@ export default function UploadPage() {
       <h1>อัปโหลดไฟล์</h1>
       <input type="text" placeholder="Enter module name" value={moduleName} onChange={(e) => setModuleName(e.target.value)} />
       <input type="file" multiple onChange={handleFileChange} />
-      <button onClick={handleUpload}>Upload</button>
+      <button title='Upload' onClick={handleUpload}>Upload</button>
       {message && <pre>{message}</pre>}
     </div>
   );

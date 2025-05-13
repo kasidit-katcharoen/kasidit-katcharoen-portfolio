@@ -23,7 +23,6 @@ import Button from "@/src/components/ui/Button";
 import { Parallax } from "react-scroll-parallax";
 import { scrollTo } from "../hooks/useCommon";
 import Image from "next/image";
-import imgProfile from "@/public/images/profile/profile3.jpg";
 import Link from "next/link";
 
 export default function SectionHomeBanner() {
@@ -88,13 +87,19 @@ export default function SectionHomeBanner() {
           <div className="img-box">
             <Parallax speed={0}>
               <Image
-                src={imgProfile}
+                src="/images/profile/profile3.jpg"
                 alt="banner"
                 data-aos="fade-right"
                 data-aos-duration="1000"
                 data-aos-once={false}
                 className="img-banner shadow"
-                loading="eager"
+                width={800}
+                height={540}
+                priority
+                // loading="eager"
+                // objectFit="cover"
+                // priority
+                // fill
                 // data-cursor-label={t_general?.viewImage || ""}
               />
             </Parallax>
@@ -103,6 +108,7 @@ export default function SectionHomeBanner() {
             <div
               className="txt-box"
               data-aos="fade-left"
+              // data-aos-delay="200"
               data-aos-duration="1000"
               data-aos-once={false}
             >
@@ -110,15 +116,15 @@ export default function SectionHomeBanner() {
               <h1 className="txt-2 f-bol c-gd">
                 {t?.fname} {t?.lname}
               </h1>
-              <TypeAnimation
+              {/* <TypeAnimation
                 wrapper="div"
                 sequence={[`${t?.position || ""}`, 5000, ``, 1000]}
                 className="txt-3 f-reg"
                 speed={50}
                 deletionSpeed={50}
                 repeat={Infinity}
-              />
-              <h2 className="d-none">{t?.position || ""}</h2>
+              /> */}
+              <h2 className="txt-3 f-reg">{t?.position || ""}</h2>
               <h3 className="txt-4">{t?.sub || ""}</h3>
               <div className="wrap-bottom">
                 <Button
@@ -137,6 +143,8 @@ export default function SectionHomeBanner() {
                     rel="noreferrer"
                     className="list-contact"
                     data-cursor-label={t_general?.click || ""}
+                    aria-label={`0935460996`}
+                    title={`0935460996`}
                   >
                     <i className="fa-solid fa-phone c-gd"></i>
                   </Link>
@@ -146,6 +154,8 @@ export default function SectionHomeBanner() {
                     rel="noreferrer"
                     className="list-contact"
                     data-cursor-label={t_general?.click || ""}
+                    aria-label={`kasidit.kat@gmail.com`}
+                    title={`kasidit.kat@gmail.com`}
                   >
                     <i className="fa-solid fa-envelope c-gd"></i>
                   </Link>
@@ -155,6 +165,8 @@ export default function SectionHomeBanner() {
                     rel="noreferrer"
                     className="list-contact"
                     data-cursor-label={t_general?.click || ""}
+                    aria-label={`https://www.facebook.com/profile.php?id=61554603137737&locale=th_TH`}
+                    title={`https://www.facebook.com/profile.php?id=61554603137737&locale=th_TH`}
                   >
                     <i className="fa-brands fa-facebook"></i>
                   </Link>
@@ -163,6 +175,8 @@ export default function SectionHomeBanner() {
                     target="_blank"
                     rel="noreferrer"
                     data-cursor-label={t_general?.click || ""}
+                    aria-label={`https://line.me/ti/p/~kasidit2408`}
+                    title={`https://line.me/ti/p/~kasidit2408`}
                   >
                     <i className="fa-brands fa-line c-gd"></i>
                   </Link>
@@ -172,12 +186,7 @@ export default function SectionHomeBanner() {
           </div>
         </div>
 
-        <div
-          className="srolling-down"
-          // data-aos="fade-up"
-          // data-aos-duration="1000"
-          // data-aos-once={false}
-        >
+        <div className="srolling-down">
           <span>SCROLL</span>
           <i className="fa-solid fa-angles-down"></i>
         </div>

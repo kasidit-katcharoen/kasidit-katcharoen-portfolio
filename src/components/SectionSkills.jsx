@@ -37,18 +37,19 @@ export default function SectionSkills() {
           const foundCate = v.cate.filter((item) => item === cate);
           if (foundCate.length > 0 || cate === "all") {
             return (
-              <a
-                href={v.url}
+              <div
+                // href={v.url}
                 className="list-skill shadow"
                 key={new Date().getTime + k}
                 data-aos="fade-up"
                 data-aos-delay={50 * k}
                 data-aos-duration="1000"
                 data-aos-once={false}
+                aria-label={v.label||'Link'}
               >
                 <img src={v.img} className={`${v.class}`} alt={v.name} />
                 <h3 className="txt-name">{v.label || "-"}</h3>
-              </a>
+              </div>
             );
           }
         });

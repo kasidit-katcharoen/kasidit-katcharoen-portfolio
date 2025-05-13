@@ -39,7 +39,7 @@ export default function SectionContactCustom() {
     if (submit && formValid) {
       setFormData({});
       setSubmit(false);
-      alert("submit success!");
+      // alert("submit success!");
     }
   }, [formValid]);
 

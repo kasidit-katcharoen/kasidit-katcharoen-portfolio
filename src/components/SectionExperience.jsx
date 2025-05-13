@@ -262,6 +262,7 @@ export default function SectionExperiences() {
 
                 <div className="wrap-btn">
                   <button
+                    title="button-prev"
                     ref={prevRef}
                     className="swiper-button-prev shadow"
                     data-cursor-label={t_general?.click || ""}
@@ -269,6 +270,7 @@ export default function SectionExperiences() {
                     <i className="fa-solid fa-arrow-left"></i>
                   </button>
                   <button
+                    title="button-next"
                     ref={nextRef}
                     className="swiper-button-next shadow"
                     data-cursor-label={t_general?.click || ""}
@@ -283,7 +285,7 @@ export default function SectionExperiences() {
                 data-aos-duration="1000"
                 data-aos-once={false}
               >
-                {t?.note||''}
+                {t?.note || ""}
               </div>
             </div>
           </div>
