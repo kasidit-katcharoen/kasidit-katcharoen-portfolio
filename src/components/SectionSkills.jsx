@@ -24,8 +24,8 @@ export default function SectionSkills() {
 
   const cateSkills = [
     { label: tdcs?.all || "", value: "all" },
-    { label: tdcs?.language || "", value: "language" },
-    { label: tdcs?.["framework&labary"] || "", value: "framework&labary" },
+    { label: tdcs?.["frontend"] || "", value: "frontend" },
+    { label: tdcs?.["backend"] || "", value: "backend" },
     { label: tdcs?.tools || "", value: "tool" },
   ];
 
@@ -34,7 +34,8 @@ export default function SectionSkills() {
     setTimeout(() => {
       setElementSkills(() => {
         let elm = skills.map((v, k) => {
-          if (v.cate === cate || cate === "all") {
+          const foundCate = v.cate.filter((item) => item === cate);
+          if (foundCate.length > 0 || cate === "all") {
             return (
               <a
                 href={v.url}

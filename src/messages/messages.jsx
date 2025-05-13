@@ -30,16 +30,12 @@ const messages = {
       title: "ABOUT ME",
       title_sub: "Kasidit Katcharoen",
       desc: `
-          Hello, my name is Kasidit Katcharoen (Gun), a Frontend Developer.
-          I graduated Bachelor's degree in Business Computer (Continuing Program) 
-          from the Faculty of Business Administration, Rajamangala University of 
-          Technology Isan.I'm highly committed to continuously learning, growing, 
-          and sharpening my skills in order to build efficient and high-performing 
-          web applications. I strongly believe that my technical expertise and 
-          passion can contribute significantly to the success of any organization.
-          My goal is to create user-centric solutions that truly meet user needs, 
-          and to push the boundaries of technology for the benefit of both business 
-          and society in the future.
+        Hello, I'm Mr. Kasidit Katcharoen (Gun).
+        I hold a Bachelor's degree in Business Computer (Continuing Program) from the Faculty of Business Administration, Rajamangala University of Technology Isan.
+        I have over 2 years of experience working as a Frontend Developer, developing websites using PHP, JavaScript, jQuery, React, Next.js and other technologies.
+        Currently, I'm highly interested in pursuing a position as a Full-stack Developer. I'm committed to continuously learning and enhancing my skills in order to build efficient web applications that deliver maximum value.
+        I strongly hope to contribute my skills and knowledge to help drive organizational development and to create solutions that truly meet user needs.
+        Ultimately, my goal is to develop advanced technologies that benefit both businesses and society in the future.
       `,
       btnViewMore: "View More",
     },
@@ -47,10 +43,10 @@ const messages = {
       title: "SKILLS",
       desc: "Web development skills & Technology",
       dropdown_category_skills: {
-        all: "All",
-        language: "Language",
-        "framework&labary": "Framework&nbsp;&nbsp;&&nbsp;&nbsp;labary",
-        tools: "Tools",
+        "all": "All",
+        "frontend": "Frontend",
+        "backend": "Backend",
+        "tools": "Tools",
       },
     },
     SectionExperiences: {
@@ -103,7 +99,7 @@ const messages = {
       close: "Close",
       select: "Select",
       drag: "Drag",
-      viewImage: "View Image",
+      viewImage: "View",
     },
   },
   th: {
@@ -134,14 +130,12 @@ const messages = {
       title: "เกี่ยวกับฉัน",
       title_sub: "กษิดิศ กาศเจริญ",
       desc: `
-          สวัสดีครับผม นายกษิดิศ กาศเจริญ (กันต์) เป็น Frontend Developer สำเร็จการศึกษาระดับปริญญาตรี 
-          สาขาคอมพิวเตอร์ธุรกิจ (ต่อเนื่อง) คณะบริหารธุรกิจ จากมหาวิทยาลัยเทคโนโลยีราชมงคลอีสาน 
-          ผมได้มุ่งมั่นศึกษา เรียนรู้ และเพิ่มทักษะความสามารถของตัวเองอยู่เสมอ 
-          เพื่อที่จะพัฒนาเว็บแอปพลิเคชั่นให้มีประสิทธิภาพจนเกิดประโยชน์สูงสุด 
-          และหวังเป็นอย่างยิ่งว่าจะได้นำทักษะความสามารถเหล่านี้มาช่วยส่งเสริมให้สามารถพัฒนาองค์กร 
-          พร้อมทั้งสร้างสรรค์โซลูชั่นที่ตอบโจทย์ต่อความต้องการของผู้ใช้ 
-          สุดท้ายนี้ผมได้ตั้งเป้าหมายในการพัฒนาเทคโนโลยีให้ก้าวหน้าและ
-          เป็นประโยชน์ต่อธุรกิจและสังคมต่อไปในอนาคตข้างหน้า
+        สวัสดีครับผม นายกษิดิศ กาศเจริญ (กันต์) สำเร็จการศึกษาระดับปริญญาตรี สาขาคอมพิวเตอร์ธุรกิจ (ต่อเนื่อง) คณะบริหารธุรกิจ 
+        จากมหาวิทยาลัยเทคโนโลยีราชมงคลอีสาน มีประสบการณ์ทำงานตำแหน่ง Frontend Developer มากกว่า 2 ปี พัฒนาเว็บไซต์ด้วย 
+        PHP, JS, Jquery React, Nextjs อื่นๆ และได้มีความสนใจในตำแหน่ง Full-stack Developer ผมได้มุ่งมั่นศึกษา เรียนรู้ 
+        และเพิ่มทักษะความสามารถของตัวเองอยู่เสมอ เพื่อที่จะพัฒนาเว็บแอปพลิเคชั่นให้มีประสิทธิภาพจนเกิดประโยชน์สูงสุด และหวังเป็นอย่างยิ่งว่า
+        จะได้นำทักษะความสามารถเหล่านี้มาช่วยส่งเสริมให้สามารถพัฒนาองค์กร พร้อมทั้งสร้างสรรค์โซลูชั่นที่ตอบโจทย์ต่อความต้องการของผู้ใช้ 
+        สุดท้ายนี้ผมได้ตั้งเป้าหมายในการพัฒนาเทคโนโลยีให้ก้าวหน้าและ เป็นประโยชน์ต่อธุรกิจและสังคมต่อไปในอนาคตข้างหน้า
       `,
       btnViewMore: "ดูเพิ่มเติม",
     },
@@ -149,10 +143,10 @@ const messages = {
       title: "ทักษะ",
       desc: "ทักษะการพัฒนาเว็บไซต์และเทคโนโลยี",
       dropdown_category_skills: {
-        all: "ทั้งหมด",
-        language: "ภาษา",
-        "framework&labary": "เฟรมเวิร์กและไลบรารี",
-        tools: "เครื่องมือ",
+        "all": "ทั้งหมด",
+        "frontend": "ฝั่งหน้าบ้าน",
+        "backend": "ฝั่งหลังบ้าน",
+        "tools": "เครื่องมือ",
       },
     },
     SectionExperiences: {
