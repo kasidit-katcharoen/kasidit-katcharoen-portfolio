@@ -44,7 +44,7 @@ export function validPhone(value) {
     return callback;
   }
   // ลบช่องว่างหรือขีดก่อนตรวจ
-  const cleaned = value.replace(/[\s-]/g, '');
+  const cleaned = value.replace(/[\s-]/g, "");
   // เช็กว่าเป็นตัวเลขทั้งหมดและมี 10 หลัก (เบอร์มือถือไทย)
   const regex = /^0\d{9}$/;
   if (!regex.test(cleaned)) {
@@ -57,9 +57,9 @@ export function validPhone(value) {
 export function scrollTo(selector, duration = 800) {
   let element = null;
 
-  if (selector.startsWith('#')) {
+  if (selector.startsWith("#")) {
     element = document.getElementById(selector.substring(1));
-  } else if (selector.startsWith('.')) {
+  } else if (selector.startsWith(".")) {
     element = document.querySelector(selector);
   } else {
     console.error("Invalid selector. Use '#' for ID or '.' for class.");
@@ -89,15 +89,13 @@ export function scrollTo(selector, duration = 800) {
   }
 
   function easeInOutCubic(t) {
-    return t < 0.5
-      ? 4 * t * t * t
-      : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
   }
 
   requestAnimationFrame(animation);
 }
 
-export function calculateAge(birthdateStr="1999-08-24") {
+export function calculateAge(birthdateStr = "1999-08-24") {
   // "1995-04-20"
   const today = new Date();
   const birthDate = new Date(birthdateStr);
@@ -119,7 +117,7 @@ export const skills = [
     name: "html",
     label: "HTML",
     class: "",
-    cate: "language",
+    cate: ["frontend"],
     url: null,
   },
   {
@@ -127,7 +125,7 @@ export const skills = [
     name: "css",
     label: "CSS",
     class: "",
-    cate: "language",
+    cate: ["frontend"],
     url: null,
   },
   {
@@ -135,7 +133,7 @@ export const skills = [
     name: "less",
     label: "Less",
     class: "",
-    cate: "framework&labary",
+    cate: ["frontend"],
     url: null,
   },
   {
@@ -143,7 +141,7 @@ export const skills = [
     name: "scss",
     label: "Scss",
     class: "",
-    cate: "framework&labary",
+    cate: ["frontend"],
     url: null,
   },
   {
@@ -151,7 +149,7 @@ export const skills = [
     name: "bootstrap",
     label: "Bootstrap",
     class: "",
-    cate: "framework&labary",
+    cate: ["frontend"],
     url: null,
   },
   {
@@ -159,7 +157,7 @@ export const skills = [
     name: "tailwind",
     label: "Tailwind",
     class: "",
-    cate: "framework&labary",
+    cate: ["frontend"],
     url: null,
   },
   {
@@ -167,23 +165,7 @@ export const skills = [
     name: "js",
     label: "JavaScript",
     class: "",
-    cate: "language",
-    url: null,
-  },
-  {
-    img: "/images/skills/typescript.svg",
-    name: "typescript",
-    label: "TypeScript",
-    class: "",
-    cate: "language",
-    url: null,
-  },
-  {
-    img: "/images/skills/sql.svg",
-    name: "sql",
-    label: "SQL",
-    class: "",
-    cate: "language",
+    cate: ["frontend"],
     url: null,
   },
   {
@@ -191,23 +173,15 @@ export const skills = [
     name: "jquery",
     label: "JQuery",
     class: "",
-    cate: "framework&labary",
+    cate: ["frontend"],
     url: null,
   },
   {
-    img: "/images/skills/reactjs.svg",
-    name: "reactjs",
-    label: "ReactJS",
+    img: "/images/skills/typescript.svg",
+    name: "typescript",
+    label: "TypeScript",
     class: "",
-    cate: "framework&labary",
-    url: null,
-  },
-  {
-    img: "/images/skills/nextjs.svg",
-    name: "nextjs",
-    label: "NextJS",
-    class: " theme-dark-invert",
-    cate: "framework&labary",
+    cate: ["frontend"],
     url: null,
   },
   {
@@ -215,7 +189,23 @@ export const skills = [
     name: "php",
     label: "PHP",
     class: "",
-    cate: "language",
+    cate: ["frontend", "backend"],
+    url: null,
+  },
+  {
+    img: "/images/skills/reactjs.svg",
+    name: "reactjs",
+    label: "ReactJS",
+    class: "",
+    cate: ["frontend"],
+    url: null,
+  },
+  {
+    img: "/images/skills/nextjs.svg",
+    name: "nextjs",
+    label: "NextJS",
+    class: " theme-dark-invert",
+    cate: ["frontend"],
     url: null,
   },
   {
@@ -223,7 +213,7 @@ export const skills = [
     name: "vue",
     label: "Vue",
     class: "",
-    cate: "framework&labary",
+    cate: ["frontend"],
     url: null,
   },
   {
@@ -231,7 +221,15 @@ export const skills = [
     name: "angular",
     label: "Angular",
     class: "",
-    cate: "framework&labary",
+    cate: ["frontend"],
+    url: null,
+  },
+  {
+    img: "/images/skills/sql.svg",
+    name: "sql",
+    label: "SQL",
+    class: "",
+    cate: ["backend"],
     url: null,
   },
   {
@@ -239,7 +237,7 @@ export const skills = [
     name: "mysql",
     label: "MySQL",
     class: "",
-    cate: "tool",
+    cate: ["backend"],
     url: null,
   },
   {
@@ -247,7 +245,7 @@ export const skills = [
     name: "prisma",
     label: "Prisma",
     class: " theme-dark-invert",
-    cate: "tool",
+    cate: ["backend"],
     url: null,
   },
   {
@@ -255,55 +253,7 @@ export const skills = [
     name: "mongodb",
     label: "MongoDB",
     class: "",
-    cate: "framework&labary",
-    url: null,
-  },
-  {
-    img: "/images/skills/postgresSQL.svg",
-    name: "postgresSQL",
-    label: "PostgresSQL",
-    class: "",
-    cate: "tool",
-    url: null,
-  },
-  {
-    img: "/images/skills/docker.svg",
-    name: "docker",
-    label: "Docker",
-    class: "",
-    cate: "tool",
-    url: null,
-  },
-  {
-    img: "/images/skills/vercel.svg",
-    name: "vercel",
-    label: "Vercel",
-    class: " theme-dark-invert",
-    cate: "tool",
-    url: null,
-  },
-  {
-    img: "/images/skills/postman.svg",
-    name: "postman",
-    label: "Postman",
-    class: "",
-    cate: "tool",
-    url: null,
-  },
-  {
-    img: "/images/skills/sourcetree.svg",
-    name: "sourcetree",
-    label: "Sourcetree",
-    class: "",
-    cate: "tool",
-    url: null,
-  },
-  {
-    img: "/images/skills/filezilla.svg",
-    name: "filezilla",
-    label: "FileZilla",
-    class: "",
-    cate: "tool",
+    cate: ["backend"],
     url: null,
   },
   {
@@ -311,31 +261,63 @@ export const skills = [
     name: "vscode",
     label: "VS Code",
     class: "",
-    cate: "tool",
+    cate: ["tool"],
     url: null,
   },
   {
-    img: "/images/skills/figma.svg",
-    name: "figma",
-    label: "Figma",
+    img: "/images/skills/phpmyadmin.png",
+    name: "phpmyadmin",
+    label: "phpMyAdmin",
     class: "",
-    cate: "tool",
+    cate: ["tool"],
     url: null,
   },
   {
-    img: "/images/skills/fibery.png",
-    name: "fibery",
-    label: "Fibery",
+    img: "/images/skills/postgresSQL.svg",
+    name: "postgresSQL",
+    label: "PostgresSQL",
     class: "",
-    cate: "tool",
+    cate: ["tool"],
     url: null,
   },
   {
-    img: "/images/skills/jira.svg",
-    name: "jira",
-    label: "Jira",
+    img: "/images/skills/docker.svg",
+    name: "docker",
+    label: "Docker",
     class: "",
-    cate: "tool",
+    cate: ["tool"],
+    url: null,
+  },
+  {
+    img: "/images/skills/vercel.svg",
+    name: "vercel",
+    label: "Vercel",
+    class: " theme-dark-invert",
+    cate: ["tool"],
+    url: null,
+  },
+  {
+    img: "/images/skills/postman.svg",
+    name: "postman",
+    label: "Postman",
+    class: "",
+    cate: ["tool"],
+    url: null,
+  },
+  {
+    img: "/images/skills/sourcetree.svg",
+    name: "sourcetree",
+    label: "Sourcetree",
+    class: "",
+    cate: ["tool"],
+    url: null,
+  },
+  {
+    img: "/images/skills/filezilla.svg",
+    name: "filezilla",
+    label: "FileZilla",
+    class: "",
+    cate: ["tool"],
     url: null,
   },
   {
@@ -343,7 +325,31 @@ export const skills = [
     name: "sketch",
     label: "Sketch",
     class: "",
-    cate: "tool",
+    cate: ["tool"],
+    url: null,
+  },
+  {
+    img: "/images/skills/figma.svg",
+    name: "figma",
+    label: "Figma",
+    class: "",
+    cate: ["tool"],
+    url: null,
+  },
+  {
+    img: "/images/skills/fibery.png",
+    name: "fibery",
+    label: "Fibery",
+    class: "",
+    cate: ["tool"],
+    url: null,
+  },
+  {
+    img: "/images/skills/jira.svg",
+    name: "jira",
+    label: "Jira",
+    class: "",
+    cate: ["tool"],
     url: null,
   },
 ];
@@ -391,6 +397,7 @@ export const experiences = {
         "jquery",
         "php",
         "mysql",
+        "phpmyadmin",
       ],
     },
     {
@@ -425,10 +432,7 @@ export const experiences = {
       name: "SHERA",
       type: "e-commerce website",
       url: "https://www.shera.com/",
-      desc: [
-        "Responsive Design",
-        "Transitions & Animations",
-      ],
+      desc: ["Responsive Design", "Transitions & Animations"],
       owner: "orisma technology company limited",
       year: "2022",
       positions: ["frontend developer"],
@@ -504,24 +508,12 @@ export const experiences = {
       name: "CMS (Content Management System)",
       type: "CMS (Content Management System)",
       url: "",
-      desc: [
-        "Responsive Design",
-        "Websit performance",
-        "Website security",
-      ],
+      desc: ["Responsive Design", "Websit performance", "Website security"],
       owner: "orisma technology company limited",
       year: "2023",
       positions: ["frontend developer"],
       responsibility: ["co-develop"],
-      tools: [
-        "html",
-        "less",
-        "js",
-        "jquery",
-        "sourcetree",
-        "figma",
-        "fibery",
-      ],
+      tools: ["html", "less", "js", "jquery", "sourcetree", "figma", "fibery"],
     },
     {
       img: project6,
@@ -555,10 +547,7 @@ export const experiences = {
       name: "sacit",
       type: "Business Website",
       url: "https://www.sacit.or.th/th/home",
-      desc: [
-        "Responsive Design",
-        "Transitions & Animations",
-      ],
+      desc: ["Responsive Design", "Transitions & Animations"],
       owner: "orisma technology company limited",
       year: "2023",
       positions: ["frontend developer"],
@@ -644,7 +633,7 @@ export const experiences = {
         "SEO",
         "Database Design",
         "REST (API)",
-        "CD/CI"
+        "CD/CI",
       ],
       owner: "kasidit katcharoen",
       year: "2025",
@@ -656,6 +645,7 @@ export const experiences = {
         "tailwind",
         "js",
         "nextjs",
+        "prisma",
         "mongodb",
         "sourcetree",
       ],
@@ -690,6 +680,7 @@ export const experiences = {
         "jquery",
         "php",
         "mysql",
+        "phpmyadmin",
       ],
     },
     {
@@ -724,10 +715,7 @@ export const experiences = {
       name: "SHERA",
       type: "e-commerce website",
       url: "https://www.shera.com/",
-      desc: [
-        "Responsive Design",
-        "Transitions & Animations",
-      ],
+      desc: ["Responsive Design", "Transitions & Animations"],
       owner: "orisma technology company limited",
       year: "2022",
       positions: ["frontend developer"],
@@ -803,24 +791,12 @@ export const experiences = {
       name: "CMS (Content Management System)",
       type: "CMS (Content Management System)",
       url: "",
-      desc: [
-        "Responsive Design",
-        "Websit performance",
-        "Website security",
-      ],
+      desc: ["Responsive Design", "Websit performance", "Website security"],
       owner: "orisma technology company limited",
       year: "2023",
       positions: ["frontend developer"],
       responsibility: ["co-develop"],
-      tools: [
-        "html",
-        "less",
-        "js",
-        "jquery",
-        "sourcetree",
-        "figma",
-        "fibery",
-      ],
+      tools: ["html", "less", "js", "jquery", "sourcetree", "figma", "fibery"],
     },
     {
       img: project6,
@@ -854,10 +830,7 @@ export const experiences = {
       name: "sacit",
       type: "Business Website",
       url: "https://www.sacit.or.th/th/home",
-      desc: [
-        "Responsive Design",
-        "Transitions & Animations",
-      ],
+      desc: ["Responsive Design", "Transitions & Animations"],
       owner: "orisma technology company limited",
       year: "2023",
       positions: ["frontend developer"],
@@ -943,7 +916,7 @@ export const experiences = {
         "SEO",
         "Database Design",
         "REST (API)",
-        "CD/CI"
+        "CD/CI",
       ],
       owner: "kasidit katcharoen",
       year: "2025",
@@ -955,6 +928,7 @@ export const experiences = {
         "tailwind",
         "js",
         "nextjs",
+        "prisma",
         "mongodb",
         "sourcetree",
       ],

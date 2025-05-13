@@ -98,17 +98,6 @@ export default function SectionHomeBanner() {
                 // data-cursor-label={t_general?.viewImage || ""}
               />
             </Parallax>
-            {/* <div
-              className="animation-box"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              data-aos-once={false}
-            >
-              <div data-dot={1}></div>
-              <div data-dot={2}></div>
-              <div data-dot={3}></div>
-              <div data-dot={4}></div>
-            </div> */}
           </div>
           <div className="overlay-box">
             <div
