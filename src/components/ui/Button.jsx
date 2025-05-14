@@ -15,6 +15,8 @@ export default function Button({
   dataBtn = "outline",
   icon = <i className="fa-solid fa-arrow-right"></i>,
   iconPosition = "right",
+  download = false,
+  target = "_self",
 }) {
   const locale = useLocale();
   const t_general = messages?.[locale]?.["general"] || "";
@@ -32,9 +34,11 @@ export default function Button({
         <Link
           href={href}
           className={`${className || ""}`}
+          download={download}
+          target={target}
+          rel="noreferrer"
           data-btn={`${dataBtn || ""} ${iconPosition || ""}`}
           data-cursor-label={t_general?.click || ""}
-
         >
           <div className="box-1">
             {iconPosition == "right" ? <div className="dot"></div> : ""}

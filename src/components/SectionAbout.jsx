@@ -31,7 +31,7 @@ export default function About() {
           <div
             className="title-sec"
             data-aos="fade-up"
-            data-aos-duration="1000"
+            data-aos-duration="500"
             data-aos-once={false}
           >
             <h2 className="c-gd f-bol" data-underline="gradient">
@@ -43,7 +43,7 @@ export default function About() {
               {/* <div
                   className="txt-title f-med"
                   data-aos="fade-up"
-                  data-aos-duration="1000"
+                  data-aos-duration="500"
                   data-aos-once={false}
                 >
                   {t?.title_sub || ""}
@@ -51,7 +51,7 @@ export default function About() {
               <h3
                 className="txt-desc"
                 data-aos="fade-up"
-                data-aos-duration="1000"
+                data-aos-duration="500"
                 data-aos-once={false}
               >
                 {t?.desc || ""}
@@ -59,7 +59,7 @@ export default function About() {
               {/* <div
                 className="wrap-btn"
                 data-aos="fade-up"
-                data-aos-duration="1000"
+                data-aos-duration="500"
                 data-aos-once={false}
               >
                 <Button href={"/about"}>{t?.btnViewMore || ""}</Button>
@@ -70,7 +70,7 @@ export default function About() {
         <div
           className="bg-box"
           data-aos="fade-up"
-          data-aos-duration="1000"
+          data-aos-duration="500"
           data-aos-once={false}
         >
           <MarqueeScroll

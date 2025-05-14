@@ -25,6 +25,7 @@ const messages = {
       position: "Frontend Developer | Full stack Developer",
       sub: "I'm an experienced web developer, creating and developing digital platforms while collaborating with both leading companies and ambitious startups!",
       btnContact: "Contact",
+      btnCV: "Download CV",
     },
     SectionAbout: {
       title: "ABOUT ME",
@@ -125,6 +126,7 @@ const messages = {
       position: "Frontend Developer | Full stack Developer",
       sub: "ผมเป็นนักพัฒนาเว็บไซต์มากประสบการณ์ สร้างสรรค์และพัฒนาแพลตฟอร์มดิจิทัล ร่วมงานกับทั้งบริษัทชั้นนำและสตาร์ทอัพไฟแรง!",
       btnContact: "ติดต่อ",
+      btnCV: "ดาวน์โหลด CV",
     },
     SectionAbout: {
       title: "เกี่ยวกับฉัน",
