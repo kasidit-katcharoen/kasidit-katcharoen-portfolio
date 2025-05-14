@@ -70,11 +70,6 @@ export default function SectionExperiences() {
     }
   }, []);
 
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-  if (!mounted) return null; // ป้องกัน hydration error
   return (
     <>
       {experiences?.[locale]?.length > 0 ? (
