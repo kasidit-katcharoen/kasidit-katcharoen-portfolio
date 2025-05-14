@@ -22,7 +22,7 @@ export default function useWordFade(
             key={new Date().getTime + k}
             data-aos={styleFade == "random" ? getRandomText() : styleFade}
             data-aos-delay={delay * k}
-            data-aos-duration="1000"
+            data-aos-duration="500"
             data-aos-once={false}
           >
             {v}

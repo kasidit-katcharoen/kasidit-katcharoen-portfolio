@@ -25,10 +25,10 @@
       height: 8px;
       background-color: var(--c-f);
       border-radius: 50%;
-      transition: all 0.5s var(--transition-timing);
+      transition: all 0.3s var(--transition-timing);
     }
     span {
-      transition: all 0.5s var(--transition-timing);
+      transition: all 0.3s var(--transition-timing);
     }
   }
   .box-2 {
@@ -43,7 +43,7 @@
     opacity: 0;
     visibility: hidden;
     transform: translate(0, -50%);
-    transition: all 0.5s var(--transition-timing);
+    transition: all 0.3s var(--transition-timing);
     color: var(--c-theme);
     i {
       @include font-size(12px);

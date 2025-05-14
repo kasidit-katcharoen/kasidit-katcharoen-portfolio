@@ -90,7 +90,7 @@ export default function SectionHomeBanner() {
                 src="/images/profile/profile3.jpg"
                 alt="banner"
                 data-aos="fade-right"
-                data-aos-duration="1000"
+                data-aos-duration="500"
                 data-aos-once={false}
                 className="img-banner shadow"
                 width={800}
@@ -109,31 +109,33 @@ export default function SectionHomeBanner() {
               className="txt-box"
               data-aos="fade-left"
               // data-aos-delay="200"
-              data-aos-duration="1000"
+              data-aos-duration="500"
               data-aos-once={false}
             >
               <div className="txt-1">{t?.hello}</div>
               <h1 className="txt-2 f-bol c-gd">
                 {t?.fname} {t?.lname}
               </h1>
-              {/* <TypeAnimation
+              <TypeAnimation
                 wrapper="div"
                 sequence={[`${t?.position || ""}`, 5000, ``, 1000]}
                 className="txt-3 f-reg"
                 speed={50}
                 deletionSpeed={50}
                 repeat={Infinity}
-              /> */}
-              <h2 className="txt-3 f-reg">{t?.position || ""}</h2>
+              />
+              <h2 className="txt-3 f-reg hide-seo">{t?.position || ""}</h2>
               <h3 className="txt-4">{t?.sub || ""}</h3>
               <div className="wrap-bottom">
                 <Button
-                  // href={"/contact"}
-                  onClick={() => {
-                    scrollTo("#sec-contact");
-                  }}
+                  href={"https://drive.google.com/file/d/1ZKzkTGWvhpED_-08NGGPl1wNpOR0KV8g/view?usp=sharing"}
+                  download={true}
+                  // target="_blank"
+                  // onClick={() => {
+                  //   scrollTo("#sec-contact");
+                  // }}
                 >
-                  {t?.btnContact || ""}
+                  {t?.btnCV || ""}
                 </Button>
                 <div className="hr-x"></div>
                 <div className="group-contact">

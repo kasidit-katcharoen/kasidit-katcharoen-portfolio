@@ -66,7 +66,7 @@ export default function SectionContactCustom() {
           <div
             className="title-sec"
             data-aos="fade-up"
-            data-aos-duration="1000"
+            data-aos-duration="500"
             data-aos-once={false}
           >
             <h2 className="c-gd f-bol" data-underline="gradient">
@@ -76,7 +76,7 @@ export default function SectionContactCustom() {
           <div
             className="content-box"
             data-aos="fade-up"
-            data-aos-duration="1000"
+            data-aos-duration="500"
             data-aos-once={false}
           >
             <div className="card-form">

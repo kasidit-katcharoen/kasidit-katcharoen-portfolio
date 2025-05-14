@@ -43,7 +43,7 @@ export default function SectionSkills() {
                 key={new Date().getTime + k}
                 data-aos="fade-up"
                 data-aos-delay={50 * k}
-                data-aos-duration="1000"
+                data-aos-duration="500"
                 data-aos-once={false}
                 aria-label={v.label||'Link'}
               >
@@ -75,7 +75,7 @@ export default function SectionSkills() {
             <div
               className="title-sec"
               data-aos="fade-up"
-              data-aos-duration="1000"
+              data-aos-duration="500"
               data-aos-once={false}
             >
               <h2 className="c-gd f-bol" data-underline="gradient">
@@ -85,7 +85,7 @@ export default function SectionSkills() {
             <div
               className="txt-sub-sec"
               data-aos="fade-up"
-              data-aos-duration="1000"
+              data-aos-duration="500"
               data-aos-once={false}
             >
               {t?.desc || ""}
@@ -94,7 +94,7 @@ export default function SectionSkills() {
               <div
                 className="cate-box"
                 data-aos="fade-up"
-                data-aos-duration="1000"
+                data-aos-duration="500"
                 data-aos-once={false}
               >
                 <Dropdown
@@ -107,7 +107,7 @@ export default function SectionSkills() {
               <div
                 className="group-skills"
                 // data-aos="fade-up"
-                // data-aos-duration="1000"
+                // data-aos-duration="500"
                 // data-aos-once={false}
               >
                 {elementSkills || ""}
