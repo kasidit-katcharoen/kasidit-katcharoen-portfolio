@@ -128,9 +128,9 @@ export default function SectionHomeBanner() {
               <h3 className="txt-4">{t?.sub || ""}</h3>
               <div className="wrap-bottom">
                 <Button
-                  href={"https://drive.google.com/file/d/1ZKzkTGWvhpED_-08NGGPl1wNpOR0KV8g/view?usp=sharing"}
+                  href={"https://drive.google.com/file/d/14ckujLlbOzupMRqNMAbcB-1z1IvyHM-T/view?usp=sharing"}
                   download={true}
-                  // target="_blank"
+                  target="_blank"
                   // onClick={() => {
                   //   scrollTo("#sec-contact");
                   // }}
