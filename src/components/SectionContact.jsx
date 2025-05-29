@@ -87,7 +87,7 @@ export default function SectionContactCustom() {
                   setSubmit(true), e.preventDefault();
                 }}
               >
-                <div className="title-form f-bol">Form Contact </div>
+                <div className="title-form f-bol">{t?.titleForm||''} </div>
                 <div
                   className="wrap-layout"
                   data-layout="grid gap-30 gap-xs-20"
