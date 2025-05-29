@@ -56,6 +56,7 @@ const messages = {
     },
     SectionContact: {
       title: "Contact",
+      titleForm: "Contact Form",
     },
     Footer: {
       home: "Home",
@@ -157,6 +158,7 @@ const messages = {
     },
     SectionContact: {
       title: "ติดต่อ",
+      titleForm: "แบบฟอร์มติดต่อ",
     },
     Footer: {
       home: "หน้าหลัก",
