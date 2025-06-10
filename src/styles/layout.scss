@@ -1,4 +1,5 @@
-@import "tailwindcss";
+// @import "tailwindcss";
+@use "tailwindcss" as *;
 @import "mixin.scss";
 @import "variable.scss";
 @import "font.scss";

@@ -34,6 +34,7 @@ export default function SectionHomeBanner() {
     getTheme(theme).particlesColor || []
   );
   const [elementParticles, setElementParticles] = useState("");
+  const [userData, setUserData] = useState(null);
 
   useEffect(() => {
     setParticlesColor(getTheme(theme).particlesColor || []);
@@ -62,17 +63,25 @@ export default function SectionHomeBanner() {
     ));
   }, [particlesColor]);
 
-  const getApiHomebanner = async () => {
+  const getUser = async () => {
     try {
-      const res = await axios.get("/api/users");
-      console.log("res", res.data);
+      const res = await axios.get("/api/users",{
+        headers: {
+          "Content-Type": "application/json",
+        },
+        params: {
+          email: 'kasidit.kat@gmail.com',
+        },
+      });
+      // console.log("res", res.data);
+      setUserData(res.data);
       return res;
     } catch (error) {
       console.log(error);
     }
   };
   useEffect(() => {
-    getApiHomebanner();
+    getUser();
   }, []);
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
@@ -128,7 +137,7 @@ export default function SectionHomeBanner() {
               <h3 className="txt-4">{t?.sub || ""}</h3>
               <div className="wrap-bottom">
                 <Button
-                  href={"https://drive.google.com/file/d/14ckujLlbOzupMRqNMAbcB-1z1IvyHM-T/view?usp=sharing"}
+                  href={userData?.documents?.cv || ""}
                   download={true}
                   target="_blank"
                   // onClick={() => {
